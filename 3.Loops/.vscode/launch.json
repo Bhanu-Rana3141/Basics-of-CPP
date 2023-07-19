@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/bhanu/Desktop/Cpp/2.Loops",
-      "program": "c:/Users/bhanu/Desktop/Cpp/2.Loops/build/Debug/outDebug",
+      "cwd": "c:/Users/bhanu/Desktop/cpp/3.Loops",
+      "program": "c:/Users/bhanu/Desktop/cpp/3.Loops/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

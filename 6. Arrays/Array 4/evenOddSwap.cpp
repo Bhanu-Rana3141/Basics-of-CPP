@@ -17,6 +17,16 @@ void swapEvenOdd(int arr[] , int n){
     }
 }
 
+void odd_even_sort(int arr[],int start,int end){
+    for(int i=start; i<end; i++){
+        for(int j=i+1; j<end; j++){
+            if(arr[i]>arr[j]){
+                swap(arr[i],arr[j]);
+            }
+        }
+    }
+}
+
 int main() {
     int n;
     cout<<"Enter n: ";
@@ -32,5 +42,17 @@ int main() {
     for(int i=0; i<n; i++){
         cout<<arr[i]<<" ";
     }
+    cout<<endl;
+
+    odd_even_sort(arr,0,n/2);
+     for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    odd_even_sort(arr,n/2,n);
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+
     return 0;
 }

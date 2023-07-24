@@ -46,8 +46,8 @@ void sortZeroOne(int arr[],int n){
     int i=0,j=n-1;
     while(i<j){
         if(arr[i]==1 && arr[j]==0){
-            arr[i++]=0;
-            arr[j--]=1;
+           swap(arr[i],arr[j]);
+           i++,j--;
         }
         if(arr[i] == 0){
             i++;

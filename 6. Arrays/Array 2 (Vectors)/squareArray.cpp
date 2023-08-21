@@ -1,6 +1,12 @@
 #include<iostream>
 using namespace std;
 
+void printArray(int arr[],int n){
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+}
+
 void sort(int arr[],int n){
     for(int i=0; i<n; i++){
         for(int j=i+1; j<n; j++){
@@ -30,17 +36,14 @@ int main() {
     }
 
     int square[n];
-    
     squareArray(arr,n,square);
+    printArray(square,n);
 
-    for(int i=0; i<n; i++){
-        cout<<square[i]<<" ";
-    }
+    cout<<endl<<endl;
 
-    cout<<"\n\nSorted Array: ";
+    cout<<"Sorted Array: ";
     sort(square,n);
-    for(int i=0; i<n; i++){
-        cout<<square[i]<<" ";
-    }
+    printArray(square,n);
+    
     return 0;
 }

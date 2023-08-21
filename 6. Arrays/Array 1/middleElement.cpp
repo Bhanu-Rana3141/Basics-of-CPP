@@ -1,5 +1,15 @@
 #include<iostream>
 using namespace std;
+
+// SIMPLE APPROACH
+
+int middleElement(int array[],int n){
+    int start=0;
+    int end=n-1;
+    int mid = start+(end-start)/2;
+    return array[mid];
+}
+
 int main() {
     int n; 
     cout<<"Enter n: ";
@@ -13,18 +23,20 @@ int main() {
         cin>>array[i];
     }
 
-    int ans=-1;
-    for(int i=0; i<n; i++){
-        for(int j=i+1; j<n; j++){
-            for(int k=j+1; k<n; k++){
-                 if(array[j] > array[i] && array[j] < array[k]){
-                    ans = array[i];
-                 }
-            }
-        }
-    }
+    // int ans=-1;
+    // for(int i=0; i<n; i++){
+    //     for(int j=i+1; j<n; j++){
+    //         for(int k=j+1; k<n; k++){
+    //              if(array[j] > array[i] && array[j] < array[k]){
+    //                 ans = array[i];
+    //              }
+    //         }
+    //     }
+    // }
 
-    cout<<"ANS: "<<ans;
+    
+
+    cout<<"Mid element: "<<middleElement(array,n);
 
     return 0;
 }

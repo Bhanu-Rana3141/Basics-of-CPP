@@ -1,8 +1,9 @@
 #include<iostream>
+#include<limits.h>
 using namespace std;
 
 int maxValue(int arr[] , int size){
-    int max = 0;
+    int max = INT_MIN;
     for(int i=0; i<size; i++){
         if(arr[i] > 0){
             max=arr[i];

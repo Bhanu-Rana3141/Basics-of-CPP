@@ -1,88 +1,42 @@
 #include<iostream>
-#include<limits.h>
 using namespace std;
 
-// SOLVING BY USING PIVOT CONCEPT
+int pivotIndex(int arr[],int n){
+    int start=0;
+    int end=n-1;
+    int mid=start+(end-start)/2;
 
-// int pivot(int arr[],int n){
-//     int s=0;
-//     int e=n-1;
-//     int mid = s+(e-s)/2;
-
-//     while(s<e){
-//         if(arr[mid]>arr[0]){
-//             s=mid+1;
-//         }
-//         else{
-//             e=mid;
-//         }
-//         mid=s+(e-s)/2;
-//     }
-//     return s;
-// }
-
-// int binarySearch(int arr[],int s,int e,int key){
-//    int mid = s+(e-s)/2;
-//    while(s<=e){
-//     if(arr[mid] == key){
-//         return mid;
-//     }
-//     else if(arr[mid] > key){
-//         e=mid-1;
-//     }
-//     else{
-//         s=mid+1;
-//     }
-//     mid=s+(e-s)/2;
-//    }
-//     return -1;
-// }
-
-
-//SOLVING BY USING PEAK ELEMENT
-int peakElement(int arr[],int n){
-    int s=0;
-    int e=n-1;
-    int mid=s+(e-s)/2;
-
-    while(s<e){
-        if(arr[mid] < arr[mid+1]){
-            s=mid+1;
+    while(start<end){
+        if(arr[mid]>=arr[0]){
+            start=mid+1;
         }
         else{
-            e=mid;
+            end=mid-1;
         }
-        mid=s+(e-s)/2;
+        mid=start+(end-start)/2;
     }
-    return s;
+    return end;
 }
 
-int binarySearch(int arr[],int s,int e,int k){
-    int mid=s+(e-s)/2;
-    while(s<=e){
-        if(arr[mid] == k){
+int binarySearch(int arr[],int start,int end,int target){
+    int mid = start+(end-start)/2;
+
+    while(start<=end){
+        if(arr[mid] == target){
             return mid;
         }
-        else if(arr[mid]>k){
-            e=mid-1;
+        else if(arr[mid] > target){
+            end=mid-1;
         }
         else{
-            s=mid+1;
+            start=mid+1;
         }
-        mid=s+(e-s)/2;
+        mid=start+(end-start)/2;
     }
+    return -1;
 }
 
-int ans(int arr[],int peak,int n,int k){
-    if(k>=arr[0] && k<=peak){
-        return binarySearch(arr,0,peak,k);
-    }
-    else{
-        return binarySearch(arr,peak+1,n-1,k);
-    }
-}
-
-int main() {    
+int main() {
     int n;
     cout<<"Enter n: ";
     cin>>n;
@@ -92,29 +46,19 @@ int main() {
         cin>>arr[i];
     }
 
-     int key;
-     cout<<"Enter key: ";
-     cin>>key;
+    int target;
+    cout<<"Enter target: ";
+    cin>>target;
 
-    // int pivotEle = pivot(arr,n);
-    // if(key >= arr[pivotEle] && key<=arr[n-1]){
-    //     cout<< binarySearch(arr,pivotEle,n-1,key);
-    // }else{
-    //     cout<<binarySearch(arr,0,pivotEle-1,key);
-    // }
+    cout<<"Pivot Index: ";
+    int pivot = pivotIndex(arr,n);
+    cout<<pivot<<endl;
 
-    // Peak element
-    int peak = peakElement(arr,n);
-
-    // int ans=-1;
-    // if(key>=arr[0] && key<=peak){
-    //    ans=binarySearch(arr,0,peak,key); 
-    // }
-    // else{
-    //     ans=binarySearch(arr,peak+1,n-1,key);
-    // }
-
-    cout<<ans(arr,peak,n,key);
-
+    if(target>= arr[pivot] && target <= arr[n-1]){
+       cout<<"Ans: "<< binarySearch(arr,pivot,n-1,target);
+    }
+    else{
+       cout<< "Ans: "<< binarySearch(arr,0,pivot-1,target);
+    }   
     return 0;
 }

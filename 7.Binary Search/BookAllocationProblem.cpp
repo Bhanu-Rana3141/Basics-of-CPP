@@ -1,5 +1,28 @@
 #include<iostream>
+#include<limits.h>
 using namespace std;
+
+// USING ARRAY SPECIFICLY FOR 2 STUDENTS
+int minOfMax(int arr[],int n){
+ int min_sum=INT_MAX,sum_1=0;
+    for(int i=0; i<n; i++){
+        int max_sum=0,sum_2=0;
+        sum_1 += arr[i];
+        for(int j=i+1; j<n; j++){
+            sum_2 += arr[j];
+        }
+        if(sum_1 > sum_2){
+            max_sum=sum_1;
+        }
+        else{
+            max_sum=sum_2;
+        }
+        if(max_sum < min_sum){
+            min_sum = max_sum;
+        }
+    }
+    return min_sum;
+}
 
 bool isPossible(int arr[],int n,int m,int mid){
     int studentCount=1;
@@ -34,6 +57,11 @@ int main() {
         cin>>arr[i];
     }
 
+    //CALLING ARRAY FUNCTION
+    int res = minOfMax(arr,n);
+    // cout<<"Ans: "<<res;
+
+
     int start=0;
     //Calculating sum for end index
     int sum=0;
@@ -54,7 +82,7 @@ int main() {
         }
         mid=start+(end-start)/2;
     }
-
     cout<<"Ans: "<<ans;
+   
     return 0;
 }

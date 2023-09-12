@@ -13,8 +13,6 @@ int main() {
         cin>>arr[i];
     }
 
-
-
     int target_diff;
     cout<<"Enter target diff: ";
     cin>>target_diff;

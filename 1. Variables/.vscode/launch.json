@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/bhanu/Desktop/Cpp/1. Variables",
-      "program": "c:/Users/bhanu/Desktop/Cpp/1. Variables/build/Debug/outDebug",
+      "cwd": "c:/Users/bhanu/Desktop/cpp/1. Variables",
+      "program": "c:/Users/bhanu/Desktop/cpp/1. Variables/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

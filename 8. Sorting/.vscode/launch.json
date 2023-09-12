@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/bhanu/Desktop/cpp/2. Conditonals",
-      "program": "c:/Users/bhanu/Desktop/cpp/2. Conditonals/build/Debug/outDebug",
+      "cwd": "c:/Users/bhanu/Desktop/cpp/8. Sorting",
+      "program": "c:/Users/bhanu/Desktop/cpp/8. Sorting/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/bhanu/Desktop/cpp/4. Number System",
-      "program": "c:/Users/bhanu/Desktop/cpp/4. Number System/build/Debug/outDebug",
+      "cwd": "c:/Users/bhanu/Desktop/cpp/021. Solving Array Questions2",
+      "program": "c:/Users/bhanu/Desktop/cpp/021. Solving Array Questions2/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

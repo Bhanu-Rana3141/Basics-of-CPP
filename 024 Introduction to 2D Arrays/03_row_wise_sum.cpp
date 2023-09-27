@@ -31,12 +31,12 @@ int main() {
     cout<<endl;
     // Column wise sum
     cout<<"Column wise sum: "<<endl;
-    for(int i=0; i<n; i++){
+    for(int col=0; col<m; col++){
         int sum = 0;
-        for(int j=0; j<m; j++) {
-            sum += arr[j][i];
+        for(int row=0; row<n; row++){
+            sum += arr[row][col];
         }
-        cout<<"Col "<<i<<" : "<<sum<<endl;
+        cout<<"col "<<col<<" : "<<sum<<endl;
     }
     return 0;
 }

@@ -10,13 +10,24 @@ void print_counting(int n){
         return;
     }
 
-// Recursive Relation 
+// Recursive Relation  
    print_counting(n-1);
 
 // Processing
    cout<<n<<" ";
 
+   
+
 }
+
+/* USING PARAMERTERISED WAY ->by using extra varible
+void print_counting(int n, int temp){
+    if(temp>n)
+        return;
+    cout<<temp<<endl;
+    print_counting(n,temp+1);
+}
+*/
 
 int main() {
     int n;
@@ -24,5 +35,8 @@ int main() {
     cin>>n;
 
     print_counting(n);
+
+
+    // print_counting(n,1);  -> extra parameter
     return 0;
 }

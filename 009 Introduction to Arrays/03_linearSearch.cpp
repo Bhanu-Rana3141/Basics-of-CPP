@@ -16,7 +16,6 @@ int main() {
     cout<<"Enter n: ";
     cin>>n;
 
-
     int arr[n]; // bad practice
     for(int i=0; i<n; i++){
         cin>>arr[i];

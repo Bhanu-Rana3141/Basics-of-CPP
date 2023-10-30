@@ -28,8 +28,9 @@ int main() {
     for(int i=0; i<n; i++){
         cin>>arr[i];
     }
-    reverse(arr.begin(), arr.end());
-    // reverse(arr,n);  
+    // reverse(arr.begin(), arr.end());
+
+    // reverse(arr,n);  // calling function at line 12
 
     // Using inbuilt function 
     // reverse(arr,arr+n);

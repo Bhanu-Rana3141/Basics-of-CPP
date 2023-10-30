@@ -11,7 +11,7 @@ void printArray(vector<int>arr){
 
 int main() {
     int n;
-    cout << "Enter the n of the array: ";
+    cout << "Enter n: ";
     cin >> n;
 
     vector<int>arr(n);
@@ -51,6 +51,7 @@ int main() {
     while(i<j){
         if(arr[i] != 0 && arr[j] == 0){
             swap(arr[i] , arr[j]);
+            i++, j--;
         }
         if(arr[i] == 0){
             i++;

@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-// Counting N to 1   -> Head Recursion
+// Counting 1 to N   -> Head Recursion
 
 void print_counting(int n){
 

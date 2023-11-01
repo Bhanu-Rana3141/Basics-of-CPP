@@ -22,20 +22,14 @@ int main() {
         }
     }
     cout<<endl;
-    // Transpose of a matrix
+ 
+    // Transpose of matrix
     for(int i=0; i<n; i++) {
-        for(int j=0; j<n; j++) {
-            arr[i][j] = arr[j][i];
-        }
+        for(int j=0; j<i; j++) {
+               swap(arr[i][j] , arr[j][i]);
+        }   
     }
-/*   Approach 2: 
-      Transpose of matrix
-        for(int i=0; i<size; i++) {
-            for(int j=0; j<i; j++) {
-               swap(matrix[i][j] , matrix[j][i]);
-            }
-        }
-*/ 
+
     cout<<"Tranpose of matrix: ";
     cout<<endl;
     
@@ -50,7 +44,11 @@ int main() {
 
     // Rotating array by 90 degrees
     for(int i=0; i<n; i++) {
-        reverse(arr[i],n);
+        // reverse(arr[i],n);
+        int s=0, e=n-1;
+        while(s < e) {
+            swap(arr[i][s++], arr[i][e--]);
+        } 
     }
 
     cout<<"Rotated Array: ";

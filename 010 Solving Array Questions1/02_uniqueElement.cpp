@@ -25,6 +25,7 @@ int unique(int arr[], int n){
 
 /* Approach 2 -> By using array manipulation, here we will compare with each element of array and by using nested
 loops and assing -1 wherever values will be repeated and then at all positions -1 will be assigned except 1 position
+and element at that position will be unique element
 
 int unique(int arr[], int n){
     for(int i=0; i<n; i++){

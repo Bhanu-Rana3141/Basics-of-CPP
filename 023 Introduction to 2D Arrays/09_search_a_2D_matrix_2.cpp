@@ -2,11 +2,11 @@
 #include<vector>
 using namespace std;
 
-/* Binary search in each row (Function Declaration)
-bool binary_search(int arr[], int target, int rowSize){
+/*Binary search in each row (Function Declaration)
+bool binary_search(int arr[], int target, int m){
 
     int s=0;
-    int e=rowSize-1;
+    int e=m-1;
     int mid = s+(e-s)/2;
 
     while(s<=e) {
@@ -63,34 +63,35 @@ int main() {
 /*Approach 2 :  Better Aproach -> Using Binary Search in each row as all the rows are sorted
     int ans = -1;
     for(int i=0; i<n; i++) {
-       ans = binary_search(arr[i] , target, n);
+       ans = binary_search(arr[i] , target, m);
        if(ans == 1) {
         cout<<"true";
         return 0;
         }
     }
     cout<<"false";
-*/   
+ */
 
 // Approach 3: Optimal Solution -> Using sorted rows and cols
 
-    int row=0;
-    int col = m-1;
+    int rowIndex=0;
+    int colIndex = m-1;
     bool flag = false;
-    while(row<n && col>=0) {
-        int element = arr[row][col];
+
+    while(rowIndex<n && colIndex>=0) {
+        int element = arr[rowIndex][colIndex];
         if(element == target){
             flag = true;
         }
         else if(element<target) {
-            row++;
+            rowIndex++;
         }
         else{
-            col++;
+            colIndex++;
         }
     }
 
-    flag==true ? cout<<true : cout<<false;
+    flag == true ? cout << true : cout << false;
 
     return 0;
 }

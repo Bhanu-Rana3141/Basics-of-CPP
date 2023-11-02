@@ -46,7 +46,7 @@ int main() {
     int mid = s+(e-s)/2;
 
     while(s<=e) {
-        int element = arr[mid/m][mid%m];
+        int element = arr[mid/m][mid%m];  // m -> no of cols
 
         if(element == target) {
             cout<<"True";
@@ -59,7 +59,7 @@ int main() {
             s=mid+1;
         }
         mid = s+(e-s)/2;
-    }
+    } 
     cout<<"False";
     return 0;
 }

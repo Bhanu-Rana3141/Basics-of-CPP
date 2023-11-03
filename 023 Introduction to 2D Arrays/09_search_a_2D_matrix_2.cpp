@@ -72,7 +72,7 @@ int main() {
     cout<<"false";
  */
 
-// Approach 3: Optimal Solution -> Using sorted rows and cols
+// Approach 3: Optimal Solution -> Using sorted rows and cols and decreasing search space in each iteration
 
     int rowIndex=0;
     int colIndex = m-1;

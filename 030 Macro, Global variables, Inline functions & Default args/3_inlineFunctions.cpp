@@ -6,13 +6,12 @@ inline int getMax(int& a, int& b){
 }
 
 int main() {
-    cout<<endl;
+    cout << endl;
 
-    int a=1,b=2;
+    int a = 1,b = 2;
     int ans = getMax(a,b);
 
-    cout<<"max: "<<ans;
+    cout << "max: " << ans;
 
-    cout<<endl<<endl;
     return 0;
 }

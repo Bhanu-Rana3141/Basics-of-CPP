@@ -1,14 +1,13 @@
 #include <iostream>
 #include<vector>
-#include<limits.h>
+#include<algorithm>
 using namespace std;
 
-void printArray(vector<int>arr, int n) {
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
-    }cout<<endl;
-}
-
+/* Approach 
+1. count frequency of each element and store in new vector i.e ans (TC -> O(N^2))
+2. sort ans vector (TC-> O(n log n))
+3. check if duplicates are present, if present then return false, else return true   (TC -> O(n))
+*/
 
 int main() {
     int n;
@@ -21,24 +20,31 @@ int main() {
         cin >> arr[i];
     }
 
-    vector<int>result;
+    vector<int>ans;
 
     for(int i=0; i<n; i++){
-        if(arr[i] == INT_MIN){
-            arr.erase(arr.begin()+i);
+        if(arr[i] == 'a') {
+            continue;
         }
         int count=1;
         for(int j=i+1; j<n; j++){
             if(arr[i] == arr[j]){
                 count++;
-                arr[j] = INT_MIN;
+                arr[j] = 'a';
             }
         }
-        result.push_back(count);
+        ans.push_back(count);
     }
-
-    printArray(arr,n);
-    printArray(result,n);
+    
+    sort(ans.begin(), ans.end());
+ 
+    for(int i=1; i<ans.size(); i++) {
+        if(ans[i] == ans[i-1]) {
+            cout << "False";
+            return 0;
+        }
+    }
+    cout << "true";
     
     return 0;
 }

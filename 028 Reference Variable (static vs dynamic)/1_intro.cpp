@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    int i = 5;
+   /* int i = 5;
     // creating reference variable
     int& j = i;
 
@@ -18,5 +18,16 @@ int main() {
     cout<<i<<endl;
 
     cout<<endl<<endl;
+*/
+
+    // Dynamic memory allocation of variable
+    int *num = new int;
+    cout << "Enter num: ";
+    cin >> *num;
+
+    cout << "num: " << *num << endl;
+    cout << "Address: " << num;
+
+    
     return 0;
 }

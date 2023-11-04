@@ -13,6 +13,7 @@ void sayDigit(int n, string arr[]) {
 
     // recursive call
     sayDigit(n, arr);
+    
     cout << arr[digit] << " ";
 
 }

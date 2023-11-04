@@ -38,13 +38,15 @@ int main() {
     // creation of object of class Hero
 
     // static memory allocation
-    cout<<"hello"<<endl;
-    Hero a;
-    cout<<"h"<<endl;
+    cout << "hello" << endl;
+
+    Hero a; // a.Hero()
+
+    cout << "h" << endl;
     
-    cout<<endl;
+    cout << endl;
     // dynamically
-    Hero *h = new Hero;
+    Hero *h = new Hero; // *h.Hero()
 
     
     return 0;

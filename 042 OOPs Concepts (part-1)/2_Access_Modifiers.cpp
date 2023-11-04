@@ -18,6 +18,7 @@ class Hero{
 
     // setting health
     void setHealth(int h){
+        cout << "this: " << this << endl;
         health = h;
     }
 
@@ -39,9 +40,7 @@ class Hero{
 int main() {
     // creation of object of class Hero
     Hero ramesh;
-
-    cout<<"Health : "<<ramesh.getHealth()<<endl;
-    cout<<"level: "<<ramesh.getLevel()<<endl;
+    cout << "Address: " << &ramesh << endl;
 
     // setter    
     ramesh.setHealth(70);

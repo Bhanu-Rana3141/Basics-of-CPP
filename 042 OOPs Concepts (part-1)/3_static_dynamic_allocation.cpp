@@ -12,7 +12,7 @@ class Hero{
 
     // setting health
     void setHealth(int h){
-        health = h;
+        this->health = h;
     }
 
     int getHealth(){
@@ -21,7 +21,7 @@ class Hero{
 
     // setting level
     void setLevel(char ch){
-        level = ch;
+        this->level = ch;
     }
 
     char getLevel(){

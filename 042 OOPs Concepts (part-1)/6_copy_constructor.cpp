@@ -41,6 +41,7 @@ int main() {
 
     // Copy constructor 
     Hero R(S);      // S.health = R.health , S.level = R.level
+    // Hero R = S;
     R.print();
 
     return 0;

@@ -21,11 +21,11 @@ void print_counting(int n){
 }
 
 /* USING PARAMERTERISED WAY ->by using extra varible
-void print_counting(int n, int temp){
-    if(temp>n)
+void print_counting(int n, int i){
+    if(i > n)
         return;
-    cout<<temp<<endl;
-    print_counting(n,temp+1);
+    cout << i << endl;
+    print_counting(n,i++);
 }
 */
 

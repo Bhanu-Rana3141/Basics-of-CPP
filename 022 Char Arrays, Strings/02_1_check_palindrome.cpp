@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<algorithm>
 using namespace std;
 
 /* Approach -1 -> Reverse current string and store in another string, and then compare original string 
@@ -22,7 +23,36 @@ int getLength(char name[]) {
     return count;
 }
 
-bool isPalindrome(char str[], int size){
+bool isPalindrome_approach_1(char str[], int size) {
+
+    char rev[10];
+    for(int i=0; i<=size; i++) {
+        rev[i] = str[size-i-1];
+    }
+
+    cout << "Printing original char array: ";
+    for(int i=0; i<size; i++) {
+        cout << str[i] << " ";
+    }
+    
+    cout << endl << endl;
+
+    cout << "printing reversed char array: ";
+    for(int i=0; i<size; i++) {
+        cout << rev[i] << " ";
+    }
+
+    cout << endl << endl;
+
+    for(int i=0; i<size; i++) {
+        if(str[i] != rev[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool isPalindrome_approach_2(char str[], int size){
     int s = 0;
     int e = size-1;
 
@@ -39,19 +69,23 @@ bool isPalindrome(char str[], int size){
 
 int main() {
    
-   cout << "Enter string: ";
-   char str[10];
-   cin >> str;
+    cout << "Enter string: ";
+    char str[10];
+    cin >> str;
 
-   int len = getLength(str);
+    int len = getLength(str);
 
-   int ans = isPalindrome(str, len);
+    int ans = isPalindrome_approach_1(str, len);
 
-   if(ans) {
-    cout << "Palindrome"; 
-   }
-   else {
-    cout << "Not Palindrome";
-   }
+    // int ans = isPalindrome_approach_2(str, len);
+
+    
+    if(ans) {
+        cout << "Palindrome"; 
+    }
+    else {
+        cout << "Not Palindrome";
+    }
+
     return 0;
 }

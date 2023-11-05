@@ -10,7 +10,6 @@ int getLength(char *str) {
 }
 
 char toLowerCase(char ch) {
-    cout << "ch: " << ch << " ";
     if(ch >= 'a' && ch <= 'z') {
         return ch;
     }

@@ -2,7 +2,7 @@
 using namespace std;
 
 /* Approach :
-1. Remove Invalid
+1. Remove Invalid -> if valid store in new string
 2. convert characters in lowercase
 3. check palindrome
 */

@@ -11,13 +11,13 @@ int getLength(char name[]){
 
 int main() {
     char name[20];
-    cout<<"Enter name: ";
-    cin>>name;
+    cout << "Enter name: ";
+    cin >> name;
 
-    cout<<"name: "<<name<<endl;
+    cout << "name: " << name << endl;
 
     //calculating length of string
-    cout<<"length: "<< getLength(name);
+    cout << "length: " << getLength(name);
 
     return 0;
 }

@@ -21,18 +21,18 @@ int getLength(char name[]){
 
 int main() {
    
-    cout<<"Enter string: ";
+    cout << "Enter string: ";
     char name[20];
-    cin>>name;
+    cin >> name;
 
     int length = getLength(name);
-    cout<<"Lenght: "<<length<<endl;
+    cout << "Lenght: " << length << endl;
     
     // Using inbuilt function
-    // reverse(name,name+length);
-    // cout << "name: "<<name;
+    reverse(name,name+length);
+    cout << "name: "<<name;
     
-    reverse(name,length);
-    cout<<"name: "<<name;
+    // reverse(name,length);
+    // cout<<"name: "<<name;
     return 0;
 }

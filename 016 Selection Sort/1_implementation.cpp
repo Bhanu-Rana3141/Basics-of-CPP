@@ -3,7 +3,7 @@ using namespace std;
 
 void printArray(int arr[], int n){
     for(int i=0; i<n; i++){
-        cout<<arr[i]<<" ";
+        cout << arr[i] << " ";
     }
 }
 
@@ -21,15 +21,17 @@ void sort(int arr[], int n){
 
 int main() {
     int n;
-    cout<<"Enter n: ";
-    cin>>n;
+    cout << "Enter n: ";
+    cin >> n;
 
     int arr[n];
+
     for(int i=0; i<n; i++){
-        cin>>arr[i];
+        cin >> arr[i];
     }
 
     sort(arr,n);
+
     printArray(arr,n);
     return 0;
 }

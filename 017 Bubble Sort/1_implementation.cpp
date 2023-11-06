@@ -1,13 +1,18 @@
 #include<iostream>
 using namespace std;
 
+
+/* 
+Worst case or average case TC -> O(n^2)
+Best Case (array already sorted) -> O(n)
+*/
+
 void printArray(int arr[], int n){
     for(int i=0; i<n; i++){
-        cout<<arr[i]<<" ";
+        cout << arr[i] << " ";
     }
 }
 
-// Time Complexity - O(n^2)
 void bubble_sort(int arr[], int n){
     for(int i=0; i<n-1; i++){
         for(int j=0; j<n-1-i; j++){
@@ -18,8 +23,6 @@ void bubble_sort(int arr[], int n){
     }
 }
 
-// But in best case if array is already sorted ,we will use a boolean variable 
-// Optimised Approach -> TC - O(n)
 void optimised_approach(int arr[] , int n){
     for(int i=0; i<n; i++) {
         bool flag = false;
@@ -37,16 +40,18 @@ void optimised_approach(int arr[] , int n){
 
 int main() {
     int n;
-    cout<<"Enter n: ";
-    cin>>n;
+    cout << "Enter n: ";
+    cin >> n;
 
     int arr[n];
     for(int i=0; i<n; i++){
-        cin>>arr[i];
+        cin >> arr[i];
     }
 
     // bubble_sort(arr,n);
+
     optimised_approach(arr,n);
+
     printArray(arr,n);
 
     return 0;

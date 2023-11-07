@@ -33,7 +33,7 @@ void using_while_loop(int arr[], int n){
             arr[j+1] = arr[j];
             j--;
         }
-        arr[j+1] = arr[k];
+        arr[j+1] = k;
     }
 }
 

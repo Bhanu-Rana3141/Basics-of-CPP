@@ -35,9 +35,7 @@ class Hero{
 };
 
 int main() {
-    // creation of object of class Hero
 
-    // static memory allocation
     cout << "hello" << endl;
 
     Hero a; // a.Hero()
@@ -45,6 +43,7 @@ int main() {
     cout << "h" << endl;
     
     cout << endl;
+    
     // dynamically
     Hero *h = new Hero; // *h.Hero()
 

@@ -13,19 +13,19 @@ int powerr(int base, int power){
 int main() {
 
     int base;
-    cout<<"Enter base: ";
-    cin>>base;
+    cout << "Enter base: ";
+    cin >> base;
 
     int power;
-    cout<<"Enter power: ";
-    cin>>power;
+    cout << "Enter power: ";
+    cin >> power;
 
     // int ans = powerr(base,power);
-    // cout<<"Ans: "<<ans<<endl;
+    // cout << "Ans: " << ans << endl;
     
     //INBUILT FUNCTION
     double res = pow(base,power);
-    cout<<"result: "<<res;
+    cout << "result: " << res;
 
     return 0;
 }

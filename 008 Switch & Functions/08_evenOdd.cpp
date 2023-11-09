@@ -10,14 +10,14 @@ bool even_or_odd(int n){
 
 int main() {
     int n;
-    cout<<"Enter n: ";
-    cin>>n;
+    cout << "Enter n: ";
+    cin >> n;
 
     if(even_or_odd(n) == 1){
-        cout<<"Even";
+        cout << "Even";
     }
     else{
-        cout<<"Odd";
+        cout << "Odd";
     }
     return 0;
 }

@@ -7,9 +7,8 @@ int main() {
     while(1){
         switch(num){
             case 1: cout<<"hello";
-            break;
+            exit(0);
         }
-        
     }
     return 0;
 }

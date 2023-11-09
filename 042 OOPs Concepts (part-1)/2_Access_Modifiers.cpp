@@ -47,8 +47,8 @@ int main() {
     ramesh.setLevel('A');
 
     // getter
-    cout<<"health of ramesh: "<<ramesh.getHealth()<<endl;
-    cout<<"Level of ramesh: "<<ramesh.getLevel()<<endl;
+    cout << "health of ramesh: " << ramesh.getHealth() << endl;
+    cout << "Level of ramesh: " << ramesh.getLevel() << endl;
 
     
     // ramesh.health = 80;

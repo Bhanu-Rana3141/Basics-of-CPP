@@ -7,6 +7,12 @@ class Hero{
     char level;
     int health; 
 
+    // Default constructor
+    Hero() {
+        cout << "default constructor called";
+    }
+
+    // As we created constructor manually, so default constructor will get vanished
     Hero(int health, char level) {
         cout << "this: "<< this << endl;
         this -> health = health;
@@ -30,7 +36,7 @@ int main() {
     // dynamic
     Hero *h = new Hero(100, 'B');
     cout << "Address of obj: " << h << endl;
-    cout << "health: " << h -> health << endl;
+    cout << "health: " << (*h).health << endl;
     cout << "level: " << h -> level << endl;
 
     return 0;

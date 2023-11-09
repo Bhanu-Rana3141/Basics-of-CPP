@@ -10,7 +10,7 @@ class Hero{
 int main() {
 
     Hero h1;
-    cout<<"Size of h1: " << sizeof(h1) << endl; 
+    cout << "Size of h1: " << sizeof(h1) << endl; 
     cout << h1.health;
     return 0;
 }

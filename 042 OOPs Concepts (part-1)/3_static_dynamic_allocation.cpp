@@ -37,21 +37,21 @@ int main() {
     Hero a;
     a.setHealth(70);
     a.setLevel('A');
-    cout<<"Health: "<<a.level<<endl;
-    cout<<"level: "<<a.getHealth()<<endl;
+    cout << "Health: " << a.level << endl;
+    cout << "level: " << a.getHealth() << endl;
 
-    cout<<endl;
+    cout << endl;
 
     // dynamically
     Hero *b = new Hero;
-    b->setHealth(80);
-    b->setLevel('B');
+    (*b).setHealth(80);
+    b -> setLevel('B');
     
-    // cout<<"Health: "<<(*b).level<<endl;
-    // cout<<"level: "<<(*b).getHealth()<<endl;
+    // cout << "Health: " << (*b).level << endl;
+    // cout << "level: " << (*b).getHealth() << endl;
 
-    cout<<"Health: "<<b->level<<endl;
-    cout<<"level: "<<b->getHealth()<<endl;
+    cout << "Health: " << b -> level << endl;
+    cout << "level: " << b -> getHealth() << endl;
 
 
 

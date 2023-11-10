@@ -4,23 +4,24 @@ using namespace std;
 
 void printArray(vector<int>&arr){
     for(int i=0; i<arr.size(); i++){
-        cout<<arr[i]<<" ";
+        cout << arr[i] << " ";
     }
 }
 
 int main(){
     int n;
     cout<<"Enter n: ";
-    cin>>n; 
+    cin >> n; 
 
     vector<int>arr(n);
     for(int i=0; i<n; i++){
-        cin>>arr[i];
+        cin >> arr[i];
     }
 
-    // Approach 1 --> Using Brute Force
-    
-    // Counting no of zeroes present in array
+/* Approach 1 --> Using Brute Force -> Counting no of zeroes present in array
+    TC -> O(n)
+    SC -> O(n)
+
     int count = 0;
     for(int i=0; i<n; i++){
         if(arr[i] == 0){
@@ -45,17 +46,28 @@ int main(){
     arr = temp;
 
     printArray(temp);
-    cout<<endl;
+    cout << endl;
+*/
 
-    //Approach 2 --> Using 2 pointer
+/* Approach 2 --> Using 2 pointer 
 
-    int nonZero=0; 
-    for(int j=0; j<arr.size(); j++){
-        if(arr[j] != 0){
-            swap(arr[j], arr[nonZero]);
-            nonZero++;
+    * Take 2 pointers i and j, starting from index 0
+    * i will point to 0, and j will increment in each iteration and traverse on each element, if element at j is non-zero, then swap(i,j)
+    * And then increment i
+
+    TC -> O(n) , SC -> O(1)
+*/
+
+    int i=0, j=0;
+    while(j < n) {
+        if(arr[j] != 0) {
+            swap(arr[i], arr[j]);
+            i++;
         }
+        j++;
     }
+    
     printArray(arr);
+    
     return 0;   
 }

@@ -14,8 +14,8 @@ int main() {
     }
 
     int target;
-    cout<<"Enter target: ";
-    cin>>target;
+    cout << "Enter target: ";
+    cin >> target;
 
     vector<int>ans;
 
@@ -25,11 +25,11 @@ int main() {
             for(int k=j+1; k<n; k++){
                 if(arr[i] + arr[j] + arr[k] == target){
                     tripletCount++;
-                    cout<<"("<<arr[i]<<","<<arr[j]<<","<<arr[k]<<")"<<endl;
+                    cout << "(" << arr[i] << "," << arr[j] << "," << arr[k] << ")" << endl;
                 }
             }
         }
     }
-    cout<<"triplet count: "<<tripletCount;
+    cout << "triplet count: " << tripletCount;
     return 0;
 }

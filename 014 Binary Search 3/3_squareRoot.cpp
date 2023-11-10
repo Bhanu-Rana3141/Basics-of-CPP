@@ -2,13 +2,15 @@
 #include<math.h>
 using namespace std;
 
+// Concept of search space
+
 int squareRoot(int arr[], int num){
     int s = 0;
     int e = num-1;
     int mid = s+(e-s)/2;
 
     int ans = -1;
-    while(s<=e){
+    while(s <= e){
         if(mid*mid == num){
             return mid;
         }
@@ -26,21 +28,21 @@ int squareRoot(int arr[], int num){
 
 int main() {
     int num;
-    cout<<"Enter num: ";
-    cin>>num;
+    cout << "Enter num: ";
+    cin >> num;
 
     int arr[num];
     for(int i=0; i<num; i++){
-        cin>>arr[i];
+        cin >> arr[i];
     }
 
     /* TC -> O(1) constant time
     Using inbuilt function
-    cout<<sqrt(num);
+    cout << sqrt(num);
     */
 
     // Without using inbuilt function
     int ans = squareRoot(arr,num);
-    cout<<"Ans: "<<ans;
+    cout << "Ans: " << ans;
     return 0;
 }

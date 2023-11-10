@@ -4,7 +4,7 @@
 using namespace std;
 
 // Approach 1 -> frequency
-// Approach 2 -> sort array and start comaparing from 0 to n-1
+// Approach 2 -> sort array and start comaparing from 0 to n-1 
 
 
 int duplicateByFrequency(vector<int>&arr, int n) {
@@ -52,6 +52,6 @@ int main() {
     }
 
     cout << "Index: " << duplicateByFrequency(arr,n);
-    // cout<<"ans: "<<duplicate(arr,n);
+    // cout << "ans: " << duplicate(arr,n);
     return 0;
 }

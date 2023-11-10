@@ -3,27 +3,27 @@ using namespace std;
 
 int main() {
     int n;
-    cout<<"Enter n: ";
-    cin>>n;
+    cout << "Enter n: ";
+    cin >> n;
 
     int arr[n];
-    cout<<"Enter array: ";
+    cout << "Enter array: ";
     for(int i=0; i<n; i++){
-        cin>>arr[i];
+        cin >> arr[i];
     }
 
-    int start=0;
+    int start = 0;
     int end = n-1;
     int mid = start+(end-start)/2;
 
-    while(start<end){
+    while(start < end){
         if(arr[mid] < arr[mid+1]){
-            start=mid+1;
+            start = mid+1;
         }
         else{
-            end=mid;
+            end = mid;
         }
         mid = start+(end-start)/2;
     }
-    cout<<start;
+    cout << start;
 }

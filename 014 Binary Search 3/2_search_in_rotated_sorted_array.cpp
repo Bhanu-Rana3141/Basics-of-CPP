@@ -1,6 +1,12 @@
 #include<iostream>
 using namespace std;
 
+/*
+1. Find pivot
+2. Check target either in range arr[pivot] to arr[n-1] or 0 to pivot-1, if target is not present return -1
+
+*/
+
 //Overall TC - > O(log n) + O(log n) = O(log n)
 
 // TC -> O(log n)
@@ -42,17 +48,17 @@ int pivotIndex(int arr[], int n){
 
 int main() {
     int n;
-    cout<<"Enter n: ";
-    cin>>n;
+    cout << "Enter n: ";
+    cin >> n;
 
     int arr[n];
     for(int i=0; i<n; i++){
-        cin>>arr[i];
+        cin >> arr[i];
     }
 
     int target;
-    cout<<"Enter target: ";
-    cin>>target;
+    cout << "Enter target: ";
+    cin >> target;
     
 
     // Pivot Index
@@ -60,10 +66,10 @@ int main() {
     
     // Searching target using pivot index
     if(target >= arr[pivot] && target <= arr[n-1]){
-       cout<<"target index: "<<binary_search(arr,pivot,n-1,target);
+       cout << "target index: " << binary_search(arr,pivot,n-1,target);
     }
     else{
-        cout<<"target index: "<<binary_search(arr,0,pivot-1,target);
+        cout << "target index: " << binary_search(arr,0,pivot-1,target);
     }
 
     return 0;

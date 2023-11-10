@@ -25,14 +25,14 @@ int main() {
             if(arr[i] + arr[j] == target){
                 pairsCount++;
                 if(arr[i] < arr[j]){
-                    cout<<"("<<arr[i]<<","<<arr[j]<<")"<<endl;
+                    cout << "(" << arr[i] << "," << arr[j] << ")" << endl;
                 }
                 else{
-                    cout<<"("<<arr[j]<<","<<arr[i]<<")"<<endl;
+                    cout << "(" << arr[j] << "," << arr[i] << ")" << endl;
                 }
             }
         }
     }
-    cout<<"Pair count: "<<pairsCount;
+    cout << "Pair count: " << pairsCount;
     return 0;
 }

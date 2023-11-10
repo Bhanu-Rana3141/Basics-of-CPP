@@ -23,20 +23,20 @@ int binarySearch(int *arr, int n, int key){
 
 int main() {
     int n;
-    cout<<"Enter size: ";
-    cin>>n;
+    cout << "Enter size: ";
+    cin >> n;
 
     int arr[n];
     for(int i=0; i<n; i++){
-        cin>>arr[i];
+        cin >> arr[i];
     }
 
     int key;
-    cout<<"Enter key: ";
-    cin>>key;
+    cout << "Enter key: ";
+    cin >> key;
 
     int index = binarySearch(arr,n,key);
 
-    cout<<"Key found at index: "<<index;
+    cout << "Key found at index: " << index;
     return 0;
 }

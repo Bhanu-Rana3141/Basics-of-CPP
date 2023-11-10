@@ -27,13 +27,14 @@ int main() {
     int odd[5] = {3,8,11,14,16};
 
     int key;
-    cout<<"Enter key: ";
-    cin>>key;
+    cout << "Enter key: ";
+    cin >> key;
 
     int even_index = binarySearch(even,6,key);
-    cout<<"Key found at index in even array: "<<even_index<<endl;
+    cout << "Key found at index in even array: " << even_index << endl;
 
     int odd_index = binarySearch(odd,5,key);
-    cout<<"key found at index in odd array: "<<odd_index;
+    cout << "key found at index in odd array: " << odd_index;
+    
     return 0;
 }

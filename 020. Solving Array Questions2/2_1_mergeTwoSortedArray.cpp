@@ -7,16 +7,18 @@ void printArray(int res[],int n,int m){
     }
 }
 
-/* MERGING ARR1 AND THEN ARR2 ,IN THIS APPROACH ARRAYS ARE NOT MERGED IN SORTED MANNER
+/*  MERGING ARR1 AND THEN ARR2 ,IN THIS APPROACH ARRAYS ARE NOT MERGED IN SORTED MANNER
+    just copying elements from arr1 to res int 1st loop and arr2 to res in 2nd loop
+    we can use sort function for sorting
 
 void mergeArray(int arr1[] , int n , int arr2[], int m , int res[]){
-    int i = 0, j = 0, k = 0;
+    int k = 0;
 
     for(int i = 0; i < n; i++){
         res[k++] = arr1[i];
     }
-    for(int j = 0; j < m; j++){
-        res[k++] = arr2[j];
+    for(int i = 0; i < m; i++){
+        res[k++] = arr2[i];
     }
 }
 */

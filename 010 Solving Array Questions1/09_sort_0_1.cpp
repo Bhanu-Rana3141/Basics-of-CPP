@@ -22,7 +22,7 @@ int main() {
     printArray(arr);
     cout<<endl;
 
-/*  Approach 1 -> use SORT -> TC(O n logn)
+/*  Approach 1 -> use SORT -> TC : O(n logn)
     sort(arr.begin(),arr.end());
     printArray(arr);
 */

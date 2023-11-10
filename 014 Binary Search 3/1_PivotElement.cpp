@@ -22,16 +22,16 @@ int pivotIndex(int arr[], int n){
 
 int main() {
     int n;
-    cout<<"Enter n: ";
-    cin>>n;
+    cout << "Enter n: ";
+    cin >> n;
 
     int arr[n];
     for(int i=0; i<n; i++){
-        cin>>arr[i];
+        cin >> arr[i];
     }
 
     int ans = pivotIndex(arr,n);
-    cout<<"Ans: "<<ans;
+    cout << "Ans: " << ans;
 
     return 0;
 }

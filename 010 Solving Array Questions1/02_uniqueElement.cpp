@@ -15,7 +15,7 @@ int unique(int arr[], int n){
                 arr[j] = -1;
             }
         }
-        cout<<arr[i]<<" : "<<count<<endl;
+        cout << arr[i] << " : " << count << endl;
         if(count == 1){
             return arr[i];
         }

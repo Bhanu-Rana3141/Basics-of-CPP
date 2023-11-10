@@ -63,7 +63,6 @@ void approach_3_finding_duplicates(vector<int>&arr, int n) {
             i++, j=n-1;
         }
     }
-    printArray(duplicates);
 }
 
 int main () {

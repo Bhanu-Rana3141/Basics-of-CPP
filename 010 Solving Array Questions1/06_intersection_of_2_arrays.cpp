@@ -7,6 +7,7 @@ void printArray(vector<int>arr) {
         cout << arr[i] << " ";
     }cout<<endl;
 }
+
 /* Implementation  :  TC -> O(n*m)
 void intersection(vector<int>&arr1, int n, vector<int>&arr2, int m,  vector<int>&ans){
     for(int i=0; i<n; i++){
@@ -21,7 +22,7 @@ void intersection(vector<int>&arr1, int n, vector<int>&arr2, int m,  vector<int>
 }
 */
 
-/*optimisation 1 -> TLE O(n+m)
+/*optimisation 1 -> TLE O(n*m)
 void intersection(vector<int>&arr1, int n, vector<int>&arr2, int m,  vector<int>&ans){
     for(int i=0; i<n; i++){
         for(int j=0; j<m; j++){
@@ -74,10 +75,10 @@ int main() {
         cin >> arr2[i];
     }
     
-    cout<<"arr1: ";
+    cout << "arr1: ";
     printArray(arr1);
 
-    cout<<"arr2: ";
+    cout << "arr2: ";
     printArray(arr2);
 
     vector<int>ans;  // to store ans

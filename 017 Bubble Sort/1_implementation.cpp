@@ -25,14 +25,14 @@ void bubble_sort(int arr[], int n){
 
 void optimised_approach(int arr[] , int n){
     for(int i=0; i<n; i++) {
-        bool flag = false;
+        bool flag = true;
         for(int j=0; j<n-i-1; j++){
             if(arr[j] > arr[j+1]){
                 swap(arr[j], arr[j+1]);
-                flag = true;
+                flag = false;
             }
         }
-        if(flag == false){
+        if(flag == true){
             break;
         }
     }

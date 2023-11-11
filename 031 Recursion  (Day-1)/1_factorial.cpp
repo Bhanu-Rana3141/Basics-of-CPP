@@ -3,7 +3,7 @@ using namespace std;
 
 int factorial(int n){
     // Base Case
-    if(n==0)
+    if(n == 0)
         return 1;
     
     // Recursive relation   
@@ -12,9 +12,9 @@ int factorial(int n){
 
 int main() {
     int n;
-    cout<<"Enter n: ";
-    cin>>n;
+    cout << "Enter n: ";
+    cin >> n;
 
     int ans = factorial(n);
-    cout<<ans;
+    cout << ans;
 }

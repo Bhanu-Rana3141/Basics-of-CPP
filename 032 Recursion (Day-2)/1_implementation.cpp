@@ -2,7 +2,7 @@
 using namespace std;
 
 void reachHome(int src, int dest){
-    cout << "Step: " << src << "  Destination: " << dest<<endl;
+    cout << "Step: " << src << "  Destination: " << dest << endl;
 
     // Base Case
     if(src == dest) {

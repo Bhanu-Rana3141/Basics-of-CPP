@@ -33,26 +33,13 @@ int main() {
 /*  reverse(arr.begin(), arr.end());
     printArray(arr, n);
 
-    reverse(arr.begin(), arr.end() - k);
+    reverse(arr.begin(), arr.end()+k);
     printArray(arr,n);
     
-    reverse(arr.end()-k, arr.end());
+    reverse(arr.begin()+k, arr.end());
     printArray(arr,n);
 */
    
-/*
-    vector<int>temp(n);
-    for(int i=0; i<n; i++){
-        temp[(i+k) % n] = arr[i]; 
-    }
-
-    // Copying temp elements in arr
-    arr = temp;
-    for(int i=0; i<n; i++){
-        cout<<arr[i]<<" ";
-    }
-*/
-
-    
+ 
     return 0;
 }

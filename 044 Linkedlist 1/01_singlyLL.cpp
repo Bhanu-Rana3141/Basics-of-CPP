@@ -7,11 +7,17 @@ class Node{
     int data;
     Node* next;
 
+    // constructor
     Node(int d){
         this->data = d;
         this->next = NULL;
         // cout << "constructor called for " << d << endl;
     }  
+
+    // creating destructor
+    ~Node() {
+        cout << "memory free for: " << this->data << endl;
+    }
 };
 
 void insertAtHead(Node* &head, int d) {
@@ -63,6 +69,33 @@ void insertAtPosition(Node*tail, Node* &head, int pos, int d){ // here copy is n
     temp->next = nodeToInsert;
 }
 
+// deleting node
+void deleteNode(Node* &head, int pos) {
+
+    if(pos == 1) {
+        Node*temp = head;
+        head = head->next;
+        // start node free from memory
+        temp->next = NULL;
+        delete temp;
+    }
+    else{
+        // delete node from middle or last
+        Node* curr = head;
+        Node* prev = NULL;
+
+        int count = 1;
+        while(count < pos) {
+            prev = curr;
+            curr = curr->next;
+            count++;
+        }
+        prev->next = curr->next;
+        curr->next = NULL;
+        delete curr;
+    }
+}
+
 int main() {
 
     Node* node1 = new Node(10);
@@ -85,4 +118,15 @@ int main() {
 
     cout << "head : " << head->data << endl; 
     cout << "tail : " << tail->data << endl; 
+    cout << endl << endl;
+
+    cout << "deletion: ";
+
+    deleteNode(head,4);
+    print(head);
+
+    cout << "head : " << head->data << endl; 
+    cout << "tail : " << tail->data << endl; 
+
+    return 0;
 }       

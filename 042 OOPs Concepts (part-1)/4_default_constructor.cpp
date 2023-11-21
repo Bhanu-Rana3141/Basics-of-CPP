@@ -1,3 +1,6 @@
+// constructor initialises object 
+// It allocates memory to objects
+
 #include<iostream>
 using namespace std;
 

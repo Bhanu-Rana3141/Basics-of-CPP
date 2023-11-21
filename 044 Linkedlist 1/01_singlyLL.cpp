@@ -2,7 +2,6 @@
 using namespace std;
 
 class Node{
-
     public:
     int data;
     Node* next;
@@ -20,15 +19,19 @@ class Node{
     }
 };
 
-void insertAtHead(Node* &head, int d) {
-
-    Node* temp = new Node(d);
-    temp->next = head;
-    head = temp;
+void insertAtHead(Node* &tail, Node* &head, int d) {
+    if(head == NULL) {
+        Node* temp = new Node(d);
+        head = temp;
+    }
+    else{
+        Node* temp = new Node(d);
+        temp->next = head;
+        head = temp;
+    }
 }
 
 void print(Node* &head) { // here copy is not created, actual head is passed i.e pass by reference
-    
     Node* temp = head;
     while(temp != NULL) {
         cout << temp->data << " ";
@@ -37,20 +40,26 @@ void print(Node* &head) { // here copy is not created, actual head is passed i.e
     cout << endl;
 }
 
-void insertAtTail(Node* &tail, int d) {  // here copy is not created, actual head is passed i.e pass by reference
-
-    Node* temp = new Node(d);
-    tail->next = temp;
-    tail = temp;
+void insertAtTail(Node* &head ,Node* &tail, int d) {  
+    if(tail == NULL) {
+        Node* temp = new Node(d);
+        tail = temp;
+        head = temp;
+    }
+    else{
+        Node* temp = new Node(d);
+        tail->next = temp;
+        tail = temp;
+    }
 }
 
-void insertAtPosition(Node*tail, Node* &head, int pos, int d){ // here copy is not created, actual head is passed i.e pass by reference
-
+void insertAtPosition(Node*tail, Node* &head, int pos, int d){ 
     // insert at start
     if(pos == 1) {
-        insertAtHead(head,d);
+        insertAtHead(tail, head, d);
         return;
     }
+
     Node* temp = head;
     int count = 1;
     while(count < pos-1) {
@@ -60,7 +69,7 @@ void insertAtPosition(Node*tail, Node* &head, int pos, int d){ // here copy is n
 
     // inserting at last position
     if(temp->next == NULL){
-        insertAtTail(tail,d);
+        insertAtTail(head, tail, d);
         return;
     }
 
@@ -69,9 +78,14 @@ void insertAtPosition(Node*tail, Node* &head, int pos, int d){ // here copy is n
     temp->next = nodeToInsert;
 }
 
-// deleting node
-void deleteNode(Node* &head, int pos) {
+void printHeadTail(Node* &head, Node* &tail) {
+    cout << "head: " << head->data << endl;
+    cout << "tail: " << tail->data << endl;
+    cout << endl;
+}
 
+// deleting node
+void deleteNode(Node* &tail, Node* &head, int pos) {
     if(pos == 1) {
         Node*temp = head;
         head = head->next;
@@ -91,6 +105,9 @@ void deleteNode(Node* &head, int pos) {
             count++;
         }
         prev->next = curr->next;
+        if(curr->next == NULL) {
+            tail = prev;
+        }
         curr->next = NULL;
         delete curr;
     }
@@ -98,35 +115,38 @@ void deleteNode(Node* &head, int pos) {
 
 int main() {
 
-    Node* node1 = new Node(10);
-
-    // pointing head and tail at node 1
-    Node* head = node1;
-    Node* tail = node1;
-    print(head);
+    Node* head = NULL; 
+    Node* tail = NULL;
 
     // insertAtHead(head, 12);
-    insertAtTail(tail, 12);
+    insertAtTail(head, tail, 12);
     print(head);
+    printHeadTail(head, tail);
 
     // insertAtHead(head, 15);
-    insertAtTail(tail,15);
+    insertAtTail(head, tail, 15);
     print(head);
+    printHeadTail(head, tail);
 
-    insertAtPosition(tail, head, 4, 22);
+    insertAtTail(head, tail, 22);
     print(head);
+    printHeadTail(head, tail);
 
-    cout << "head : " << head->data << endl; 
-    cout << "tail : " << tail->data << endl; 
-    cout << endl << endl;
-
-    cout << "deletion: ";
-
-    deleteNode(head,4);
+    insertAtPosition(tail, head, 1, 100);
     print(head);
+    printHeadTail(head, tail);
 
-    cout << "head : " << head->data << endl; 
-    cout << "tail : " << tail->data << endl; 
+    insertAtPosition(tail, head, 5, 500);
+    print(head);
+    printHeadTail(head, tail);
+
+    deleteNode(tail, head, 4);
+    print(head);
+    printHeadTail(head, tail);
+
+    deleteNode(tail, head, 1);
+    print(head);
+    printHeadTail(head, tail);
 
     return 0;
 }       

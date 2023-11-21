@@ -9,7 +9,7 @@ class Hero{
     static int timeToComplete;
 
     static int random() {
-        return timeToComplete;
+        return timeToComplete += 1;
     }
 
 };
@@ -17,9 +17,9 @@ class Hero{
 int Hero :: timeToComplete = 5;
 
 int main() {
-/*
+
     cout << Hero::timeToComplete << endl;
-   
+/*
     Hero a;
     cout << a.timeToComplete << endl;
     a.timeToComplete = 10;

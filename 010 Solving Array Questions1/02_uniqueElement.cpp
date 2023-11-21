@@ -66,7 +66,7 @@ int main() {
         cin >> arr[i];
     }
 
-    cout<<"Unique element: "<<unique(arr,n);
+    cout << "Unique element: " << unique(arr,n);
 
     return 0;
 }

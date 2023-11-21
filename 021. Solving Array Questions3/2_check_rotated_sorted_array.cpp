@@ -15,27 +15,27 @@ bool isRotated_Sorted(vector<int>& arr, int n){
         count++;
     }
 
-    return count<=1;
+    return count <= 1;
 }
 
 int main() {
     
     int n;
-    cout<<"Enter n: ";
-    cin>>n;
+    cout << "Enter n: ";
+    cin >> n;
 
     vector<int>arr(n); 
 
     for (int i = 0; i < n; i++) {
-        cin>>arr[i];
+        cin >> arr[i];
     }
 
     int ans = isRotated_Sorted(arr,n);
 
     if(ans == 1){
-        cout<<"true";
+        cout << "true";
     }else{
-        cout<<"false";
+        cout << "false";
     }
     return 0;
 }

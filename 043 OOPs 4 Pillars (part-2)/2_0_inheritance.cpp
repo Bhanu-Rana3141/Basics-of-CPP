@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 
+// parent class
 class Human {
     public:
     int age;
@@ -17,7 +18,7 @@ class Human {
     }
 };
 
-class Male: public Human{
+class Male : protected Human{
 
     public:
     string color;
@@ -26,6 +27,10 @@ class Male: public Human{
         this->weight = w;
     }
 
+    int getWeight() {
+        return this->weight;
+    }
+    
     void sleep() {
         cout << "male sleeping" << endl;
     }
@@ -34,16 +39,19 @@ class Male: public Human{
 
 int main() {
      
-    Male object1;
-    cout << object1.age << endl;
-    cout << object1.height << endl;
-    cout << object1.weight << endl;
-    cout << object1.color;
-    
-    object1.setWeight(64);
-    cout << object1.weight << endl;
+    Male m1;
+    cout << m1.getWeight() << endl;
 
-    object1.sleep();
+    // cout << object1.age << endl;
+    // cout << object1.height << endl;
+    // cout << object1.weight << endl;
+    // cout << object1.color;
+    
+    // object1.setWeight(64);
+    // cout << object1.weight << endl;
+
+    // object1.sleep();
+
 
     return 0;
 }

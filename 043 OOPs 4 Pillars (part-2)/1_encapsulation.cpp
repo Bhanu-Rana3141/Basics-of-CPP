@@ -7,7 +7,6 @@ class Student{
     int age;
     int height;
 
-
     public:
     int getAge() {
         return this->age;
@@ -18,6 +17,7 @@ int main() {
    
    Student first;
 
-   cout<<"sab shi h";
+   cout << "sab shi h";
+
     return 0;
 }

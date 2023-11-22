@@ -43,7 +43,7 @@ int main() {
 
     // Copy constructor -> inbuilt copy constructor is called
     Hero R(S);      // S.health = R.health , S.level = R.level
-    // Hero R = S;
+     // Hero R = S;
     R.print();
 
     return 0;

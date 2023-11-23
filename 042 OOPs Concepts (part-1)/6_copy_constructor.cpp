@@ -23,6 +23,8 @@ class Hero{
     // Copy constructor
     Hero(Hero& temp){
         cout << "copy constructor called" << endl;
+        cout << "temp: " << &temp << endl;
+        cout << "this : " << this << endl;
         this->health = temp.health;
         this->level = temp.level;
     }
@@ -43,7 +45,9 @@ int main() {
 
     // Copy constructor -> inbuilt copy constructor is called
     Hero R(S);      // S.health = R.health , S.level = R.level
-     // Hero R = S;
+    // Hero R = S;
+    cout << "obj S : " << &S << endl;
+    cout << "obj R : " << &R << endl;
     R.print();
 
     return 0;

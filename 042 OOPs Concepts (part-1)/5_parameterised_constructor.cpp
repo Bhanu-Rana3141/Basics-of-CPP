@@ -12,7 +12,6 @@ class Hero{
         cout << "default constructor called";
     }
 
-    // As we created constructor manually, so default constructor will get vanished
     Hero(int health, char level) {
         cout << "this: "<< this << endl;
         this -> health = health;
@@ -22,9 +21,6 @@ class Hero{
 
 int main() {
   
-    // Hero suresh; 
-    // if constructor is made explicitly then, the default constructor will be vanished
- 
    // static
     Hero ramesh(70, 'A');
     cout << "Address of obj: " << &ramesh << endl;

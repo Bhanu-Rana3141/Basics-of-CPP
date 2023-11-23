@@ -1,7 +1,6 @@
 #include<iostream>
 using namespace std;
 
-// parent class
 class Animal {
 
     public:
@@ -14,7 +13,6 @@ class Animal {
     }
 };
 
-// child class
 class Dog: public Animal {
 
 };

@@ -49,7 +49,10 @@ int main() {
     for(int i=0; i<n; i++) {
         cout << maxi.top() << " ";
         maxi.pop();
-    }cout << endl;
+    }
+    
+    cout << endl;
+
     cout << "maxi khaali h kya : " << maxi.empty() << endl;
     // min heap
     priority_queue<int, vector<int>, greater<int>> mini;
@@ -62,7 +65,9 @@ int main() {
     for(int i=0; i<n; i++) {
         cout << mini.top() << " ";
         mini.pop();
-    }cout << endl;
+    }
+    
+    cout << endl;
 
     cout << "mini khali h kya: " << mini.empty() << endl;
 

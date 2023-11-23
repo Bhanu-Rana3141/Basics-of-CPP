@@ -1,9 +1,3 @@
-/*
-public
-private -> by default
-protected
-*/
-
 #include<iostream>
 using namespace std;
 
@@ -16,7 +10,6 @@ class Hero{
     public:
     char level;
 
-    // setting health
     void setHealth(int h){
         cout << "this: " << this << endl;
         health = h;
@@ -26,7 +19,6 @@ class Hero{
         return health;
     }
 
-    // setting level
     void setLevel(char ch){
         level = ch;
     }
@@ -38,7 +30,7 @@ class Hero{
 };
 
 int main() {
-    // creation of object of class Hero
+    
     Hero ramesh;
     cout << "Address: " << &ramesh << endl;
 

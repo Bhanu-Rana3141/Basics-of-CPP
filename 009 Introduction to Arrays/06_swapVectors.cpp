@@ -5,10 +5,12 @@ using namespace std;
 void printArray(vector<int>&arr) {
     for (int i = 0; i < arr.size(); i++) {
         cout << arr[i] << " ";
-    }cout << endl;
+    }
+    cout << endl;
 }
 
 int main() {
+    
     int n;
     cout << "Ente n : ";
     cin >> n;
@@ -29,6 +31,7 @@ int main() {
 
     cout << "arr1: ";
     printArray(arr1);
+    
     cout << "arr2: ";
     printArray(arr2);
 

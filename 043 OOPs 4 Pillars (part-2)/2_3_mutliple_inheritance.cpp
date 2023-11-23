@@ -28,6 +28,5 @@ int main() {
     obj.bark();
     obj.speak();
 
-
     return 0;
 }

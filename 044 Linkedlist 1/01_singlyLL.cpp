@@ -89,7 +89,7 @@ void deleteNode(Node* &tail, Node* &head, int pos) {
     if(pos == 1) {
         Node*temp = head;
         head = head->next;
-        // start node free from memory
+        // deleting first node from memory
         temp->next = NULL;
         delete temp;
     }
@@ -103,7 +103,7 @@ void deleteNode(Node* &tail, Node* &head, int pos) {
             prev = curr;
             curr = curr->next;
             count++;
-        }
+        }  
         prev->next = curr->next;
         if(curr->next == NULL) {
             tail = prev;

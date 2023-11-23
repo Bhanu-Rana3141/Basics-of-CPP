@@ -27,17 +27,18 @@ class Hero{
         this->health = health;
         this->level = level;
     }
-    // void setHealth(int health) {
-    //     this->health = health;
-    // }
+    
+    /*void setHealth(int health) {
+        this->health = health;
+    }
 
-    // void setLevel(char level) {
-    //     this->level = level;
-    // }
+    void setLevel(char level) {
+        this->level = level;
+    }
 
-    // void setName(char name[]) {
-    //     strcpy(this->name, name);
-    // }
+    void setName(char name[]) {
+        strcpy(this->name, name);
+    }*/
 
     Hero(Hero &temp) {
         cout << "copy constructor called " << endl;

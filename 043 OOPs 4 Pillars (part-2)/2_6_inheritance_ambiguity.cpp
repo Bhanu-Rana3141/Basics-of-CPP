@@ -26,5 +26,6 @@ int main() {
 
     obj.A::func();
     obj.B::func();
+    
     return 0;
 }

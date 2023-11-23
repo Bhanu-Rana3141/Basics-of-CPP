@@ -1,6 +1,3 @@
-// constructor initialises object 
-// It allocates memory to objects
-
 #include<iostream>
 using namespace std;
 
@@ -17,7 +14,6 @@ class Hero{
         cout << "Constructor called" << endl;
     }
 
-    // setting health
     void setHealth(int h){
         health = h;
     }
@@ -26,7 +22,6 @@ class Hero{
         return health;
     }
 
-    // setting level
     void setLevel(char ch){
         level = ch;
     }

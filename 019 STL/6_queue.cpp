@@ -71,8 +71,5 @@ int main() {
 
     cout << "mini khali h kya: " << mini.empty() << endl;
 
-    
-    
-
     return 0;
 }

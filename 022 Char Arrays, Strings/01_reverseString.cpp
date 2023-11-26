@@ -1,5 +1,6 @@
 #include<iostream>
 #include<algorithm>
+#include <string.h>
 using namespace std;
 
 void reverse(char name[],int n){
@@ -28,11 +29,8 @@ int main() {
     int length = getLength(name);
     cout << "Lenght: " << length << endl;
     
-    // Using inbuilt function
-    reverse(name,name+length);
-    cout << "name: "<<name;
-    
-    // reverse(name,length);
-    // cout<<"name: "<<name;
+    reverse(name, length);
+    cout << "name: " << name;
+
     return 0;
 }

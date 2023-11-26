@@ -5,84 +5,88 @@ class Node{
     public:
     int data;
     Node* next;
-    Node* back;
+    Node* prev;
 
-    Node(int d) {
-        this->data = d;
+    Node(int data) {
+        this->data = data;
         this->next = NULL;
-        this->back = NULL;
+        this->prev = NULL;
     }
 };
 
-void insertAtHead(Node* &head, Node* &tail, int data) {
+void insertAtTail(Node* &head, Node* &tail, int data) {
     if(head == NULL) {
-        Node* node1 = new Node(data);
-        head = node1;
-        tail = node1;
+        Node* newNode = new Node(data);
+        head = newNode;
+        tail = newNode;
     }
     else{
-        Node* node1 = new Node(data);
-        node1->next = head;
-        head = node1;
+        Node* newNode = new Node(data);
+        tail->next = newNode;
+        newNode->prev = tail;
+        tail = newNode;
     }
-    return;
-}
-
-void insertAtTail(Node* &tail, int data) {
-    if(tail == NULL) {
-        Node* node1 = new Node(data);
-        tail = node1;
-    }
-    else{
-        Node* node1 = new Node(data);
-        tail->next = node1;
-        tail = node1;
-    }
-    return;
 }
 
 void print(Node* &head) {
-    Node* curr = head;
-    while(curr != NULL) {
-        cout << curr->data << " ";
-        curr = curr->next;
+    Node* temp = head;
+    while(temp != NULL) {
+        cout << temp->data << " ";
+        temp = temp->next;
     }
     cout << endl;
     return;
 }
 
-void reverseLL(Node* &head) {
-    Node* prev = NULL;
+void printHeadTail(Node* &head, Node* &tail) {
+    cout << "head: " << head->data << endl;
+    cout << "tail: " << tail->data << endl;
+    cout << endl;
+}
+
+void reverse(Node* &head) {
     Node* curr = head;
+    Node* back = NULL;  
     Node* forward = NULL;
 
     while(curr != NULL) {
         forward = curr->next;
-        curr->next = prev;
-        curr->back = curr->next;
-        prev = curr;
+        curr->next = back;
+        curr->prev = forward;
+        back = curr;
         curr = forward;
     }
-    head = prev;
+    head = back;
     return;
 }
 
-int main() {
-    
+int main(){
+
     Node* head = NULL;
     Node* tail = NULL;
 
-    insertAtHead(head, tail, 3);
-    insertAtTail(tail, 5);
-    insertAtTail(tail, 7);
-    insertAtTail(tail, 9);
+    insertAtTail(head, tail, 1);
+    print(head);
+    printHeadTail(head, tail);
 
-    cout << "Input Linked List: ";
+    insertAtTail(head, tail, 2);
+    print(head);
+    printHeadTail(head, tail);
+
+    insertAtTail(head, tail, 3);
+    print(head);
+    printHeadTail(head, tail);
+
+    insertAtTail(head, tail, 4);
+    print(head);
+    printHeadTail(head, tail);
+
+    cout << "Input linked list : ";
     print(head);
 
-    cout << "Reversed Linked List: ";
-    reverseLL(head);
+    cout << "Reversed Linked list: ";
+    reverse(head);
     print(head);
-
+   
     return 0;
 }

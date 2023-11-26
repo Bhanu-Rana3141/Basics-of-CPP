@@ -23,24 +23,26 @@ int getLength(char name[]) {
     return count;
 }
 
+void print(char str[], int size) {
+    for(int i=0; i<size; i++) {
+        cout << str[i] << " ";
+    }
+}
+
 bool isPalindrome_approach_1(char str[], int size) {
 
     char rev[10];
-    for(int i=0; i<=size; i++) {
+    for(int i=0; i<size; i++) {
         rev[i] = str[size-i-1];
     }
 
     cout << "Printing original char array: ";
-    for(int i=0; i<size; i++) {
-        cout << str[i] << " ";
-    }
+    print(str, size);
     
     cout << endl << endl;
 
     cout << "printing reversed char array: ";
-    for(int i=0; i<size; i++) {
-        cout << rev[i] << " ";
-    }
+    print(rev, size);
 
     cout << endl << endl;
 

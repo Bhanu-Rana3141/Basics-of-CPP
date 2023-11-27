@@ -1,7 +1,9 @@
 #include<iostream>
 using namespace std;
 
-int fibo_loop(int n) {
+// Iterative approach
+int fibonacci(int n) {
+
     int a = 0;
     int b = 1;
     int sum = 0;
@@ -16,7 +18,9 @@ int fibo_loop(int n) {
     return sum;
 }
 
+// Recursive approach
 int fibo(int n) {
+
     if(n == 0) 
         return 0;
     if(n == 1)
@@ -26,15 +30,14 @@ int fibo(int n) {
 }
 
 int main() {
+
     int n;
     cout << "Enter n: ";
     cin >> n;
 
     cout << "using recursion: " << fibo(n) << endl;
 
-    cout << "using loop : ";
-    cout << fibo_loop(n);
-
-  
+    cout << "using loop : " << fibonacci(n);
+    
     return 0;
 }

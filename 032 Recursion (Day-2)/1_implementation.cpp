@@ -6,7 +6,7 @@ void reachHome(int src, int dest){
 
     // Base Case
     if(src == dest) {
-        cout << " Finally reached Home";
+        cout << "Finally reached Home";
         return;
     }
     

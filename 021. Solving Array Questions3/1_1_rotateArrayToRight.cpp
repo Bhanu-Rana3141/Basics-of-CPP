@@ -6,7 +6,8 @@ using namespace std;
 void printArray(vector<int>arr, int n){
     for(int i=0; i<n; i++){
         cout << arr[i] << " ";
-    }cout << endl;
+    }
+    cout << endl;
 }
 
 int main() {
@@ -25,12 +26,17 @@ int main() {
     cout << "Steps to rotate: ";
     cin >> k;
 
+    k = k % n;
+
+    // APPROACH 1
     rotate(arr.begin(), arr.end()-k, arr.end());
 
     printArray(arr,n);
 
-    // Brute force 
-/*  reverse(arr.begin(), arr.end());
+    
+
+/*  APPROACH 2
+    reverse(arr.begin(), arr.end());
     printArray(arr, n);
 
     reverse(arr.begin(), arr.end()+k);

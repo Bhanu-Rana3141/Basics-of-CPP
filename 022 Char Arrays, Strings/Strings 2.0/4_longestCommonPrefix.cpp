@@ -3,7 +3,7 @@ SC -> O(m) , ans string
 
 Approach 1 
 * sort the vector of strings 
-TC -> O(n*m * log n)) -> where n is no of strings in vector and m is length of each string, and log(n) for sorting
+TC -> O(n*m * log n) -> where n is no of strings in vector and m is length of each string, and log(n) for sorting
 
 * compare first and last string of vector because the no of same characters in first and last string will be present in all the strings between first and last, therefore if any character is not same then it will not be present in any of the string, if the characters of strings are equal store it in ans string
 TC -> O(m)

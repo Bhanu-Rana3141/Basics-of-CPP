@@ -4,6 +4,7 @@
 using namespace std;
 
 void printArray(vector<int>&arr) {
+
     for(int i = 0; i < arr.size(); i++) {
         cout << arr[i] << " ";
     }
@@ -11,6 +12,7 @@ void printArray(vector<int>&arr) {
 }
 
 int ArrayToIntConversion(vector<int>&arr, int size) {
+    
     int value = 0;
     for(int i = 0; i < size; i++) {
         int x = arr[i] % 10;

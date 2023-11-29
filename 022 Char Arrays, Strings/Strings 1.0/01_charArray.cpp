@@ -1,7 +1,14 @@
 #include<iostream>
+#include <string.h>
 using namespace std;
 
+/*
+1. strlen
+2. strcmp
+*/
+
 int getLength(char name[]){
+
     int count = 0;
     for(int i=0; name[i] != '\0'; i++){
         count++;
@@ -21,3 +28,9 @@ int main() {
 
     return 0;
 }
+
+
+/*
+Q. delimeter ?
+Q. TC of str.lenght(), str.size(), strlen(str)
+*/

@@ -1,6 +1,6 @@
 /* TC -> O(n) && SC -> O(1) in all the cases
 APPROACH 1
-* sort both the strings using (count sort)
+* sort both the strings using 
 * compare them, if they are equal then anagram else not anagram
 
 APPROACH 2 
@@ -65,7 +65,7 @@ bool isAnagram(string s, string t) {
     cout << "Frequency vector of t: ";
     printFrequencyVector(freqOfT);
 
-    for(int i=0; i<freqOfS.size(); i++) {
+    for(int i=0; i<26; i++) {
         if(freqOfS[i] != freqOfT[i]) {
             return false;
         }

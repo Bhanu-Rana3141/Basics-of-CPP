@@ -17,7 +17,7 @@ using namespace std;
 
 string commonPrefix(vector<string> &str) {
 
-    // sort the array
+    // sort the vector
     sort(str.begin(), str.end());
 
     // comparing first and last string
@@ -29,8 +29,8 @@ string commonPrefix(vector<string> &str) {
     int i=0, j=0;
     while(i<s1.size() && j<s2.size()) {
         // while comparing strings, each character get's compared and due to which tc is O(m) where m is length of string, and in case of integer only 1 comparison is done TC->O(1)
-        if(s1[i] == s2[i]) {
-            ans.push_back(s1[i]);
+        if(s1[i] == s2[j]) {
+            ans += s1[i];
             i++, j++;
         }
         else{

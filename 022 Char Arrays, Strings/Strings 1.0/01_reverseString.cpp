@@ -32,5 +32,12 @@ int main() {
     reverse(name, length);
     cout << "name: " << name;
 
+    // reverse(name, name+strlen(name));
+
+   
+
+    
+
+
     return 0;
 }

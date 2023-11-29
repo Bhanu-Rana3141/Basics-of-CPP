@@ -9,9 +9,9 @@ int main() {
     // string str1("wallah");
     // cout << str << " " << str1 << endl;
 
-    // string s;
-    // getline(cin, s);
-    // cout << s;
+    string s;
+    getline(cin, s); 
+    cout << s;
 
     // Inbuilt functions
     // Reverse

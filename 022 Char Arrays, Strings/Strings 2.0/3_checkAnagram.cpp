@@ -1,6 +1,6 @@
 /* TC -> O(n) && SC -> O(1) in all the cases
 APPROACH 1
-* sort both the strings using 
+* sort both the strings 
 * compare them, if they are equal then anagram else not anagram
 
 APPROACH 2 
@@ -17,25 +17,8 @@ OPTIMISED version of APPROACH 2
 
 #include<iostream>
 #include<vector>
+#include<algorithm>
 using namespace std;
-
-string countSort(string s) {
-
-    vector<int> freq(26,0);
-
-    for(int i=0; i<s.size(); i++) {
-        freq[s[i]-'a']++;
-    }
-
-    int j=0;
-    for(int i=0; i<26; i++) {
-        while(freq[i]--) {
-            s[j] = i+'a';
-            j++;
-        }
-    }
-    return s;
-}
 
 void printFrequencyVector(vector<int> freq) {
 
@@ -45,28 +28,34 @@ void printFrequencyVector(vector<int> freq) {
     cout << endl;
 }
 
+string sortedString(string& s) {
+
+    sort(s.begin(), s.end());
+    
+}
+
 bool isAnagram(string s, string t) {
 
     // for storing freq of alphabets in s and t
-    vector<int> freqOfS(26,0);
-    vector<int> freqOfT(26,0);
+    vector<int> freqTableOfS(26,0);
+    vector<int> freqTableOfT(26,0);
 
     for(int i=0; i<s.length(); i++) {
-        freqOfS[s[i]-'a']++;
+        freqTableOfS[s[i]-'a']++;
     }
 
     for(int i=0; i<t.length(); i++) {
-        freqOfT[t[i]-'a']++;
+        freqTableOfT[t[i]-'a']++;
     }
 
     cout << "Frequency vector of s: ";
-    printFrequencyVector(freqOfS);
+    printFrequencyVector(freqTableOfS);
 
     cout << "Frequency vector of t: ";
-    printFrequencyVector(freqOfT);
+    printFrequencyVector(freqTableOfT);
 
     for(int i=0; i<26; i++) {
-        if(freqOfS[i] != freqOfT[i]) {
+        if(freqTableOfS[i] != freqTableOfT[i]) {
             return false;
         }
     }
@@ -105,7 +94,7 @@ int main() {
         cout << "No";
     }
     else{
-        if(countSort(s) == countSort(t)) {
+        if(sortedString(s) == sortedString(t)) {
         cout << "yes";
         }
         else{

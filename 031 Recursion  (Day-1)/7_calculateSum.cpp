@@ -1,18 +1,15 @@
 #include<iostream>
 using namespace std;
 
-int calculateSum(int n, int sum) {
-
+void calculateSum(int n, int& sum) {
     // base case
     if(n == 0) {
-        return sum;
+        return;
     }
 
-    // processing
     sum += n;
 
-    // recursive relation
-    calculateSum(n-1,sum);
+    calculateSum(n-1, sum);
 }
 
 int main() {
@@ -22,7 +19,10 @@ int main() {
     cin >> n;
 
     int sum = 0;
-    cout << "sum: " << calculateSum(n,sum);
 
+    calculateSum(n, sum);
+
+    cout << "sum : " << sum;
+    
     return 0;
 }

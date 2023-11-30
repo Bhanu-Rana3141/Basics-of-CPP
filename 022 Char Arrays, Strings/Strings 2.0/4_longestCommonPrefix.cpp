@@ -15,7 +15,7 @@ TC -> O(m)
 #include<algorithm>
 using namespace std;
 
-string commonPrefix(vector<string> &str) {
+string longestCommonPrefix1(vector<string> &str) {
 
     // sort the vector
     sort(str.begin(), str.end());
@@ -40,7 +40,7 @@ string commonPrefix(vector<string> &str) {
     return ans;
 }
 
-string longestCommonPrefix(vector<string> &str) {
+string longestCommonPrefix2(vector<string> &str) {
 
     string s1 = str[0]; // keeping first string constant and comparing with other strings
     int ansLength = s1.size();
@@ -68,9 +68,9 @@ int main() {
         cin >> str[i];
     }
 
-    // cout << "Longest common prefix :" << commonPrefix(str);
+    // cout << "Longest common prefix :" << longestCommonPrefix1(str);
 
-    cout << "Longest common prefix :" << longestCommonPrefix(str);
+    cout << "Longest common prefix :" << longestCommonPrefix2(str);
 
     
     

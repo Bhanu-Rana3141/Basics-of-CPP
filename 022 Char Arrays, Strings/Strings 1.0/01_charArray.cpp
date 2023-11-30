@@ -2,11 +2,6 @@
 #include <string.h>
 using namespace std;
 
-/*
-1. strlen
-2. strcmp
-*/
-
 int getLength(char name[]){
 
     int count = 0;
@@ -30,7 +25,3 @@ int main() {
 }
 
 
-/*
-Q. delimeter ?
-Q. TC of str.lenght(), str.size(), strlen(str)
-*/

@@ -56,6 +56,6 @@ int main() {
     moveNegativesToLeft(arr, n);
     // moveNegative(arr, n); // to print negatives in same order as input
     printArray(arr, n);
-    
+        
     return 0;
 }

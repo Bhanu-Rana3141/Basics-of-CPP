@@ -14,7 +14,7 @@ void print_counting(int n){
    print_counting(n-1);
 
 // Processing
-   cout<<n<<" ";
+   cout << n << " ";
 
    
 

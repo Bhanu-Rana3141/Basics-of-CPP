@@ -37,7 +37,7 @@ int main() {
 
     char name[100];
     cin.getline(name, 50); 
-    // getline(cin, name);   -> used in strings
+    // getline(cin, name); -> used in strings
     cout << name;
 */
  
@@ -114,5 +114,7 @@ int main() {
     // s.erase(s.begin(), s.begin()+4);
     // cout << s << endl;
 
+    // isalpha
+    // islower
     return 0;
 }

@@ -4,13 +4,13 @@ using namespace std;
 class Animal {
 
     public:
-    int age;
-    int weight;
+        int age;
+        int weight;
 
     public:
-    void speak() {
-        cout << "speaking" << endl;
-    }
+        void speak() {
+            cout << "speaking" << endl;
+        }
 };
 
 class Dog: public Animal {

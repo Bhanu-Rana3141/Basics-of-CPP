@@ -3,16 +3,16 @@ using namespace std;
 
 class A {
     public:
-    void func() {
-        cout << "function in A" << endl;
-    }
+        void func() {
+            cout << "function in A" << endl;
+        }
 };
 
 class B {
     public:
-    void func() {
-        cout << "function in B" << endl;
-    }
+        void func() {
+            cout << "function in B" << endl;
+        }
 };
 
 class C: public A, public B {

@@ -18,9 +18,9 @@ class B: public A {
 
 class C: public A {
     public:
-    void func3() {
-        cout << "Inside function 3" << endl;
-    }
+        void func3() {
+            cout << "Inside function 3" << endl;
+        }
 };
 
 int main() {

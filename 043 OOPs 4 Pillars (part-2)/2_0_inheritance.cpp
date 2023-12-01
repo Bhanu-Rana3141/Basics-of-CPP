@@ -3,55 +3,33 @@ using namespace std;
 
 // parent class
 class Human {
-    public:
-    int age;
-    int weight;
-    int height;
+    
+    protected:
+        int age;
+        int weight;
+        int height;
 
-    public:
-    int getAge() {
-        return age;
-    }
-
-    void setWeight(int w){
-        this->weight = w;
-    }
+        void eat() {
+            cout << "Eating" << endl;
+        }
 };
 
-class Male : protected Human{
+// Male is a Human
+class Male : private Human {
 
     public:
-    string color;
-
-    void setWeight(int w) {
-        this->weight = w;
-    }
-
-    int getWeight() {
-        return this->weight;
-    }
-    
-    void sleep() {
-        cout << "male sleeping" << endl;
-    }
-
+        void print() {
+            cout << "inside male class: " << this->age;
+        }
 };
 
 int main() {
-     
+
     Male m1;
-    cout << m1.getWeight() << endl;
 
-    // cout << object1.age << endl;
-    // cout << object1.height << endl;
-    // cout << object1.weight << endl;
-    // cout << object1.color;
+    m1.print(); // accessing inside Male class
     
-    // object1.setWeight(64);
-    // cout << object1.weight << endl;
-
-    // object1.sleep();
-
-
+    // m1.age(); // accessing outside -> not accessible
+    
     return 0;
 }

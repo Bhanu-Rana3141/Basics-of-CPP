@@ -37,15 +37,15 @@ class Hero{
 
 int main() {
   
-    Hero S(70,'C');   // S.Hero() -> by default
+    Hero S(70,'C');   // parameterised constructor
     cout << "address of s: " << &S << endl;
     S.print();
 
     cout << endl;
 
-    // Copy constructor -> inbuilt copy constructor is called
-    Hero R(S);      // S.health = R.health , S.level = R.level
-    // Hero R = S;
+    // Copy constructor 
+    Hero R(S);      // -> inbuilt copy constructor is called , 
+    // Hero R = S; R.health =  S.health, R.level = S.level
     cout << "obj S : " << &S << endl;
     cout << "obj R : " << &R << endl;
     R.print();

@@ -4,20 +4,20 @@ using namespace std;
 class Animal{
 
     public:
-    void bark() {
-        cout << "barking" << endl;
-    }
+        void bark() {
+            cout << "barking" << endl;
+        }
 };
 
 class Human{
 
     public:
-    void speak() {
-        cout << "speaking" << endl;
-    }
+        void speak() {
+            cout << "speaking" << endl;
+        }
 };
 
-// multiple inheritance
+// multiple inheritance -> child class inherting from 2 parent classes
 class Hybrid : public Animal, public Human {
     
 };

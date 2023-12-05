@@ -10,7 +10,6 @@
 using namespace std;
 
 class Parameter {
-
     public:
         int value;
 

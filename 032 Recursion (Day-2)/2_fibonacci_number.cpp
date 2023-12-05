@@ -39,9 +39,9 @@ int main() {
     cout << "Enter n: ";
     cin >> n;
 
-    cout << "using recursion: " << fibo(n) << endl;
+    cout << "Recursive Approach: " << fibo(n) << endl;
 
-    cout << "using loop : " << fibonacci(n);
+    cout << "Iterative Approach : " << fibonacci(n);
     
     return 0;
 }

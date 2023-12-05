@@ -13,18 +13,16 @@ using namespace std;
 //     calculatePower(base, power, ans, i+1);
 // }
 
-int calculatePower(int base, int power, int& ans){
+void calculatePower(int base, int power, int& ans){
     // base case
     if(power == 0) {
-        return 1;
+        return;
     }
 
     ans = ans * base;
 
     cout <<"ans for " << power << " is : " << ans << endl;
     calculatePower(base, power-1, ans);
-     
-    return ans;
 }
 
 int main() {
@@ -40,9 +38,10 @@ int main() {
     int ans = 1;
 
     // calculatePower(base, power, ans, 1);
-    cout << "ans : " << calculatePower(base, power, ans);
 
-    
+    calculatePower(base, power, ans);
 
+    cout << "ans: " << ans;
+   
     return 0;
 }

@@ -28,6 +28,5 @@ int main() {
 
     sayDigit(n, arr);
 
-
     return 0;   
 }

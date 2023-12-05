@@ -12,6 +12,7 @@ int climbStairs(int n) {
 }
 
 int main() {
+    
     int n;
     cout << "Enter n: ";
     cin >> n;

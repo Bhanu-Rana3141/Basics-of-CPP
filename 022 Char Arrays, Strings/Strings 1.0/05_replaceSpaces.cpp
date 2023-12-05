@@ -24,7 +24,7 @@ int main() {
             // temp.push_back('7');
             // temp.push_back('8');
             // temp.push_back('6');
-            // temp += "786";
+            // temp += "786"; 
         }
         else{
             temp.push_back(s[i]);

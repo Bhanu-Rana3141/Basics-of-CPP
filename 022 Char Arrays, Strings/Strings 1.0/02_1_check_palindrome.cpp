@@ -13,7 +13,7 @@ using namespace std;
     -initialising 2 pointers 1 points to 0th index and other points to last index.
     -comparing value at pointer 1 with value at pointer 2, if they are not equal then it's not palindrome
     therefore if they are equal increment starting pointer with 1 and decrement ending pointer by 1
-    -If loops gets completely exectued and it haven't return false, it means string is palindrome
+    -If loops gets completely exectued and it haven't return false, it means strings are palindrome
 */
 
 void print(char str[]) {

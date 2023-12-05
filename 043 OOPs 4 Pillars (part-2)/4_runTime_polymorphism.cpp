@@ -1,6 +1,6 @@
 /*
 RUN TIME POLYMORPHISM -> function/method overridding
-*OVERRIDING :  child class m jo parent class ka function h usko apni need k according implement karenge
+*OVERRIDING :  child class m jo parent class ka function h usko apni need k according implement karna
 
 */
 

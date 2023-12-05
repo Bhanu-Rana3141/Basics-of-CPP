@@ -25,10 +25,40 @@ bool compare(string s1, string s2) {
     return true;
 }
 
+int find(string str, string target) {
+    for(int i=0; i<str.length(); i++) {
+        cout << str.substr(i, target.length()) << endl;
+        if(str.substr(i, target.length()) == target) {
+            cout << endl << "Found here -> " << str.substr(i, target.length()) << endl;
+            return i;
+        }
+    }   
+    return -1;
+}
+
+void replace(string& s, char oldChar, char newChar) {
+    for(int i=0; i<s.size(); i++) {
+        if(s[i] == oldChar) {
+            s[i] = newChar;
+        }
+    }
+}
+
+string erase(string& str, int& pos, int& noOfCharacters) {
+    string ans = "";
+    for(int i=0; i<str.length(); i++) {
+        cout << i << " ";
+        if(i == pos) {
+            i += noOfCharacters;
+        }
+        ans.push_back(str[i]);
+    }
+    return ans;
+}
+
 int main() {
 
-/*  
-    char ch[100];
+/*   char ch[100];
     cin >> ch;
    
     for(int i=0; i<9; i++) {
@@ -41,71 +71,63 @@ int main() {
     cout << name;
 */
  
+    // SUBSTRING
     // string str;
     // cin >> str;
-
-    // SUBSTRING
-    // cout << str.substr(1,3) << endl; // 1,3 are inclusive
-
-
+    // cout << str.substr(1,4) << endl; // 1 is inclusive and 4 is exclusive
 
     // COMPARE 
     // s1.compare(s2) == 0 -> both strings are equal 
     // s1.compare(s2) != 0 , CASE 1 : > 0 if first character of s1 is greater than s2,   CASE 2: < 0 smaller 
-    
     // string s1;
     // cout << "Enter s1: ";
     // cin >> s1;
-
     // string s2;
     // cout << "Enter s2: ";
     // cin >> s2;
-
     // if(s1.compare(s2) == 0) {
     //     cout << "Both are exactly same";
     // }
     // else{
     //     cout << "Not same";
     // }
-
     // if(compare(s1,s2) == 1) {
     //     cout << "Both are equal";
     // }
     // else{
     //     cout << "Not equal";
     // }
-
     // string x = "bbbb";
     // string y = "bbbba";
     // cout << x.compare(y) << endl;
 
-
-
     // FIND
     // string sentence = "hello jee kya haal chaal";
-    // string target = "z";
+    // string target = "haal";
     // cout << sentence.find(target);
-
     //npos -> if we are finding a part of string in main string, if it is present then index will be returned else no position will be returned
     // if(sentence.find(target) == string::npos) {
     //     cout << string::npos; // not found
     // }
+    // int index = find(sentence, target);
+    // cout << "found at : " << index;
     
-
-
-    // REPLACE -> s.replace(starting pos, no of characters to be replaced, last pos)
+    // REPLACE -> s.replace(starting index, no of characters to be replaced, new characters or substring)
     // string sentence = "my name is Bhanu";
     // cout << sentence << endl;
     // sentence.replace(11, 5, "Partap");
     // cout << sentence << endl;
-
     // string s2 = "Singh";
     // sentence.replace(11,6, s2);
     // cout << sentence << endl;
-
     // sentence.replace(11,7, "Rana");
     // cout << sentence << endl;
-    
+    // string s = "hello jee kya haal chaal";
+    // cout << s << endl;
+    // char newChar = 'z';
+    // replace(s, 'a', newChar);
+    // cout << s << endl;
+
 
     // ERASE -> s.erase(start pos, no of characters to be deleted )
     // string s = "abcdefghijkl"; 
@@ -113,8 +135,19 @@ int main() {
     // cout << s << endl;
     // s.erase(s.begin(), s.begin()+4);
     // cout << s << endl;
+    
+    // erase custom implementation
+    // string str;
+    // cout << "Enter string: ";
+    // getline(cin, str);
+    // int startPosition;
+    // cout << "starting pos for erase: ";
+    // cin >> startPosition;
+    // int noOfCharacters;
+    // cout << "no of characters to erase: ";
+    // cin >> noOfCharacters;
+    // string ans = erase(str, startPosition, noOfCharacters);
+    // cout << ans;
 
-    // isalpha
-    // islower
     return 0;
 }

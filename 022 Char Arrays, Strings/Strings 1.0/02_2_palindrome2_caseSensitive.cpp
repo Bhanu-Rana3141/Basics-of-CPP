@@ -21,7 +21,6 @@ char toUpperCase(char ch) {
 }
 
 bool isPalindrome(char str[]) {
-
     int s = 0;
     int e = strlen(str)-1;
 

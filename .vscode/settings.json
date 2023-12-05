@@ -61,6 +61,7 @@
     "ostream": "cpp",
     "initializer_list": "cpp",
     "string": "cpp",
-    "*.tcc": "cpp"
+    "*.tcc": "cpp",
+    "chrono": "cpp"
   }
 }

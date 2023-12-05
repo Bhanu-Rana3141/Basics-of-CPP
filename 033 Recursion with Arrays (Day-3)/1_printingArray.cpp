@@ -23,11 +23,12 @@ int main() {
     int arr[5] = {10, 20, 30, 40, 50};
     int n = sizeof(arr)/sizeof(arr[0]);
 
+    //1
     print(arr,n);
     cout << endl;
 
-    int i=0;
-    print(arr, n, i);
+    //2
+    print(arr, n, 0);
     
     return 0;
 }

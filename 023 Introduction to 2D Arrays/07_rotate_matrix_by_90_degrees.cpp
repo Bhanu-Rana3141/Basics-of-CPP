@@ -4,7 +4,7 @@ using namespace std;
 void reverse(int arr[], int n) {
     int s=0,e=n-1;
 
-    while(s<e) {
+    while(s < e) {
         swap(arr[s],arr[e]);
         s++ , e--;
     }
@@ -12,13 +12,13 @@ void reverse(int arr[], int n) {
 
 int main() {
     int n;
-    cout<<"Enter n: ";
-    cin>>n;
+    cout << "Enter n: ";
+    cin >> n;
 
     int arr[n][n];
     for(int i=0; i<n; i++) {
         for(int j=0; j<n; j++) {
-            cin>>arr[i][j];
+            cin >> arr[i][j];
         }
     }
     cout<<endl;
@@ -35,12 +35,12 @@ int main() {
     
     for(int i=0; i<n; i++) {
         for(int j=0; j<n; j++) {
-           cout<<arr[i][j] <<" ";
+           cout << arr[i][j] <<" ";
         }
-        cout<<endl;
+        cout << endl;
     }
      
-    cout<<endl;
+    cout << endl;
 
     // Rotating array by 90 degrees
     for(int i=0; i<n; i++) {
@@ -51,14 +51,15 @@ int main() {
         } 
     }
 
-    cout<<"Rotated Array: ";
-    cout<<endl;
+    cout << "Rotated Array: ";
+    cout << endl;
 
     for(int i=0; i<n; i++) {
         for(int j=0; j<n; j++) {
-            cout<<arr[i][j]<<" ";
+            cout << arr[i][j] << " ";
         }
-        cout<<endl;
+        cout << endl;
     }
+    
     return 0;
 }

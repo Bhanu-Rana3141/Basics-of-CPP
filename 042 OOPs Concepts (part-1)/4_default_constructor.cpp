@@ -37,9 +37,7 @@ int main() {
     cout << "hello" << endl;
 
     Hero a; // a.Hero()
-
     cout << "h" << endl;
-    
     cout << endl;
     
     // dynamically

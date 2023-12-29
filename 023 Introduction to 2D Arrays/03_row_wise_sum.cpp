@@ -5,27 +5,27 @@ int main() {
 
     cout<<"Enter n: ";
     int n;
-    cin>>n;
+    cin >> n;
 
     cout<<"Enter m: ";
     int m;
-    cin>>m;
+    cin >> m;
 
     int arr[n][m];
     for(int i=0; i<n; i++){
         for(int j=0; j<m; j++){
-            cin>>arr[i][j];
+            cin >> arr[i][j];
         }
     }
 
     // Row wise sum
-    cout<< "Row wise sum: "<<endl;
+    cout << "Row wise sum: " << endl;
     for(int i=0; i<n; i++){
         int sum = 0;
         for(int j=0; j<m; j++) {
             sum += arr[i][j];
         }
-        cout<<"Row "<<i<<" : "<<sum<<endl;
+        cout << "Row " << i << " : " << sum << endl;
     }
 
     cout<<endl;
@@ -36,7 +36,7 @@ int main() {
         for(int row=0; row<n; row++){
             sum += arr[row][col];
         }
-        cout<<"col "<<col<<" : "<<sum<<endl;
+        cout << "col " << col << " : " << sum << endl;
     }
     return 0;
 }

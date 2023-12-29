@@ -4,7 +4,6 @@ using namespace std;
 // Counting 1 to N   -> Head Recursion
 
 void print_counting(int n){
-
 //Base Case
     if(n==0){  
         return;
@@ -14,13 +13,10 @@ void print_counting(int n){
    print_counting(n-1);
 
 // Processing
-   cout << n << " ";
-
-   
-
+   cout << n << " ";  
 }
 
-/* USING PARAMERTERISED WAY ->by using extra varible
+/* By using extra variable
 void print_counting(int n, int i){
     if(i > n)
         return;
@@ -35,7 +31,6 @@ int main() {
     cin>>n;
 
     print_counting(n);
-
 
     // print_counting(n,1);  -> extra parameter
     return 0;

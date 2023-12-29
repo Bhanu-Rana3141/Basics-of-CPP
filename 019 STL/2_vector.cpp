@@ -56,14 +56,16 @@ int main() {
     cout << "Before pop: ";
     for(int i=0; i<v.size(); i++) {
         cout << v[i] << " ";
-    }cout << endl;
+    }
+    cout << endl;
 
     v.pop_back();
 
     cout << "After pop: ";
     for(int i=0; i<v.size(); i++) {
         cout << v[i] << " ";
-    }cout << endl;
+    }
+    cout << endl;
 
     cout << endl;
 

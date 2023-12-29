@@ -12,11 +12,23 @@ int getLength(string s) {
     return length;
 }
 
+string subString(string str, int startPos, int noOfCharacters) {
+    string ans = "";
+    for(int i=0; i<str.length(); i++) {
+        if(i == startPos) {
+           for(int j=i; j<noOfCharacters+i; j++) {
+            ans.push_back(str[j]);
+           }
+           break;
+        }  
+    }
+    return ans;
+}
+
 bool compare(string s1, string s2) {
     if(s1.length() != s2.length()) {
         return false;
     }
-
     for(int i=0; i<s1.length(); i++) {
         if(s1[i] != s2[i]) {
             return false;
@@ -25,19 +37,42 @@ bool compare(string s1, string s2) {
     return true;
 }
 
+// int find(string str, string target) {
+//     for(int i=0; i<str.length(); i++) {
+//         cout << str.substr(i, target.length()) << endl;
+//         if(str.substr(i, target.length()) == target) {
+//             cout << endl << "Found here -> " << str.substr(i, target.length()) << endl;
+//             return i;
+//         }
+//     }   
+//     return -1;
+// }
+
 int find(string str, string target) {
-    for(int i=0; i<str.length(); i++) {
-        cout << str.substr(i, target.length()) << endl;
-        if(str.substr(i, target.length()) == target) {
-            cout << endl << "Found here -> " << str.substr(i, target.length()) << endl;
-            return i;
+    for(int i=0; i<str.length();) {
+        bool isEqual = true;
+        for(int j=0; j<target.length(); j++) {
+            if(str[i] == ' ') {
+                i++;
+                break;
+            }
+            if(str[i] == target[j]) {
+                i++;
+            }
+            else{
+                isEqual = false;
+                i++;
+            }   
         }
-    }   
+        if(isEqual == true) {
+            return i-target.length();
+        }
+    }
     return -1;
-}
+} 
 
 void replace(string& s, char oldChar, char newChar) {
-    for(int i=0; i<s.size(); i++) {
+    for(int i=0; i<s.size(); i++) { 
         if(s[i] == oldChar) {
             s[i] = newChar;
         }
@@ -73,8 +108,16 @@ int main() {
  
     // SUBSTRING
     // string str;
-    // cin >> str;
-    // cout << str.substr(1,4) << endl; // 1 is inclusive and 4 is exclusive
+    // getline(cin, str);
+    // cout << str.substr(1, 4) << endl; // 1 represents starting index and 4 represents no of chracters of substring
+    // int startPos;
+    // cout << "Enter starting pos: ";
+    // cin >> startPos;
+    // int noOfCharacters;
+    // cout << "Enter no of characters want in substring: ";
+    // cin >> noOfCharacters;
+    // string ans = subString(str, startPos, noOfCharacters);
+    // cout << ans;
 
     // COMPARE 
     // s1.compare(s2) == 0 -> both strings are equal 
@@ -101,7 +144,7 @@ int main() {
     // string y = "bbbba";
     // cout << x.compare(y) << endl;
 
-    // FIND
+    // FIND -> uses linear search algorithm 
     // string sentence = "hello jee kya haal chaal";
     // string target = "haal";
     // cout << sentence.find(target);
@@ -127,7 +170,6 @@ int main() {
     // char newChar = 'z';
     // replace(s, 'a', newChar);
     // cout << s << endl;
-
 
     // ERASE -> s.erase(start pos, no of characters to be deleted )
     // string s = "abcdefghijkl"; 

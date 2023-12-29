@@ -18,5 +18,6 @@ int main() {
     cin >> n;
 
     cout << climbStairs(n);
+    
     return 0;
 }

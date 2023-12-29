@@ -9,7 +9,6 @@
      cout << totalSubstrings;
 */
 
-
 #include<iostream>
 #include<vector>
 using namespace std;

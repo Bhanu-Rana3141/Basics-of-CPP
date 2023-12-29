@@ -2,7 +2,6 @@
 using namespace std;
 
 class Animal {
-
     public:
         int age;
         int weight;

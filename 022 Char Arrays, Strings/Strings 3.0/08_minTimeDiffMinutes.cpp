@@ -19,9 +19,6 @@ int main() {
 
     for(int i=0; i<timePoints.size(); i++) {
         int hours = stoi(timePoints[i].substr(0,2));
-        // if(hours == 0) {
-        //     hours = 24;
-        // }
         int min = stoi(timePoints[i].substr(3,2));
         int totalMinutes = hours*60 + min;
         minutes.push_back(totalMinutes);
@@ -50,7 +47,6 @@ int main() {
     cout << endl;
     cout << "Minimum time difference : " << mini;
     cout << endl << endl;
-
 
     return 0;
 }

@@ -34,10 +34,5 @@ int main() {
 
     // reverse(name, name+strlen(name));
 
-   
-
-    
-
-
     return 0;
 }

@@ -4,7 +4,6 @@
 using namespace std;
 
 void printArray(vector<int>&arr) {
-
     for(int i = 0; i < arr.size(); i++) {
         cout << arr[i] << " ";
     }
@@ -12,7 +11,6 @@ void printArray(vector<int>&arr) {
 }
 
 int ArrayToIntConversion(vector<int>&arr, int size) {
-    
     int value = 0;
     for(int i = 0; i < size; i++) {
         int x = arr[i] % 10;
@@ -22,7 +20,6 @@ int ArrayToIntConversion(vector<int>&arr, int size) {
 }
 
 void intToArrayConversion(vector<int>&arr, int sum) {
-
     while(sum > 0) {
         int x = sum % 10;
         arr.push_back(x);
@@ -31,6 +28,7 @@ void intToArrayConversion(vector<int>&arr, int sum) {
 }
 
 int main() {
+    
     int n;
     cout << "Enter n: ";
     cin >> n;

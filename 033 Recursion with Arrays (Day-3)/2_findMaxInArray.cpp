@@ -3,34 +3,27 @@
 using namespace std;
 
 void findMax(int arr[], int n, int i, int& max) {
-
     // base case
     if(i >= n) {
         return;
     }
-
     // 1 case solve kardo
     if(arr[i] > max) {
         max = arr[i];
     }
-
     // baaki recursion sambhal lega
     findMax(arr, n, i+1, max);
 }
 
 void findMin(int arr[], int n, int& min) {
-    
     //base case
     if(n == 0) {
         return;
     }
-
     if(arr[0] < min) {
         min = arr[0];
     }
-
     findMin(arr+1, n-1, min);
-
 }
 
 int main() {

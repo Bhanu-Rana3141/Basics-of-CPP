@@ -1,7 +1,7 @@
 /*
 CASE 1 -> no removal, already palindrome
 CASE 2 -> 1 removal either i or j 
-CASE 3 -> >1 removal -> not palindrome
+CASE 3 -> more than 1 removal -> not palindrome
 
 
 TC : O(n) + O(n) = O(2n) -> O(n)
@@ -13,7 +13,6 @@ isPalindrome -> O(n)
 using namespace std;
 
 bool checkPalindrome(string s, int i, int j) {
-
     while(i <= j) {
         if(s[i] != s[j]) {
             return false;

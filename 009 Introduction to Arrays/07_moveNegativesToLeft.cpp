@@ -9,6 +9,7 @@ void printArray(int *arr, int n) {
    return;
 }
 
+// sort 0-1 approach 
 void moveNegativesToLeft(int *arr, int n) {
 
     int i = 0, j = n-1;
@@ -28,6 +29,7 @@ void moveNegativesToLeft(int *arr, int n) {
     return;
 }
 
+// rearrange and print in same order
 void moveNegative(int arr[], int n) {
 
     int i=0, j=0;
@@ -54,7 +56,7 @@ int main() {
     }
 
     moveNegativesToLeft(arr, n);
-    // moveNegative(arr, n); // to print negatives in same order as input
+    // moveNegative(arr, n);
     printArray(arr, n);
         
     return 0;

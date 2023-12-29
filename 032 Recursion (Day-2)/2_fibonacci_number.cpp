@@ -24,7 +24,6 @@ int fibonacci(int n) {
 
 // Recursive approach
 int fibo(int n) {
-
     if(n == 0) 
         return 0;
     if(n == 1)
@@ -42,6 +41,6 @@ int main() {
     cout << "Recursive Approach: " << fibo(n) << endl;
 
     cout << "Iterative Approach : " << fibonacci(n);
-    
+     
     return 0;
 }

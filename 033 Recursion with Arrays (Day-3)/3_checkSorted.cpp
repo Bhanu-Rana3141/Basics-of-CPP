@@ -7,11 +7,9 @@ using namespace std;
     if(i >= n) {
         return true;
     }
-    
     if(arr[i-1] > arr[i]) {
         return false;
     }
-
     isSorted(arr, n, i+1);
 }
 */
@@ -21,11 +19,9 @@ bool isSorted(int arr[], int n) {
     if(n==1) {
         return true;
     }
-    
     if(arr[0] > arr[1]) {
         return false;
     }
-
     isSorted(arr+1, n-1);
 }
 

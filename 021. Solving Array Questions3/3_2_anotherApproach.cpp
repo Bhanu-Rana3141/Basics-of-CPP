@@ -31,7 +31,6 @@ int main() {
     int carry=0;
 
     while(i>=0 && j>=0){
-        
         int val1 = a[i];
         int val2 = b[j];
         int sum = val1 + val2 + carry;

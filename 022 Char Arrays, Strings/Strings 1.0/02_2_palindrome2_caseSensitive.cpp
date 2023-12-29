@@ -2,6 +2,14 @@
 #include <string.h>
 using namespace std;
 
+int getLength(char ch[]) {
+    int count = 0;
+    for(int i=0; ch[i] != '\0') {
+        count++;
+    }
+    return count;
+}
+
 char toLowerCase(char ch) {
     if(ch >= 'a' && ch <= 'z') {
         return ch;
@@ -22,7 +30,7 @@ char toUpperCase(char ch) {
 
 bool isPalindrome(char str[]) {
     int s = 0;
-    int e = strlen(str)-1;
+    int e = getLength(str)-1;
 
     while(s<e) {
         if(toLowerCase(str[s]) != toLowerCase(str[e])) {
@@ -43,7 +51,6 @@ int main() {
     cin >> str;
 
     int ans = isPalindrome(str);
-
 
     if(ans) {
         cout << "palindrome";

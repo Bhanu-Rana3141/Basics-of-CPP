@@ -2,16 +2,15 @@
 using namespace std;
 
 class Student{
-    
     private:
         char name;
         int age;
         int height;
 
-        public:
-            int getAge() {
-                return this->age;
-            }
+    public:
+        int getAge() {
+            return this->age;
+        }
 };
 
 int main() {

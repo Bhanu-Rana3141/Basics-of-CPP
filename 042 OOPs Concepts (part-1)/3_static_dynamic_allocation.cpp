@@ -33,8 +33,8 @@ int main() {
     Hero a;
     a.setHealth(70);
     a.setLevel('A');
-    cout << "Health: " << a.level << endl;
-    cout << "level: " << a.getHealth() << endl;
+    cout << "Health: " << a.getHealth() << endl;
+    cout << "level: " << a.getLevel() << endl;
 
     cout << endl;
 

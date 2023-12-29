@@ -18,11 +18,11 @@ void printArr(vector<vector<int>>&arr){
 
 void row(vector<vector<int>>&arr ,int i, int m){
    // iterate horizontally for rows     TC -> O(m)
-   for(int j=0; j<m; j++){
+    for(int j=0; j<m; j++){
         if(arr[i][j] != 0) {
             arr[i][j] = -1;
         }
-   }
+    }
     
 }
 
@@ -67,7 +67,8 @@ After assingning -1 we will again traverse through the matrix again and replace 
         for(int j=0; j<m; j++) {
             cin>>arr[i][j];
         }
-    }cout<<endl;
+    }
+    cout<<endl;
 
     // Checking 0 and calling functions      TC-> O(n*m)
     for(int i=0; i<n; i++){

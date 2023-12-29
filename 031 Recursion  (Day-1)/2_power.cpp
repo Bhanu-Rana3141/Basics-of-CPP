@@ -9,6 +9,7 @@ int power(int n){
 }
 
 int main() {
+    
     int n;
     cout<<"Enter n: ";
     cin>>n;

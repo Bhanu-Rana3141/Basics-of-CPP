@@ -1,18 +1,21 @@
 #include<iostream>
 using namespace std;
 
-// void calculatePower(int base, int power, int& ans, int i) {
-//     // base case
-//     if(i > power) {
-//         return;
-//     }
-//     // 1 case sove karo
-//     ans = ans * base;
+/* using extra variable
+void calculatePower(int base, int power, int& ans, int i) {
+    // base case
+    if(i > power) {
+        return;
+    }
+    // 1 case sove karo
+    ans = ans * base;
 
-//     // baaki recursion sambhal lega
-//     calculatePower(base, power, ans, i+1);
-// }
+    // baaki recursion sambhal lega
+    calculatePower(base, power, ans, i+1);
+}
+*/
 
+/*Without using extra variable
 void calculatePower(int base, int power, int& ans){
     // base case
     if(power == 0) {
@@ -21,8 +24,16 @@ void calculatePower(int base, int power, int& ans){
 
     ans = ans * base;
 
-    cout <<"ans for " << power << " is : " << ans << endl;
+    cout << "ans for " << power << " is : " << ans << endl;
     calculatePower(base, power-1, ans);
+}
+*/
+
+int calculatePower(int base, int power) {
+    if(power == 0) {
+        return 1;
+    }
+    return base * calculatePower(base, power-1);
 }
 
 int main() {
@@ -35,11 +46,10 @@ int main() {
     cout << "Enter power: ";
     cin >> power;
 
-    int ans = 1;
-
+    // int ans = 1;
     // calculatePower(base, power, ans, 1);
 
-    calculatePower(base, power, ans);
+    int ans = calculatePower(base, power);
 
     cout << "ans: " << ans;
    

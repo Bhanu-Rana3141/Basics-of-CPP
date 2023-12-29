@@ -34,14 +34,16 @@ int main() {
     cout << "all values: ";
     for(int i : s) {
         cout << i << " ";
-    }cout << endl;
+    }
+    cout << endl;
 
     // 1. erase 
     s.erase(s.begin());
     cout << "values after erasing 0th element: ";
     for(int i : s) {
         cout << i << " ";
-    }cout << endl;
+    }
+    cout << endl;
 
     // creating an iterator for traversing
     set<int>::iterator it = s.begin();
@@ -50,7 +52,8 @@ int main() {
     cout << "values after erasing 1st element: ";
     for(int i : s) {
         cout << i << " ";
-    }cout << endl << endl;
+    }
+    cout << endl << endl;
 
 
     // 2. count -> checks whether element is present or not

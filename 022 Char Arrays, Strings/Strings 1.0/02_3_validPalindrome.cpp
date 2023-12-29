@@ -17,11 +17,14 @@ bool valid(char ch) {
 }
 
 char toLowerCase(char ch) {
-    if((ch >= 'a' && ch <= 'z') && (ch <= '0' && ch >= '9')){
-        return ch;
-    }
-    else{
-        return ch-'A'+'a';
+    // if((ch >= 'a' && ch <= 'z') && (ch <= '0' && ch >= '9')){
+    //     return ch;
+    // }
+    // else{
+    //     return ch-'A'+'a';
+    // }
+    if(ch >= 'A' && ch <= 'Z') {
+        return ch - 'A' + 'a';
     }
 } 
 

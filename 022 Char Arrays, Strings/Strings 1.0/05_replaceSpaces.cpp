@@ -35,7 +35,7 @@ int main() {
     print(s);
 */
 
-    // in place replacement     SC-> O(1)
+    // in place replacement    TC -> O(n) : size of string , O(m) : part that has to be replaced , OVERALL : O(m*n),  SC-> O(1)
 
     for(int i=0; i<s.size(); i++) {
         if(s[i] == ' ') {

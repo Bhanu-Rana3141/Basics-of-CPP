@@ -5,10 +5,10 @@ using namespace std;
 int main() {
 
     string s;
-    // getline(cin , s);
+    cout << "Enter string: " ;
+    getline(cin, s);
 
-    cin.getline(s, s.size());
-
-
+    cout << s;
+    
     return 0;
 }

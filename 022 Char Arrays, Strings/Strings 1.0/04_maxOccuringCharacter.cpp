@@ -19,16 +19,16 @@ pair<char, int> maxOccurence(string s) {
         freq[s[i] - 'a']++;
     }   
 
-    int ans = 0;
+    int max = 0;
     int idx = 0;
     for(int i=0; i<26; i++) {
-        if(freq[i] > ans) {
-            ans = freq[i];
+        if(freq[i] > max) {
+            max = freq[i];
             idx = i;
         }
     }
     char ch = idx + 'a';
-    return {ch, ans};
+    return {ch, max};
 }
 
 int main() {

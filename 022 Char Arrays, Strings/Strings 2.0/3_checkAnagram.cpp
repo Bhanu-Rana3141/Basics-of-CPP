@@ -27,9 +27,20 @@ void printFrequencyVector(vector<int> freq) {
     cout << endl;
 }
 
-string sortedString(string& s) {
-    sort(s.begin(), s.end());
-    
+void sortedString(string& s) {
+    vector<int>freq(26, 0);
+
+    for(int i=0; i<s.length(); i++) {
+        freq[s[i]-'a']++;
+    }
+
+    int j=0;
+    for(int i=0; i<26; i++) {
+        while(freq[i]--) {
+            s[j] = i + 'a';
+            j++;
+        }
+    }
 }
 
 bool isAnagram(string s, string t) {
@@ -86,31 +97,30 @@ int main() {
     cin >> t;
 
 /*  Approach 1 
-    if(s.size() != t.size()) {
-        cout << "No";
+    if(s.length() != t.length()) {
+        cout << "Not anagram";
+        return 0;
+    }
+    if(sortedString(s) == sortedString(t)) {
+        cout << "Yes, it is anagram";
     }
     else{
-        if(sortedString(s) == sortedString(t)) {
-        cout << "yes";
-        }
-        else{
-            cout << "no";
-        }
+        cout << "Not anagram";
     }
 */
 
 /*  Approach 2 
     if(s.length() != t.length()) {
         cout << "Not anagram";
+        return 0;
+    }
+    if(isAnagram(s,t)) {
+        cout << "strings are anagram";
     }
     else{
-        if(isAnagram(s,t)) {
-        cout << "strings are anagram";
-        }
-        else{
-            cout << "Not anagram";
-        }
+        cout << "Not anagram";
     }
+
 */
 
 //  Approach 3   

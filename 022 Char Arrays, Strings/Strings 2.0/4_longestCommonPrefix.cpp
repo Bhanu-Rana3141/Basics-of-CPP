@@ -1,13 +1,14 @@
-/* TC -> O(n*m * log n)) + O(m) 
-SC -> O(m) , ans string
+/* APPROACH 1
+* traversing on each character of string having minimum length b|w first and last i.e TC - O(m) -> where m is the min length b|w first and last string
+* sort array of strings- TC : O(n*log(n)) -> where n is the length of string
+-> After sorting first and last string will have minimal common prefix which will be present in all other strings 
+* Compare characters of first and last string - O(k) -> where k is the size of string
+* OVERALL TC -> O(n*log(n) * k) + min(s[0].length, s[s.length()-1])
 
-Approach 1 
-* sort the vector of strings 
-TC -> O(n*m * log n) -> where n is no of strings in vector and m is length of each string, and log(n) for sorting
-
-* compare first and last string of vector because the no of same characters in first and last string will be present in all the strings between first and last, therefore if any character is not same then it will not be present in any of the string, if the characters of strings are equal store it in ans string
-TC -> O(m)
-
+APPROACH 2: 
+* keep 1st string constant and compare all other strings with it
+* using 2 loops 1 for traversing through each string of vector, and second one to count the no of common characters between the strings compared currently, then a variable is maintained to store the common prefix, and at last by using substring function ans will be displayed
+* TC : O(n*m) -> n is length of vector of strings and m is the length of strings which are compared
 */
 
 #include<iostream>
@@ -17,7 +18,7 @@ using namespace std;
 
 string longestCommonPrefix1(vector<string> &str) {
 
-    // sort the vector
+    // sort the vector - 
     sort(str.begin(), str.end());
 
     // comparing first and last string
@@ -26,12 +27,9 @@ string longestCommonPrefix1(vector<string> &str) {
 
     string ans = "";
 
-    int i=0, j=0;
-    while(i<s1.size() && j<s2.size()) {
-        // while comparing strings, each character get's compared and due to which tc is O(m) where m is length of string, and in case of integer only 1 comparison is done TC->O(1)
-        if(s1[i] == s2[j]) {
-            ans += s1[i];
-            i++, j++;
+    for(int i=0; i<min(s1.size(), s2.size()); i++) {
+        if(s1[i] == s2[i]) {
+            ans.push_back(s1[i]);
         }
         else{
             break;
@@ -47,7 +45,7 @@ string longestCommonPrefix2(vector<string> &str) {
 
     for(int i=1; i<str.size(); i++) {
         int j=0;
-        while(j<s1.size() && j<str[i].size() && s1[j]==str[i][j]) {
+        while(j < min(s1.size(), str[i].size()) && s1[j] == str[i][j]) {
             j++;
         }
         ansLength = min(ansLength, j);
@@ -72,7 +70,5 @@ int main() {
 
     cout << "Longest common prefix :" << longestCommonPrefix2(str);
 
-    
-    
     return 0;
 }

@@ -1,3 +1,7 @@
+/*APPROACH
+* create a array of roman values
+* create another array of numeric values mapped with roman values 
+*/
 #include<iostream>
 using namespace std;
 

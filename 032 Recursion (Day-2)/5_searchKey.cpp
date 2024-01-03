@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-void searchKey(string s, char key, int i, vector<int>& ans, int& count) {
+void searchKey(string& s, char& key, int i, vector<int>& ans, int& count) {
     // base case
     if(i >= s.length()) {
        return;

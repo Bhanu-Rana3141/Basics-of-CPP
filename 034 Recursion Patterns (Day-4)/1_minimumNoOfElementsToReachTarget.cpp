@@ -25,6 +25,23 @@ int solve(vector<int>& arr, int target, int& count) {
     return mini;
 }
 
+int solvee(vector<int>&arr, int target, int output) {
+    if(target == output) {
+        return 0;
+    }
+    if(output > target) {
+        return INT_MAX;
+    }
+    int mini = INT_MAX;
+    for(int i=0; i<arr.size(); i++) {
+        int ans = solvee(arr, arr[i] + output, output);
+        if(ans != INT_MAX) {
+            mini = min(mini, ans+1);
+        }
+    }
+    return mini;
+}
+
 int main() {
 
     int n;
@@ -43,11 +60,11 @@ int main() {
     int count = 0;
 
     int ans = solve(arr, target, count);
+    // int ans = solvee(arr, target, 0);
+
     cout << "Minimum no of elements to reach target: " << ans << endl;
 
     cout << "Total possible ways to make target: " << count;
-
-    
 
     return 0;
 }

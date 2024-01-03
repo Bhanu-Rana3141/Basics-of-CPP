@@ -49,4 +49,4 @@ int main() {
     cout << "Key present at index: " << ans;
     
     return 0;
-}
+}     

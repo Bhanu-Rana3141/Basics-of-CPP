@@ -1,5 +1,7 @@
 /*
  recursive Fibonacci implementation is not the most efficient one in terms of time and space complexity, as it recalculates the same Fibonacci values multiple times. Memoization or using an iterative approach can significantly improve the performance by avoiding redundant calculations.
+ TC - O(2^n)
+ SC - O(n)
 */
 
 #include<iostream>

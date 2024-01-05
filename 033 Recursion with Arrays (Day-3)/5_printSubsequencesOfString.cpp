@@ -9,16 +9,18 @@ using namespace std;
 
 void printSubsequences(string s, string output, int i, vector<string>& ans) {
     if(i == s.size()) {
-        // cout << output << " ";
-        ans.push_back(output);
+        cout << output << " ";
+        // ans.push_back(output);
         return;
     }
     // exclude
-    printSubsequences(s, output, i+1, ans);
 
     // include
     output.push_back(s[i]);
     printSubsequences(s, output, i+1, ans);
+    // output.pop_back();
+    printSubsequences(s, output, i+1, ans);
+
 }
 
 int main() {
@@ -33,9 +35,9 @@ int main() {
     string output = "";
     printSubsequences(s, output, i, ans);
 
-    for(auto it: ans) {
-        cout << it << " ";
-    }
+    // for(auto it: ans) {
+    //     cout << it << " ";
+    // }
     
     return 0;
 }

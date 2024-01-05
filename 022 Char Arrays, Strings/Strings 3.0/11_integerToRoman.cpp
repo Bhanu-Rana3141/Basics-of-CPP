@@ -23,6 +23,6 @@ int main() {
     }
 
     cout << "Ans: " << ans;
-    
+     
     return 0;
 }

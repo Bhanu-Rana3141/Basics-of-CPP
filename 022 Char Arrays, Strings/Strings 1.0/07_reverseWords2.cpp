@@ -4,6 +4,7 @@ SC - O(1) - Inplace reversal
 */
 
 #include<iostream>
+#include<algorithm>
 using namespace std;
 
 void reverse(string& s, int start, int end) {
@@ -19,8 +20,10 @@ int main() {
     cout << "Enter s: " ;
     getline(cin, s);
 
+    reverse(s.begin(), s.end());
+
     int i=0, j=0;
-    while(i<s.size() && j<s.size()) {
+    while(j<s.size()) {
         if(s[j] == ' ') {
             reverse(s, i, j-1);
             j++;

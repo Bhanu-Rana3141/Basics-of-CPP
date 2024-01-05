@@ -42,7 +42,6 @@ int main() {
             s.replace(i, 2, "786");
         }
     }
-
     print(s);
 
     return 0;

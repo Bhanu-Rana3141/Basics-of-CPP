@@ -51,14 +51,12 @@ bool isAnagram(string s, string t) {
     for(int i=0; i<s.length(); i++) {
         freqTableOfS[s[i]-'a']++;
     }
-
     for(int i=0; i<t.length(); i++) {
         freqTableOfT[t[i]-'a']++;
     }
 
     cout << "Frequency vector of s: ";
     printFrequencyVector(freqTableOfS);
-
     cout << "Frequency vector of t: ";
     printFrequencyVector(freqTableOfT);
 

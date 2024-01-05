@@ -4,7 +4,6 @@ using namespace std;
 
 int getLength(char sentence[]) {
     int length = 0;
-
     int i=0;
     while(sentence[i] != '\0') {
         length++;

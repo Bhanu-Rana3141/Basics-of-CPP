@@ -1,6 +1,18 @@
 #include<iostream>
 #include<limits.h>
+#include<vector>
 using namespace std;
+
+void maximumSum(vector<int>& arr, int i, int sum, int& maxSum) {
+    if(i >= arr.size()) {
+        maxSum = max(maxSum, sum);
+        return;
+    }
+
+    maximumSum(arr, i+1, sum, maxSum);
+    sum += arr[i];
+    maximumSum(arr, i+2, sum, maxSum);
+}
 
 int main() {
 
@@ -8,25 +20,18 @@ int main() {
     cout << "Enter size of array: ";
     cin >> n;
 
-    int arr[n];
+    vector<int> arr(n);
     for(int i=0; i<n; i++) {
         cin >> arr[i];
-    }
+    } 
 
-    pair<int, int> p;
-    int ans = INT_MIN;
+    int sum = 0;
+    int maxSum = INT_MIN;
+    int index = 0;
 
-    for(int i=0; i<n; i++) {
-        for(int j=i+2; j<n; j++) {
-            int sum = arr[i] + arr[j];
-            if(sum > ans) {
-                ans = sum;
-                p = {arr[i], arr[j]};
-            }
-        }
-    }
-    
-    cout << "Pairs: {" << p.first << ", " << p.second << "} , " << "Max sum : " << ans;
+    maximumSum(arr, index, sum, maxSum);
+
+    cout << "maximum sum : " << maxSum;
 
     return 0;
 }

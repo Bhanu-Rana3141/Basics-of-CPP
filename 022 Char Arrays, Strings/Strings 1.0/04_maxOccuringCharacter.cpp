@@ -37,7 +37,7 @@ int main() {
     cout << "Enter string: " ;
     cin >> s;
 
-    // converting in lower case
+    // converting in lower case - O(n)
     for(int i=0; i<s.size(); i++) {
         s[i] = toLowerCase(s[i]);
     }

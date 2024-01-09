@@ -15,8 +15,8 @@ void calculatePower(int base, int power, int& ans, int i) {
 }
 */
 
-/*Without using extra variable
-void calculatePower(int base, int power, int& ans){
+// Pass by reference
+void calculatePower(int& base, int power, int& ans){
     // base case
     if(power == 0) {
         return;
@@ -27,14 +27,14 @@ void calculatePower(int base, int power, int& ans){
     cout << "ans for " << power << " is : " << ans << endl;
     calculatePower(base, power-1, ans);
 }
-*/
 
-int calculatePower(int base, int power) {
-    if(power == 0) {
-        return 1;
-    }
-    return base * calculatePower(base, power-1);
-}
+
+// int calculatePower(int base, int power) {
+//     if(power == 0) {
+//         return 1;
+//     }
+//     return base * calculatePower(base, power-1);
+// }
 
 int main() {
 
@@ -46,10 +46,10 @@ int main() {
     cout << "Enter power: ";
     cin >> power;
 
-    // int ans = 1;
-    // calculatePower(base, power, ans, 1);
+    int ans = 1;
+    calculatePower(base, power, ans);
 
-    int ans = calculatePower(base, power);
+    // int ans = calculatePower(base, power);
 
     cout << "ans: " << ans;
    

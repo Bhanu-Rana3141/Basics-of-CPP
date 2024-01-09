@@ -18,7 +18,7 @@ void printSubsequences(string s, string output, int i, vector<string>& ans) {
     // include
     output.push_back(s[i]);
     printSubsequences(s, output, i+1, ans);
-    // output.pop_back();
+    output.pop_back();
     printSubsequences(s, output, i+1, ans);
 
 }

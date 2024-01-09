@@ -15,7 +15,6 @@ using namespace std;
 */
 
 bool isSorted(int arr[], int n) {
-    // base case
     if(n==1) {
         return true;
     }

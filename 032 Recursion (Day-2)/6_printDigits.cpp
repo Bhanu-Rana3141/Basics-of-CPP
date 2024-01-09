@@ -2,11 +2,9 @@
 using namespace std;
 
 void printDigits(int n) {
-    // base case
     if(n == 0) {
         return;
     }
-
     int digit = n%10;
     n /= 10;
 

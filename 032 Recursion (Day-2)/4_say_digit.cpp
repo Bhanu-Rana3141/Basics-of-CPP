@@ -1,17 +1,23 @@
 #include <iostream>
 using namespace std;
 
-void sayDigit(int n, string arr[]) {
+void sayDigit(int n, string numbers[], string& ans) {
+    if(n == 0) {
+        return;
+    }
+    int digit = n % 10;
+    n /= 10;
+    sayDigit(n, numbers, ans);
+    ans += numbers[digit] + ' ';
+}
 
-    // Base case
+void sayDigit(int n, string arr[]) {
     if(n == 0)
         return;
 
-    // processing
     int digit = n % 10;
     n /= 10;
 
-    // recursive call
     sayDigit(n, arr);
     
     cout << arr[digit] << " ";
@@ -26,7 +32,11 @@ int main() {
     cout << "Enter n: ";
     cin >> n;
 
-    sayDigit(n, arr);
+    // sayDigit(n, arr);
+
+    string ans = "";
+    sayDigit(n, arr, ans);
+    cout << ans;
 
     return 0;   
 }

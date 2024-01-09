@@ -1,9 +1,4 @@
 /*
-APPROACH 1 : ITERATIVE
-TC : O(n^3)
-SC : O(1)
-
-APPRACH 2 : RECURSIVE
 TC : O(n^2)
 SC : O(n+2) -> maximum depth of recursive tree
 */
@@ -11,18 +6,6 @@ SC : O(n+2) -> maximum depth of recursive tree
 #include<iostream>
 #include<vector>
 using namespace std;
-
-void printSubarrayIterative(vector<int>& arr) {
-    int n = arr.size();
-    for(int i=0; i<n; i++) {
-        for(int j=i; j<n; j++) {
-            for(int k=i; k<=j; k++) {
-                cout << arr[k] << " ";
-            }
-            cout << endl;
-        }
-    }
-}
 
 void printSubarraysUtility(vector<int>&arr, int start, int end) {
     if(end == arr.size()) {
@@ -52,8 +35,6 @@ int main() {
     for(int i=0; i<n; i++) {
         cin >> arr[i];
     }
-
-    // printSubarrayIterative(arr);
 
     printSubarray(arr);
     

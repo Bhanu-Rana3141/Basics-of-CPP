@@ -17,7 +17,9 @@ int main() {
     cout << "Enter s: ";
     cin >> s;
 
-    if(isPalindrome(s, 0, s.size()-1)) {
+    bool ans = isPalindrome(s, 0, s.size()-1);
+
+    if(ans) {
         cout << "Palindrome";
     }
     else{

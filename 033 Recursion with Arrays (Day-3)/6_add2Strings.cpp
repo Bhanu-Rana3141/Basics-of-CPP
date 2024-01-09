@@ -46,9 +46,9 @@ void add(string& num1, int p1, string& num2, int p2, int carry, string& ans) {
     int sum = n1 + n2 + carry;
     int digit = sum % 10;
     carry = sum/10;
-    ans.push_back(digit + '0');
     
     add(num1, p1-1, num2, p2-1, carry, ans);
+    ans.push_back(digit + '0');
 }
 int main() {
 
@@ -63,7 +63,6 @@ int main() {
     // string ans = add(num1, num1.size()-1, num2, num2.size()-1, 0);
     string ans = "";
     add(num1, num1.size()-1, num2, num2.size()-1, 0, ans);
-    reverse(ans.begin(), ans.end());
     cout << ans;
     
     return 0;

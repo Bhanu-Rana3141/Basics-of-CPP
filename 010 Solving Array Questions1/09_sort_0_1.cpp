@@ -36,13 +36,11 @@ int main() {
         }
     }
 
-    for(int i=0; i<n; i++){
-        if(i<zeroCount){
-            arr[i] = 0;
-        }
-        else{
-            arr[i] = 1;
-        }
+    for(int i=0; i<zeroCount; i++){
+        arr[i] = 0;
+    }
+    for(int i=zeroCount; i<n; i++) {
+        arr[i] = 1;
     }
     printArray(arr);
 */

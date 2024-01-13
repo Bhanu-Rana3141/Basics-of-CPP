@@ -9,7 +9,6 @@ void printArr(vector<int>& arr) {
 }
 
 void intersection(vector<int>& arr1, int n, vector<int>& arr2, int m, vector<int>& ans) {
-
     int i=0, j=0;
     while(i < n && j < m) {
         if(arr1[i] == arr2[j]) {
@@ -26,7 +25,6 @@ void intersection(vector<int>& arr1, int n, vector<int>& arr2, int m, vector<int
 }
 
 void unionArr(vector<int>& arr1, int n, vector<int>& arr2, int m, vector<int>& ans) {
-
     int i=0, j=0;
     while(i<n && j<m) {
         if(arr1[i] == arr2[j]) {

@@ -2,7 +2,6 @@
 using namespace std;
 
 void printArray(int *arr, int n) {
-    
    for(int i=0; i<n; i++) {
     cout << arr[i] << " ";
    }
@@ -11,9 +10,7 @@ void printArray(int *arr, int n) {
 
 // sort 0-1 approach 
 void moveNegativesToLeft(int *arr, int n) {
-
     int i = 0, j = n-1;
-
     while(i < j) {
         if(arr[i] < 0) {
             i++;
@@ -31,9 +28,7 @@ void moveNegativesToLeft(int *arr, int n) {
 
 // rearrange and print in same order
 void moveNegative(int arr[], int n) {
-
     int i=0, j=0;
-
     while(i<n) {
         if(arr[i] < 0) {
             swap(arr[i], arr[j]);

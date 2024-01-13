@@ -24,7 +24,6 @@ bool isSorted(int arr[], int n) {
     isSorted(arr+1, n-1);
 }
 
-
 int main() {
     
     int n;
@@ -46,9 +45,6 @@ int main() {
     else{
         cout << "Array is not sorted";
     }
-
-    
-    
 
     return 0;
 }

@@ -12,7 +12,6 @@ void printArray(vector<int>&arr) {
 
 //TC -> O(n * log n)
 void approach_1_finding_duplicates(vector<int>&arr, int n) {
-
     sort(arr.begin(), arr.end());  
     printArray(arr);
 

@@ -1,6 +1,6 @@
 /*  
     * ORDERED MAP
-    * IMPLEMENTATION - red black tree or balanced tree, therefore compleexity of operations O(log n)
+    * IMPLEMENTATION - red black tree or balanced tree, therefore complexity of operations O(log n)
     * Data is stored in form of key and value
     * keys are unique, points only one value  [1 key -> 1 value]
     
@@ -34,10 +34,9 @@ int main() {
         cout << i.first << " : " << i.second << endl;
     }
 
-    // 2. count
+    // 2. count - checks present or not
     cout << endl;
     cout << "present or not : " << m.count(11) << endl;
-
     cout << endl;
 
     // 3. erase
@@ -52,5 +51,6 @@ int main() {
     for(auto i=it; i!=m.end(); i++) {
         cout << i->first << endl;
     }
+    
     return 0;
 }

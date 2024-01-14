@@ -55,7 +55,6 @@ int main() {
     }
     cout << endl << endl;
 
-
     // 2. count -> checks whether element is present or not
     
     cout << "element present or not: " << s.count(5) << endl;
@@ -66,7 +65,6 @@ int main() {
         cout << *i << " ";
     }
     
-
     return 0;
 }
 

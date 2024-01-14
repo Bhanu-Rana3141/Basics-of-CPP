@@ -16,7 +16,9 @@ int main() {
     v.push_back(4);
     v.push_back(5);
 
-    cout << "3 present or not : " << binary_search(v.begin(), v.end(), 3) << endl;
+    cout << "3 present or not : " << binary_search(v.begin(), v.end(), 2) << endl;
+    cout << "Lower bound: " << lower_bound(v.begin(), v.end(), 2) - v.begin() << endl;
+    cout << "Lower bound: " << upper_bound(v.begin(), v.end(), 2) - v.begin() << endl;
 
     // Rotate
     cout << "rotate: ";

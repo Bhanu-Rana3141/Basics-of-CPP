@@ -1,5 +1,4 @@
-/*  1. jb 1 vector pura fill hojayega, phir ye 1 purane wale se double size ka vector create karega and then 
-       purane wala naye m copy hojayaga and purane wala dead hojayaga
+/*  1. jb 1 vector pura fill hojayega, phir ye 1 purane wale se double size ka vector create karega and then purane wala naye m copy hojayaga and purane wala dead hojayaga
     2. Dynamic - size can be changed
 
     *size -> kitne elements stored hain
@@ -20,7 +19,7 @@ void print(vector<int>&v) {
 int main() {
 
     vector<int> a(5,1);
-    vector<int> b(a);
+    vector<int> b(a); // copying b in a
     vector<int> c = {1,2,3,4,5};
 
     cout << "a: ";
@@ -73,7 +72,7 @@ int main() {
     cout << "size: " << v.size() << endl;
     cout << "capacity: " << v.capacity() << endl;
 
-    v.clear();
+    v.clear(); // size will become 0, but capacity will remain same
     cout << "After clear: ";
     cout << "size: " << v.size() << endl;
     cout << "capacity: " << v.capacity() << endl;

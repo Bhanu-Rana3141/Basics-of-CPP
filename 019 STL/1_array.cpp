@@ -2,7 +2,7 @@
 #include<array>
 using namespace std;
 
-// based on simple array
+// STL Array is based on simple array, and it is static that's why it is not used in CP
 
 int main() {
     

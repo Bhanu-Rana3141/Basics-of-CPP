@@ -4,8 +4,9 @@ Edge case : if 0 is present at first position(src) and last position(destination
 2. creating another matrix to track the position, where rat has visited and should not visit again
 3. rat can move down, left, right, up on basis of 3 condititons :
 * indexes if i and j should not be out of bound
-* the direction rat is visiting should be 1 in orignal matrix and true has to be marked in visiting matrix
-4. After reaching destination, find all other ways to reach destination use BACKTRACKING
+* the direction rat is visiting should be 1 in orignal matrix 
+* And it should not be visited earlier i.e should be false in visited matrix
+4. After reaching destination // BASE CASE, find all other ways to reach destination use BACKTRACKING
 */
 
 #include<iostream>
@@ -30,7 +31,7 @@ void solve(vector<vector<int>>&arr, int row, int col, int i, int j, vector<vecto
     
     // down
     if(isSafe(arr, i+1, j, row, col, visited)) {
-        visited[i][j] = true;
+        visited[i+1][j] = true;
         solve(arr, row, col, i+1, j, visited, path, output+'D');
         // backtrack
         visited[i+1][j] = false;
@@ -38,7 +39,7 @@ void solve(vector<vector<int>>&arr, int row, int col, int i, int j, vector<vecto
 
     // left
     if(isSafe(arr, i, j-1, row, col, visited)) {
-        visited[i][j] = true;
+        visited[i][j-1] = true;
         solve(arr, row, col, i, j-1, visited, path, output+'L');
         // backtrack
         visited[i][j-1] = false;
@@ -46,7 +47,7 @@ void solve(vector<vector<int>>&arr, int row, int col, int i, int j, vector<vecto
 
     // right
     if(isSafe(arr, i, j+1, row, col, visited)) {
-        visited[i][j] = true;
+        visited[i][j+1] = true;
         solve(arr, row, col, i, j+1, visited, path, output+'R');
         // backtrack
         visited[i][j+1] = false;
@@ -54,7 +55,7 @@ void solve(vector<vector<int>>&arr, int row, int col, int i, int j, vector<vecto
 
     // up
     if(isSafe(arr, i-1, j, row, col, visited)) {
-        visited[i][j] = true;
+        visited[i-1][j] = true;
         solve(arr, row, col, i-1, j, visited, path, output+'U');
         // backtrack
         visited[i-1][j] = false;

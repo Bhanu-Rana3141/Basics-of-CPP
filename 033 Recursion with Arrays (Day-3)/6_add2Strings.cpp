@@ -15,6 +15,7 @@ string add(string num1, int p1, string num2, int p2, int carry) {
         }
         return "";
     }
+    
     int n1 = (p1 >= 0 ? num1[p1] : '0') - '0';
     int n2 = (p2 >= 0 ? num2[p2] : '0') - '0';
     int sum = n1 + n2 + carry;

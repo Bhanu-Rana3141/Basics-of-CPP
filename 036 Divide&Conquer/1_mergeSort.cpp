@@ -50,7 +50,7 @@ void mergeSort(int arr[], int s, int e) {
 
     int mid = s+(e-s)/2;
 
-    // Sortng left part
+    // Sorting left part
     mergeSort(arr, s, mid); 
     
     //Sorting right part

@@ -41,9 +41,12 @@ void merge(int arr[], int s, int e) {
     while(rightIndex < len2) {
         arr[mainArrayIndex++] = right[rightIndex++];
     }
+    delete[] left;
+    delete[] right;
 }
 
 void mergeSort(int arr[], int s, int e) {
+    
     if(s >= e) {
         return;
     }

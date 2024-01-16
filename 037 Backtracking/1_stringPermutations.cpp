@@ -37,7 +37,7 @@ int main() {
     cout << "Enter string: ";
     cin >> s;
 
-    int i=0;
+    int i = 0;
     printPermutations(s,i);
     
     return 0;

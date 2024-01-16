@@ -25,7 +25,7 @@ int main() {
         cin >> arr[i];
     } 
 
-    int sum = 0;
+    int sum = 0; // need to calculate max sum
     int maxSum = INT_MIN;
     int index = 0;
 

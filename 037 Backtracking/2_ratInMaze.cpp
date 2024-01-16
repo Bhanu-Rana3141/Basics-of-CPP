@@ -3,7 +3,7 @@ Edge case : if 0 is present at first position(src) and last position(destination
 1. creating a 2-D matrix which will have 1 at its starting pos and at last pos
 2. creating another matrix to track the position, where rat has visited and should not visit again
 3. rat can move down, left, right, up on basis of 3 condititons :
-* indexes if i and j should not be out of bound
+* indexes i and j should not be out of bound
 * the direction rat is visiting should be 1 in orignal matrix 
 * And it should not be visited earlier i.e should be false in visited matrix
 4. After reaching destination // BASE CASE, find all other ways to reach destination use BACKTRACKING

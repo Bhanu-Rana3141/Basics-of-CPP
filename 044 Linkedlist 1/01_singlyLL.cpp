@@ -23,6 +23,7 @@ void insertAtHead(Node* &tail, Node* &head, int d) {
     if(head == NULL) {
         Node* temp = new Node(d);
         head = temp;
+        tail = temp;
     }
     else{
         Node* temp = new Node(d);

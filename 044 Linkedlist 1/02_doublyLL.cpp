@@ -85,7 +85,7 @@ void insertAtPosition(Node* &head, Node* &tail, int d, int pos){
         insertionAtTail(tail, head, d);
         return;
     }
-    // creating new nodef
+    // creating new node
     Node* nodeToInsert = new Node(d);
 
     nodeToInsert->next = temp->next;
@@ -120,7 +120,9 @@ void deleteNode(Node* &head, Node* &tail, int pos) {
         }
         prev->next = curr->next;
         curr->prev = NULL;
-        if(curr->next == NULL) tail = prev;
+        if(curr->next == NULL) { 
+            tail = prev;
+        }
         curr->next = NULL;
         delete curr;
     }

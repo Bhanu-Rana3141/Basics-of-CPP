@@ -1,10 +1,16 @@
+/*
+OPTIMISED - 2 POINTER(TORTOISE-HARE)
+TC - O(N/2) - O(N)
+SC - O(1)
+*/
+
 #include<iostream>
 using namespace std;
 
 class Node{
     public:
-    int data;
-    Node* next;
+        int data;
+        Node* next;
 
     Node(int d) {
         this->data = d;
@@ -31,7 +37,7 @@ void insertAtTail(Node* &tail, int data) {
         Node* node1 = new Node(data);
         tail = node1;
     }
-    else{
+    else {
         Node* node1 = new Node(data);
         tail->next = node1;
         tail = node1;

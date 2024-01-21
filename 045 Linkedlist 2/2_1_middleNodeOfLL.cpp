@@ -1,10 +1,18 @@
+/*
+BRUTE - 
+* CALCULATE LENGTH - O(N)
+* FIND MIDDLE - O(N/2)
+* TC - O(N)
+* SC - O(1)
+*/
+
 #include<iostream>
 using namespace std;
 
 class Node{
     public:
-    int data;
-    Node* next;
+        int data;
+        Node* next;
 
     Node(int d) {
         this->data = d;
@@ -18,7 +26,7 @@ void insertAtHead(Node* &head, Node* &tail, int data) {
         head = node1;
         tail = node1;
     }
-    else{
+    else {
         Node* node1 = new Node(data);
         node1->next = head;
         head = node1;
@@ -39,6 +47,16 @@ void insertAtTail(Node* &tail, int data) {
     return;
 }
 
+void print(Node* &head) {
+    Node* curr = head;
+    while(curr != NULL) {
+        cout << curr->data << " ";
+        curr = curr->next;
+    }
+    cout << endl;
+    return;
+}
+
 int getLength(Node* head) {
     int count = 0;
     while(head != NULL) {
@@ -48,14 +66,19 @@ int getLength(Node* head) {
     return count;
 }
 
-void print(Node* &head) {
-    Node* curr = head;
-    while(curr != NULL) {
-        cout << curr->data << " ";
-        curr = curr->next;
+// TORTOISE - HAIR APPROACH
+Node* middle(Node* head) {
+    Node* slow = head;
+    Node* fast = head->next;
+
+    while(fast != NULL) {
+        fast = fast->next;
+        if(fast != NULL) {
+            fast = fast->next;
+        }
+        slow = slow->next;
     }
-    cout << endl;
-    return;
+    return slow;
 }
 
 int main() {

@@ -2,7 +2,9 @@
 using namespace std;
 
 void reverse(int arr[], int n) {
-    int s=0,e=n-1;
+
+    int s = 0;
+    int e = n-1;
 
     while(s < e) {
         swap(arr[s],arr[e]);
@@ -30,8 +32,8 @@ int main() {
         }   
     }
 
-    cout<<"Tranpose of matrix: ";
-    cout<<endl;
+    cout << "Tranpose of matrix: ";
+    cout << endl;
     
     for(int i=0; i<n; i++) {
         for(int j=0; j<n; j++) {
@@ -45,7 +47,7 @@ int main() {
     // Rotating array by 90 degrees
     for(int i=0; i<n; i++) {
         // reverse(arr[i],n);
-        int s=0, e=n-1;
+        int s = 0, e = n-1;
         while(s < e) {
             swap(arr[i][s++], arr[i][e--]);
         } 

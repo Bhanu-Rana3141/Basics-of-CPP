@@ -1,11 +1,21 @@
+/*
+ITERATIVE APPROACH 
+TC - O(N)
+SC - O(1)
+
+RECURSIVE APPROACH 
+TC - O(N)
+SC - O(N)
+*/
+
 #include<iostream>
 using namespace std;
 
 class Node{
     public:
-    int data;
-    Node* next;
-    Node* prev;
+        int data;
+        Node* next;
+        Node* prev;
 
     Node(int data) {
         this->data = data;
@@ -44,7 +54,8 @@ void printHeadTail(Node* &head, Node* &tail) {
     cout << endl;
 }
 
-void reverse(Node* &head) {
+// ITERATIVE APPROACH
+void reverseIterative(Node* &head) {
     Node* curr = head;
     Node* back = NULL;  
     Node* forward = NULL;
@@ -57,7 +68,18 @@ void reverse(Node* &head) {
         curr = forward;
     }
     head = back;
-    return;
+}
+
+// RECURSIVE APPROACH
+void reverseRecursive(Node* &head, Node* &curr, Node* & back) {
+    if(curr == NULL) {
+        head = back;
+        return;
+    }
+
+    reverseRecursive(head, curr->next, curr);
+    curr->next = back;
+    curr->prev = curr->next;
 }
 
 int main(){
@@ -66,26 +88,19 @@ int main(){
     Node* tail = NULL;
 
     insertAtTail(head, tail, 1);
-    print(head);
-    printHeadTail(head, tail);
-
     insertAtTail(head, tail, 2);
-    print(head);
-    printHeadTail(head, tail);
-
     insertAtTail(head, tail, 3);
-    print(head);
-    printHeadTail(head, tail);
-
     insertAtTail(head, tail, 4);
-    print(head);
-    printHeadTail(head, tail);
 
     cout << "Input linked list : ";
     print(head);
 
     cout << "Reversed Linked list: ";
-    reverse(head);
+    // reverseIterative(head);
+
+    Node* curr = head;
+    Node* back = NULL;
+    reverseRecursive(head, curr, back);
     print(head);
    
     return 0;

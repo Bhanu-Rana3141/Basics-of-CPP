@@ -3,9 +3,9 @@ using namespace std;
 
 class Node{
     public:
-    int data;
-    Node* prev;
-    Node* next;
+        int data;
+        Node* prev;
+        Node* next;
 
     // constructor
     Node(int d) {

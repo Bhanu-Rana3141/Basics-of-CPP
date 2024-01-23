@@ -7,36 +7,36 @@ using namespace std;
 int main() {
 
     int n; //row size;
-    cout<<"Enter row size: ";
-    cin>>n;
+    cout << "Enter row size: ";
+    cin >> n;
 
     int m; //col size
-    cout<<"Enter col size: ";
-    cin>>m;
+    cout << "Enter col size: ";
+    cin >> m;
 
     int arr[n][m];
     for(int i=0; i<n; i++){
         for(int j=0; j<m; j++){
-            cin>>arr[i][j];
+            cin >> arr[i][j];
         }
     }
 
     cout << endl;
 
     int target;
-    cout<<"Enter target: ";
-    cin>>target;
+    cout << "Enter target: ";
+    cin >> target;
 
  /*  linear approach   --> O(m*n)
     for(int i=0; i<n; i++) {
         for(int j=0; j<m; j++) {
             if(arr[i][j] == target) {
-                cout<<"true";
+                cout << "true";
                 return 0;
             }
         }
     }
-    cout<<"False";
+    cout <<  "False";
 */
 
     // Binary search Approach   --> O(log(n*m))
@@ -45,21 +45,21 @@ int main() {
     int e = n*m-1;
     int mid = s+(e-s)/2;
 
-    while(s<=e) {
+    while(s <= e) {
         int element = arr[mid/m][mid%m];  // m -> no of cols
 
         if(element == target) {
-            cout<<"True";
+            cout << "True";
             return 0;
         }
         else if(element > target) {
-            e=mid-1;
+            e = mid-1;
         }
         else{
-            s=mid+1;
+            s = mid+1;
         }
         mid = s+(e-s)/2;
     } 
-    cout<<"False";
+    cout << "False";
     return 0;
 }

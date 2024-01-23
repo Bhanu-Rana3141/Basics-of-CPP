@@ -91,6 +91,7 @@ int main() {
     insertAtTail(tail, 3);
     insertAtTail(tail, 4);
     insertAtTail(tail, 5);
+    insertAtTail(tail, 6);
 
     cout << "Input Linked List: ";
     print(head);
@@ -98,7 +99,8 @@ int main() {
     int length = getLength(head);
     cout << "Length of Linked list: " << length << endl;
     
-    for(int i=0; i<length/2; i++) {
+    int mid = length/2;
+    while(mid--) {
         head = head->next;
     }
 

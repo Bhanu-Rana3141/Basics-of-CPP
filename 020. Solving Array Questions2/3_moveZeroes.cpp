@@ -9,6 +9,7 @@ void printArray(vector<int>&arr){
 }
 
 int main(){
+    
     int n;
     cout<<"Enter n: ";
     cin >> n; 

@@ -20,33 +20,16 @@ int main() {
 
     cout << endl;
 
-/* 
-    Approach 1 -> time complexity O(n*m)
-    int row=0;
-    for(int col = 0; col<m; col++) {
-        if(row <= 0){
-            for(row=0; row<n; row++) {
-                cout<<arr[row][col];
-            }
-        }
-        else{
-            for(row=n-1; row>=0; row--){
-                cout<<arr[row][col]<<" ";
-            }
-        }
-    }
-*/  
-
-// Approach 2 -> O(n*m)
+// TC -> O(n*m)
     for(int col = 0; col<m; col++){
-        if(col % 2 !=0){
+        if(col % 2 != 0){
             for(int row = n-1; row>=0; row--) {
-                cout<<arr[row][col]<<" ";
+                cout << arr[row][col] << " ";
             }
         }
         else{
-            for(int row=0; row<n; row++){
-                cout<<arr[row][col]<<" ";
+            for(int row = 0; row<n; row++){
+                cout << arr[row][col] << " ";
             }
         }
     }

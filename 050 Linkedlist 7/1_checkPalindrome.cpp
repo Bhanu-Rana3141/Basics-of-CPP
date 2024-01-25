@@ -57,27 +57,27 @@ void print(Node* head) {
 }
 
 // APPROACH 1
-// bool checkPalindrome1(Node* head) {
-//     vector<int> nodeData;
+bool checkPalindrome1(Node* head) {
+    vector<int> nodeData;
 
-//     while(head != NULL) {
-//         nodeData.push_back(head->data);
-//         head = head->next;
-//     }
+    while(head != NULL) {
+        nodeData.push_back(head->data);
+        head = head->next;
+    }
 
-//     int s = 0;
-//     int e = nodeData.size() - 1;
+    int s = 0;
+    int e = nodeData.size() - 1;
 
-//     while(s < e) {
-//         if(nodeData[s] != nodeData[e]) {
-//             return false;
-//         }
-//         else {
-//             s++, e--;
-//         }
-//     }
-//     return true;
-// }
+    while(s < e) {
+        if(nodeData[s] != nodeData[e]) {
+            return false;
+        }
+        else {
+            s++, e--;
+        }
+    }
+    return true;
+}
 
 // APPROACH 2
 Node* getMiddle(Node* head) {
@@ -123,6 +123,8 @@ int main() {
 
     cout << "Linkedlist: ";
     print(head);
+
+    // bool ans = checkPalindrome1(head);
 
     // step 1 - find middle
     Node* middle = getMiddle(head);

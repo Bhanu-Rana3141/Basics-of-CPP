@@ -6,9 +6,9 @@ using namespace std;
 int pivotIndex(int arr[], int n){
     int s = 0;
     int e = n-1;
-    int mid = s+(e-s)/2;
+    int mid = s + (e-s)/2;
 
-    while(s<e){
+    while(s < e){
         if(arr[mid] >= arr[0]) {
             s = mid+1;
         }
@@ -21,6 +21,7 @@ int pivotIndex(int arr[], int n){
 }
 
 int main() {
+
     int n;
     cout << "Enter n: ";
     cin >> n;

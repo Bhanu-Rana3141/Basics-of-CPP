@@ -7,6 +7,10 @@ and element at that position will be unique element
 TC O(n^2)
 SC O(1)
 
+APPROACH 3 - Hashing 
+* TC - O(N)
+* SC - O(N)
+
 Approach 3 -> Optimised approach using XOR
 TC O(n)
 SC O(1)
@@ -14,8 +18,8 @@ SC O(1)
 
 #include <iostream>
 using namespace std;
-/*
-int unique(int arr[], int n){
+
+int unique1(int arr[], int n){
     for(int i=0; i<n; i++){
         if(arr[i] == -1){
             continue;
@@ -35,7 +39,7 @@ int unique(int arr[], int n){
 }
 
 
-int unique(int arr[], int n){
+int unique2(int arr[], int n){
     for(int i=0; i<n; i++){
         if(arr[i] == -1){
             continue;
@@ -52,8 +56,8 @@ int unique(int arr[], int n){
         }
     }
 }
-*/
-int unique(int arr[],int n){
+
+int unique3(int arr[],int n){
     int ans = 0;
     for(int i=0; i<n; i++){
         ans ^= arr[i];
@@ -71,8 +75,9 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
-
-    cout << "Unique element: " << unique(arr,n);
+    // cout << "Unique element: " << unique1(arr,n);
+    // cout << "Unique element: " << unique2(arr,n);
+    cout << "Unique element: " << unique3(arr,n);
 
     return 0;
 }

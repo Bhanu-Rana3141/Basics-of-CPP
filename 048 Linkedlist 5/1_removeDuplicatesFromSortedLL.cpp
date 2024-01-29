@@ -1,5 +1,5 @@
 /*
-APPROACH 1 - MAP
+APPROACH 1 - Convert linkedlist in array and then: USE SET OR 2 POINTER APPROACH
 * TC - O(N)
 * SC - O(N)
 

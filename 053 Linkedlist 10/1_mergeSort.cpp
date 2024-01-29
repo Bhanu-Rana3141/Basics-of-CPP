@@ -1,12 +1,23 @@
+/*
+APPROACH - MERGE SORT
+* Find middle of list
+* Divide in 2 parts left and right
+* Sort both parts recursively
+* Merge both parts
+* TC - O(N LOG N)
+* SC - O(LOG N)
+
+Q. Why quick sort is preferred in arrays and merge sort in linkedlists ?
+*/
+
 #include<iostream>
-#include<map>
 using namespace std;
 
 class Node {
     public:
         int data;
         Node* next;
-
+    
     Node(int data) {
         this->data = data;
         this->next = NULL;
@@ -35,28 +46,22 @@ void print(Node* head) {
 
 Node* findMid(Node* head) {
     Node* slow = head;
-    Node* fast = fast->next;
-
+    Node* fast = head->next;
+    
     while(fast != NULL && fast->next != NULL) {
-        slow = slow->next;
         fast = fast->next->next;
+        slow = slow->next;
     }
     return slow;
 }
 
 Node* merge(Node* left, Node* right) {
-    if(left == NULL) {
-        return right;
-    }
-    if(right == NULL) {
-        return left;
-    }
-    // dummy node
+
     Node* ans = new Node(-1);
     Node* temp = ans;
 
     while(left != NULL && right != NULL) {
-        if(left->data < right->data) {
+        if(left->data <= right->data) {
             temp->next = left;
             temp = left;
             left = left->next;
@@ -77,20 +82,19 @@ Node* merge(Node* left, Node* right) {
     while(right != NULL) {
         temp->next = right;
         temp = right;
-        right = right->next;
+        right = right->next; 
     }
-
-    ans = ans->next;
-    return ans;
+    return ans->next;
 }
 
+// SORT
 Node* mergeSort(Node* head) {
-    // Base case - Already sorted
     if(head == NULL || head->next == NULL) {
         return head;
     }
 
     Node* mid = findMid(head);
+
     Node* left = head;
     Node* right = mid->next;
     mid->next = NULL;
@@ -98,14 +102,14 @@ Node* mergeSort(Node* head) {
     left = mergeSort(left);
     right = mergeSort(right);
 
-    Node* result = merge(left, right);
-    return result;
+    Node* ans = merge(left, right);
+    return ans;
 }
 
 int main() {
 
     int n;
-    cout << "Enter size of LL : ";
+    cout << "Enter no of nodes: ";
     cin >> n;
 
     Node* head = NULL;
@@ -117,8 +121,11 @@ int main() {
         insertAtTail(head, tail, input);
     }
 
+    cout << "Linkedlist: ";
+    print(head);
+
     Node* ans = mergeSort(head);
     print(ans);
-
+    
     return 0;
 }

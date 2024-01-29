@@ -4,7 +4,7 @@ using namespace std;
 int binarySearch(int *arr, int size, int key){
     int start = 0;
     int end = size-1;
-    int mid = start+(end-start)/2;
+    int mid = start + (end-start)/2;
 
     while(start <= end){
         if(arr[mid] == key){
@@ -30,7 +30,7 @@ int main() {
     cout << "Enter key: ";
     cin >> key;
 
-    int even_index = binarySearch(even,6,key);
+    int even_index = binarySearch(even, 6, key);
     cout << "Key found at index in even array: " << even_index << endl;
 
     int odd_index = binarySearch(odd,5,key);

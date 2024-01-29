@@ -1,8 +1,15 @@
 /*
-APPROACH 1 
+APPROACH 1 - IN THIS APPROACH DATA IS REPLACED
 * Count 0 1 2 - TC : O(N)
 * Place them in sorting order - TC : O(N)
 * BUT HERE DATA IS REPLACED
+* TC - O(N)
+* SC - O(N)
+
+APPROACH 2 - IN THIS APPROACH LINKS ARE CHANGED, DATA IS NOT REPLACED
+* Creating dummy nodes for 0, 1 , 2 and further connecting 0 1 2 making them separate nodes
+* TC - O(N)
+* SC - O(N)
 */
 
 #include<iostream>
@@ -31,6 +38,7 @@ void insertAtTail(Node* &head, Node* &tail, int element) {
     }
 }
 
+// APPROACH 1
 Node* sort(Node* &head) {
     int zeroCount = 0;
     int oneCount = 0;
@@ -68,6 +76,53 @@ Node* sort(Node* &head) {
     return head;
 }
 
+void insert(Node* &tail, Node* &curr) {
+    tail->next = curr;
+    tail = curr;
+}
+
+// APPROACH 2
+Node* sortList(Node* head) {
+    Node* zeroHead = new Node(-1);
+    Node* zeroTail = zeroHead;
+    Node* oneHead = new Node(-1);
+    Node* oneTail = oneHead;
+    Node* twoHead = new Node(-1);
+    Node* twoTail = twoHead;
+
+    Node* curr = head;
+    while(curr != NULL) {
+        if(curr->data == 0) {
+            insert(zeroTail, curr);
+        }
+        else if(curr->data == 1) {
+            insert(oneTail, curr);
+        }
+        else {
+            insert(twoTail, curr);
+        }
+        curr = curr->next;
+    } 
+
+    if(oneHead->next != NULL) {
+        // If list one is not empty
+        zeroTail->next = oneHead->next;
+    }
+    else {
+        // if list one is empty
+        zeroTail->next = twoHead->next;
+    }
+
+    oneTail->next = twoHead->next;
+    twoTail->next = NULL;
+
+    head = zeroHead->next;
+    delete zeroHead;
+    delete oneHead;
+    delete twoHead;
+    return head;
+}
+
 void print(Node* head) {
     while(head != NULL) {
         cout << head->data << " ";
@@ -91,7 +146,8 @@ int main() {
         insertAtTail(head, tail, element);
     }
 
-    Node* ans = sort(head);
+    // Node* ans = sort(head);
+    Node* ans = sortList(head);
     print(ans);
 
     return 0;

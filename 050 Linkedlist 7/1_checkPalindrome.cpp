@@ -107,7 +107,6 @@ Node* reverse(Node* &head) {
 
 int main() {
 
-    
     Node* head = NULL;
     Node* tail = NULL;
 

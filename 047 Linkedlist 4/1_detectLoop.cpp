@@ -5,6 +5,9 @@ DETECT LOOP
 APPROACH 1 - USING MAP DATA STRUCUTRE
 * Creating a map keeping track of visited nodes
 * if any node is visited twice, then loop is present else NOT present
+* By using this approach :
+1. Loop can be detected
+2. Where the loop will be detected that will be the starting node of loop.
 * TC - O(N)
 * SC - O(N) 
 
@@ -55,7 +58,7 @@ void print(Node* head) {
 
 // VARIATION 1 - DETECT LOOP
 
-/* APPROACH 1
+/* APPROACH 1 - 
 bool isLoop(Node* head) {
     map<Node*, bool> isVisited;
 

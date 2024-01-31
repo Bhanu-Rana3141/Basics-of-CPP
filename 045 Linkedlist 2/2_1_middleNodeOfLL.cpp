@@ -66,7 +66,7 @@ int getLength(Node* head) {
     return count;
 }
 
-// TORTOISE - HAIR APPROACH
+// APPROACH 2 : TORTOISE - HAIR APPROACH
 Node* middle(Node* head) {
     Node* slow = head;
     Node* fast = head->next;

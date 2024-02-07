@@ -23,6 +23,7 @@ void insertElement(stack<int>& st, int x) {
     st.pop();
 
     insertElement(st, x);
+    
     st.push(topElement);
 }
 

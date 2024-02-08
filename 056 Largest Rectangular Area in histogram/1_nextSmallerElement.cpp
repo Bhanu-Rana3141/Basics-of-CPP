@@ -72,6 +72,7 @@ int main() {
     }
 
     // vector<int> ans = nextSmaller1(arr, n);
+    
     vector<int> ans = nextSmaller2(arr, n);
 
     print(ans);

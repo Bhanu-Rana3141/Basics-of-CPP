@@ -1,3 +1,5 @@
+// TC - O(N * LOG SUM) - n is size of array and sum is sum of all the elements in array 
+
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -26,7 +28,6 @@ int main() {
 
     vector<int> arr = {10, 20, 30, 40};
     int m = 2;
-
     int n = arr.size();
 
     int s = 0;

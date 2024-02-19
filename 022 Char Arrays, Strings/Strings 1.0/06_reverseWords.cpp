@@ -29,7 +29,6 @@ int main() {
     while(j < s.size()) {
         if(s[j] == ' ') {
             reversee(s, i, j-1);
-            i = j;
             j++;
             while(s[j] == ' ') {
                 s.erase(j, 1);

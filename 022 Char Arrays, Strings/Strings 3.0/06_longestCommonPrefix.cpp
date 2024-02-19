@@ -30,6 +30,8 @@ int main() {
             i++;
         }
     }
+
     cout << ans;
+    
     return 0;
 }

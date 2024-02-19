@@ -2,6 +2,7 @@
 using namespace std;
 
  char isUpper(char ch) {
+	
 	if(ch >='a' && ch <= 'z') {
 		return ch-'a'+'A';
 	}
@@ -12,11 +13,11 @@ using namespace std;
 
 int main() {
 
-    string s;
+	string s;
     cout << "Enter s: ";
     getline(cin , s);
 
-   s[0] = isUpper(s[0]);
+   	s[0] = isUpper(s[0]);
 
 	for(int i=1; i<s.size(); i++) {
 		if(s[i] == ' ') {

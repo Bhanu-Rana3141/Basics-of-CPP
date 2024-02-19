@@ -41,5 +41,6 @@ int main() {
     else{
         cout << "No, 0 is not majority element";
     }
+    
     return 0;
 }

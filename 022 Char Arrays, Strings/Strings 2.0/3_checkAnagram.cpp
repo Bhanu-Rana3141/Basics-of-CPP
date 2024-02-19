@@ -21,6 +21,7 @@ OPTIMISED version of APPROACH 2
 using namespace std;
 
 void printFrequencyVector(vector<int> freq) {
+
     for(int i=0; i<freq.size(); i++) {
         cout << freq[i] << " ";
     }
@@ -28,6 +29,7 @@ void printFrequencyVector(vector<int> freq) {
 }
 
 void sortedString(string& s) {
+
     vector<int>freq(26, 0);
 
     for(int i=0; i<s.length(); i++) {
@@ -69,6 +71,7 @@ bool isAnagram(string s, string t) {
 }
 
 bool isAnagramOptimised(string s, string t) {
+    
     vector<int> freq(26,0);
 
     for(int i=0; i<s.length(); i++) {

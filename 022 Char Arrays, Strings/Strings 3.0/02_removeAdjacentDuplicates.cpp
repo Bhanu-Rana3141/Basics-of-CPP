@@ -18,6 +18,7 @@ string removeDuplicates(string s) {
 }
 
 void removeDuplicate(string& s) {
+
     int i=0;
     while(s[i+1] != '\0') {
         if(s[i] == s[i+1]) {
@@ -42,6 +43,5 @@ int main() {
     // string ans = removeDuplicates(s);
     // cout << ans;
    
-
     return 0;
 }

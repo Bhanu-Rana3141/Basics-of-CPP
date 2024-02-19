@@ -3,9 +3,10 @@
 using namespace std;
 
 int binarySearch(string &s, int start, int end, char target) {
+
     int mid = start+(end-start)/2;
 
-    while(start<=end) {
+    while(start <= end) {
         if(s[mid] == target) {
             return mid;
         }
@@ -31,6 +32,7 @@ int main() {
     cin >> target;
 
     int index = binarySearch(s, 0, s.size()-1, target);
+
     if(index > -1) {
         cout << "Element present at index: " << index;
     }

@@ -20,6 +20,7 @@ void sort(int arr[], int n){
 }
 
 int main() {
+
     int n;
     cout << "Enter n: ";
     cin >> n;
@@ -33,5 +34,6 @@ int main() {
     sort(arr,n);
 
     printArray(arr,n);
+    
     return 0;
 }

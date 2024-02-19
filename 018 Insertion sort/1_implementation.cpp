@@ -2,6 +2,7 @@
 using namespace std;
 
 void printArray(int arr[], int n) {
+
     for(int i=0; i<n; i++) {
         cout << arr[i] << " ";
     }
@@ -25,6 +26,7 @@ void insertion_sort(int arr[], int n) {
 }
 
 void using_while_loop(int arr[], int n){
+
     for(int i=1; i<n; i++) {
         int k = arr[i];
         int j = i-1;
@@ -38,6 +40,7 @@ void using_while_loop(int arr[], int n){
 }
 
 int main() {
+            
     int n;
     cout << "Enter n: ";
     cin >> n;

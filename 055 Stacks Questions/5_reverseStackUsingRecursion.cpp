@@ -1,4 +1,11 @@
-// TC - O(N^2) && SC - O(N) 
+/*
+APPROACH 1 - USING EXTRA STACK
+TC - O(N) && SC - O(N)
+
+APPROACH 2 - RECURSION
+TC - O(N^2) && SC - O(N)
+
+*/
 
 #include<iostream>
 #include<stack>
@@ -15,7 +22,9 @@ void print(stack<int> st) {
 
 
 // APPROACH 1 - ITERATIVE
-stack<int> solve_1(stack<int> st, stack<int>& reverseStack) {
+stack<int> solve_1(stack<int> st) {
+
+    stack<int> reverseStack;
 
     while(st.size() != 0) {
         reverseStack.push(st.top());
@@ -64,9 +73,7 @@ int main() {
     cout << "Input stack: ";
     print(st);
 
-    stack<int> reverseStack;
-
-    // stack<int> reverse = solve_1(st, reverseStack);
+    // stack<int> reverse = solve_1(st);
     // cout << "output Stack: ";
     // print(reverseStack);
 

@@ -13,7 +13,7 @@ void print(vector<int> arr, int n) {
 
 vector<int> previousSmaller_1(vector<int>& arr, int n) {
 
-    vector<int> ans(n, 0);
+    vector<int> ans(n, -1);
 
     for(int i=n-1; i>=0; i--) {
         for(int j=i-1; j>=0; j--) {
@@ -21,9 +21,6 @@ vector<int> previousSmaller_1(vector<int>& arr, int n) {
                 ans[i] = arr[j];
                 break;
             }
-        }
-        if(ans[i] == 0) {
-            ans[i] = -1;
         }
     }
     return ans;
@@ -37,7 +34,7 @@ vector<int> previousSmaller_2(vector<int>& arr, int n) {
 
     for(int i=0; i<n; i++) {
 
-        while(st.top() > arr[i]) {
+        while(st.top() >= arr[i]) {
             st.pop();
         }
 

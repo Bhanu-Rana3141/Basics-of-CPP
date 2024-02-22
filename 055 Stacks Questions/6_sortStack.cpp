@@ -4,7 +4,7 @@ APPROACH 1 - USE ARRAY
 * Sort array 
 * Create a another stack and copy values from the sorted array
 
-* TC - O(N) + O(N* LOG N) + O(N) : O(N)
+* TC - O(N) + O(N * LOG N) + O(N) : O(N * LOG N)
 * SC - O(N) - array, O(N) - stack, : O(2N)
 
 

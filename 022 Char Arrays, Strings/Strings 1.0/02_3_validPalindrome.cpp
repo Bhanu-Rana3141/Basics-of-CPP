@@ -14,7 +14,7 @@ bool valid(char ch) {
     else{
         return false;
     }
-}
+}      
 
 char toLowerCase(char ch) {
     if(ch >= 'A' && ch <= 'Z') {

@@ -29,6 +29,10 @@ int celebrity_1(vector<vector<int>> arr, int n) {
             }
         }
         
+        if(isCelebrity == false) {
+            continue;
+        }
+
         // check col
         for(int row=0; row<n; row++) {
             if(i == row) {

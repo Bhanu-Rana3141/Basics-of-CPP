@@ -23,19 +23,14 @@ void print(vector<int> arr) {
 
 vector<int> nextSmaller1(vector<int>& arr, int n) {
 
-    vector<int> ans;
-    
+    vector<int> ans(n, -1);
+
     for(int i=0; i<n; i++) {
-        bool smaller = false;
         for(int j=i+1; j<n; j++) {
             if(arr[j] < arr[i]) {
-                ans.push_back(arr[j]);
-                smaller = true;
+                ans[i] = arr[j];
                 break;
             }
-        }
-        if(smaller == false) {
-            ans.push_back(-1);
         }
     }
     return ans;
@@ -44,7 +39,7 @@ vector<int> nextSmaller1(vector<int>& arr, int n) {
 vector<int> nextSmaller2(vector<int> arr, int n) {
 
     stack<int> st;
-    st.push(-1);
+    st.push(-1); 
 
     vector<int> ans(n);
 
@@ -71,9 +66,9 @@ int main() {
         cin >> arr[i];
     }
 
-    // vector<int> ans = nextSmaller1(arr, n);
+    vector<int> ans = nextSmaller1(arr, n);
     
-    vector<int> ans = nextSmaller2(arr, n);
+    // vector<int> ans = nextSmaller2(arr, n);
 
     print(ans);
 

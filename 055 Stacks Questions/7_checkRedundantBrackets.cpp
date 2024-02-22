@@ -12,7 +12,7 @@ bool isRedundant(string s) {
         if(s[i] == '(' || s[i] == '+' || s[i] == '-' || s[i] == '*' || s[i] == '/') {
             st.push(s[i]);
         }
-       else {
+        else {
             // ya toh ')' bracket or lowercase alphabet
             if(s[i] == ')') {
                 bool isRedundant = true;
@@ -21,7 +21,7 @@ bool isRedundant(string s) {
                         isRedundant = false;
                     }
                     st.pop();
-                }
+                 }
                 if(isRedundant == true) {
                     return true;
                 }

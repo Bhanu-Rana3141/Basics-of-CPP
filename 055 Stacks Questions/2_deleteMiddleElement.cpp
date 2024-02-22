@@ -13,7 +13,25 @@ void printStack(stack<int> st) {
     cout << endl;
 }
 
-void deleteMiddle(stack<int>& st, int count, int size) {
+void deleteMiddle_1(stack<int> &st, int size) {
+
+    int mid = size / 2;
+    stack<int> temp;
+    
+    for(int i=0; i<mid; i++) {
+        temp.push(st.top());
+        st.pop();
+    }
+
+    st.pop(); // middle element
+
+    while(temp.size() != 0) {
+        st.push(temp.top());
+        temp.pop();
+    }
+}
+
+void deleteMiddle_2(stack<int>& st, int count, int size) {
 
     if(count == size/2) {
         st.pop();
@@ -24,7 +42,7 @@ void deleteMiddle(stack<int>& st, int count, int size) {
 
     st.pop();
 
-    deleteMiddle(st, count + 1, size);
+    deleteMiddle_2(st, count + 1, size);
 
     st.push(topElement);
 }
@@ -44,7 +62,8 @@ int main() {
     printStack(st);
 
     int count = 0;
-    deleteMiddle(st, count, n);
+    // deleteMiddle_1(st, n);
+    deleteMiddle_2(st, count, n);
 
     printStack(st); 
     

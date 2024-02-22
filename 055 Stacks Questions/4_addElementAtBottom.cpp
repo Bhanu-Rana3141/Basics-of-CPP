@@ -1,4 +1,10 @@
-// TC - O(N) && SC - O(N)
+/*
+APPROACH 1 - USING EXTRA STACK
+TC - O(N) && SC - O(N)
+
+APPROACH 2 - RECURSION
+TC - O(N) && SC - O(N)
+*/
 
 #include<iostream>
 #include<stack>
@@ -12,7 +18,24 @@ void printStack(stack<int>& st) {
     }
 }
 
-void insertElement(stack<int>& st, int x) {
+void insertElement_1(stack<int> &st, int x) {
+
+    stack<int> temp;
+
+    while(st.size() != 0) {
+        temp.push(st.top());
+        st.pop();
+    }
+
+    st.push(x);
+
+    while(temp.size() != 0) {
+        st.push(temp.top());
+        temp.pop();
+    }
+}
+
+void insertElement_2(stack<int>& st, int x) {
 
     if(st.size() == 0) {
         st.push(x);
@@ -22,7 +45,7 @@ void insertElement(stack<int>& st, int x) {
     int topElement = st.top();
     st.pop();
 
-    insertElement(st, x);
+    insertElement_2(st, x);
     
     st.push(topElement);
 }
@@ -38,7 +61,8 @@ int main() {
 
     int x = 100;
 
-    insertElement(st, x);
+    insertElement_1(st, x);
+    // insertElement_2(st, x);
 
     printStack(st);
     

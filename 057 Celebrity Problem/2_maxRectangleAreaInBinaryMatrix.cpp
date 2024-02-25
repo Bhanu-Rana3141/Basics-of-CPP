@@ -1,3 +1,5 @@
+// TC - O(N^2) && SC - O(N)
+
 #include<iostream>
 #include<vector>
 #include<stack>

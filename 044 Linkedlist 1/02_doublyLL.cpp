@@ -20,7 +20,7 @@ class Node{
     } 
 };
 
-void print(Node* &head){
+void print(Node* &head) {
     Node* temp = head;
     while(temp != NULL) {
         cout << temp->data << " ";
@@ -68,7 +68,7 @@ void insertionAtTail(Node* & tail,Node* &head, int d) {
     }
 }
 
-void insertAtPosition(Node* &head, Node* &tail, int d, int pos){
+void insertAtPosition(Node* &head, Node* &tail, int d, int pos) {
     if(pos == 1) {
         insertionAtHead(tail, head, d);
         return;

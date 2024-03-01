@@ -21,7 +21,7 @@ bool isRedundant(string s) {
                         isRedundant = false;
                     }
                     st.pop();
-                 }
+                }
                 if(isRedundant == true) {
                     return true;
                 }

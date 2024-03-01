@@ -8,12 +8,16 @@ bool isValid(string s) {
 
     stack<char> st;
 
-    for(int i=0; i<s.length(); i++) {
+    for(int i=0; i<s.size(); i++) {
+
         if(s[i] == '(' || s[i] == '[' || s[i] == '{') {
             st.push(s[i]);
         }
         else {
-            if(!st.empty()) {
+            if(st.size() == 0) {
+                return false;
+            }
+            else {
                 if((st.top() == '(' && s[i] == ')') || (st.top() == '[' && s[i] == ']') || (st.top() == '{' && s[i] == '}')) {
                     st.pop();
                 }
@@ -21,12 +25,9 @@ bool isValid(string s) {
                     return false;
                 }
             }
-            else {
-                return false;
-            }
         }
     }
-    return st.empty() ? true : false;
+    return st.size() == 0 ? true : false;
 }
 
 int main() {

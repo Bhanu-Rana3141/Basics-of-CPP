@@ -40,33 +40,35 @@ void buildFromLevelOrderTraversal(node* &root) {
     // 1 3 5 7 11 17 -1 -1 -1 -1 -1 -1 -1
 
     queue<node*> q;
-    cout << "Enter data for root: ";
+
     int d;
+    cout << "Enter root element data: ";
     cin >> d;
+
     root = new node(d);
     q.push(root);
 
-    while(!q.empty()) {
-        node* temp = q.front();
-        q.pop();
+    while(q.size() != 0) {
 
-        cout << "Enter left data for : " << temp -> data << endl;
-        int leftData;
+        int leftData;  
+        cout << "Enter left data for " << q.front() -> data << " : "; 
         cin >> leftData;
 
         if(leftData != -1) {
-            temp -> left = new node(leftData);
-            q.push(temp -> left);
+            q.front() -> left = new node(leftData);
+            q.push(q.front() -> left);
         }
 
-        cout << "Enter right data for: " << temp -> data << endl;
         int rightData;
+        cout << "Enter right data for " << q.front() -> data << " : ";
         cin >> rightData;
 
         if(rightData != -1) {
-            temp -> right = new node(rightData);
-            q.push(temp -> right);
+            q.front() -> right = new node(rightData);
+            q.push(q.front() -> right);
         }
+
+        q.pop();
     }
 }
 
@@ -77,25 +79,27 @@ void levelOrderTraversal(node* root) {
     q.push(root);
     q.push(NULL);
 
-    while(!q.empty()) {
+    while(q.size() != 0) {
+
         node* temp = q.front();
         q.pop();
 
         if(temp == NULL) {
             cout << endl;
-            if(!q.empty()) {
+            if(q.size() != 0) {
                 q.push(NULL);
             }
         }
         else {
-            cout << temp -> data << " "; 
+            cout << temp -> data << " ";
+
             if(temp -> left != NULL) {
                 q.push(temp -> left);
             }
 
             if(temp -> right != NULL) {
                 q.push(temp -> right);
-            } 
+            }
         }
     }
 }

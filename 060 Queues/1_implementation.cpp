@@ -72,6 +72,5 @@ int main() {
     q.enqueue(1);
     q.enqueue(1);
 
-    
     return 0;
 }

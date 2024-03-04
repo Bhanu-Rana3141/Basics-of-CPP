@@ -74,7 +74,7 @@ void buildFromLevelOrderTraversal(node* &root) {
 
 void levelOrderTraversal(node* root) {
 
-    // level order traversal is done by using separator
+    // level order traversal is done by using separator, here NULL is used as separator
     queue<node*> q;
     q.push(root);
     q.push(NULL);

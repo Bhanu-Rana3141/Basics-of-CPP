@@ -107,7 +107,7 @@ int main() {
     int count = 0;
     leafNodeCount(root, count);
 
-    cout << "total leaf nodes: " <<count;
+    cout << "total leaf nodes: " << count;
     
     return 0;
 }

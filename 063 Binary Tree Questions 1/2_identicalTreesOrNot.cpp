@@ -100,7 +100,7 @@ bool isSame(Node* r1, Node* r2) {
     bool value = r1 -> data == r2 -> data;
 
     if(left && right && value) {
-        return true;
+        return true; 
     }
     else {
         return false;

@@ -2,9 +2,11 @@
 using namespace std;
 
 void sayDigit(int n, string numbers[], string& ans) {
+
     if(n == 0) {
         return;
     }
+    
     int digit = n % 10;
     n /= 10;
     sayDigit(n, numbers, ans);
@@ -21,7 +23,6 @@ void sayDigit(int n, string arr[]) {
     sayDigit(n, arr);
     
     cout << arr[digit] << " ";
-
 }
 
 int main() {

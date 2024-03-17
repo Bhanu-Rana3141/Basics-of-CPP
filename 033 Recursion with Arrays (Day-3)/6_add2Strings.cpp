@@ -9,6 +9,7 @@ using namespace std;
 
 // Due to pass by value, new memory will be created multiple times and stack gets filled and uses more memory which reduces time and space complexity
 string add(string num1, int p1, string num2, int p2, int carry) {
+
     if(p1<0 && p2<0) {
         if(carry != 0) {
             return string(1, carry + '0');
@@ -30,6 +31,7 @@ string add(string num1, int p1, string num2, int p2, int carry) {
 
 // Optimised - using pass by reference, a string ans is passed and changes are done in ans string itself no new memory is created which save some time and space
 void add(string& num1, int p1, string& num2, int p2, int carry, string& ans) {
+
     if(p1<0 && p2<0) {
         if(carry != 0) {
             ans.push_back(carry + '0');
@@ -51,6 +53,7 @@ void add(string& num1, int p1, string& num2, int p2, int carry, string& ans) {
     add(num1, p1-1, num2, p2-1, carry, ans);
     ans.push_back(digit + '0');
 }
+
 int main() {
 
     string num1;

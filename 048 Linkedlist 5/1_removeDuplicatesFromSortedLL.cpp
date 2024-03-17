@@ -35,22 +35,27 @@ void insertAtTail(Node* &head, Node* &tail, int data) {
     }
 }
 
-void removeDuplicates(Node* &head) {
-    Node* curr = head;
-    while(curr->next != NULL) {
-        if(curr->data == curr->next->data) {
-            Node* next_next = curr->next->next;
-            Node* nodeToDelete = curr->next;
-            delete nodeToDelete;
-            curr->next = next_next;
+Node* removeDuplicates(Node* &head) {
+
+    if(head == NULL || head -> next == NULL) {
+        return head;
+    }
+
+    Node* temp = head;
+
+    while(temp -> next != NULL) {
+        if(temp -> data == temp -> next -> data) {
+            temp -> next = temp -> next -> next;
         }
         else {
-            curr = curr->next;
+            temp = temp -> next;
         }
-    }
+    }   
+    return head;
 }
 
 void print(Node* head) {
+
     while(head != NULL) {
         cout << head->data << " ";
         head = head->next;
@@ -77,7 +82,7 @@ int main() {
     print(head);
 
     cout << "Linkedlist after removing duplicates: ";
-    removeDuplicates(head);
+    head = removeDuplicates(head);
     print(head);
     
     return 0;

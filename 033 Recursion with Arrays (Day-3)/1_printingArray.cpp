@@ -14,8 +14,8 @@ void print(int arr[], int n, int i) {
     if(i >= n) {
         return;
     }
-    print(arr, n, i+1);
     cout << arr[i] << " ";
+    print(arr, n, i+1);
 }
 
 int main() {
@@ -24,7 +24,7 @@ int main() {
     int n = sizeof(arr)/sizeof(arr[0]);
 
     //1
-    print(arr,n);
+    // print(arr,n);
     cout << endl;
 
     //2

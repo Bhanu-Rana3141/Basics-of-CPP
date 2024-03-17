@@ -113,22 +113,28 @@ int diameter_1(Node* root) {
     return ans;
 }
 
+
 // APPROACH 2 - TC : O(N)
-int diameter_2(Node* root, int &d) {
+pair<int, int> diameter_2(Node* &root) {
 
     if(root == NULL) {
-        return 0;
+        return {0, 0};
     }
 
-    int left = diameter_2(root -> left, d);
-    int right = diameter_2(root -> right, d);
+    pair<int, int> left = diameter_2(root -> left);
+    pair<int, int> right = diameter_2(root -> right);
 
-    d = max(d, left + right);
+    int op1 = left.first;
+    int op2 = right.first;
+    int op3 = left.second + right.second;
 
-    int ans = max(left, right) + 1;
+    pair<int, int> ans;
+    ans.first = max(op1, max(op2, op3));
+    ans.second = max(left.second, right.second) + 1;
 
-    return ans;
-}
+    return ans; 
+} 
+
 
 int main() {
 
@@ -139,10 +145,7 @@ int main() {
 
     // int diameter = diameter_1(root);
 
-    int d = 0;
-    int diameter = diameter_2(root, d);
-
-    cout << "diameter: " << d;
+    cout << "diameter: " << diameter_2(root).first;
 
     return 0;
 }

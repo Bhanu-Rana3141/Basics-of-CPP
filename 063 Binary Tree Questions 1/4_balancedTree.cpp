@@ -17,30 +17,10 @@ class Node {
 };
 
 
-void buildTree(Node* &root) {
-
-    int d;
-    cout << "Enter data for root element: ";
-    cin >> d;
-
-    if(d == -1) {
-        return;
-    }
-
-    root = new Node(d);
-    
-    cout << "Enter left data for " << root -> data << " : ";
-    buildTree(root -> left);
-
-    cout << "Enter right data for " << root -> data << " : ";
-    buildTree(root -> right);
-}
-
-
 void buildFromLevelOrder(Node* &root) {
 
     int d;
-    cout << "Enter root element: ";
+    cout << "Enter root element data : ";
     cin >> d;
 
     root = new Node(d);
@@ -94,10 +74,11 @@ void levelOrderTraversal(Node* &root) {
         else {
             cout << temp -> data << " ";
 
-            if(temp -> left != NULL) {
+            if(temp -> left) {
                 q.push(temp -> left);
             }
-            if(temp -> right != NULL) {
+
+            if(temp -> right) {
                 q.push(temp -> right);
             }
         }
@@ -105,62 +86,84 @@ void levelOrderTraversal(Node* &root) {
 }
 
 
-// LNR
-void inorderTraversal(Node* &root) {
+// APPROACH 1 - O(N^2)
+
+int height(Node* root) {
 
     if(root == NULL) {
-        return;
+        return 0;
     }
 
-    inorderTraversal(root -> left);
-    cout << root -> data << " ";
-    inorderTraversal(root -> right);
+    int left = height(root -> left);
+    int right = height(root -> right);
+    int ans = max(left, right) + 1;
+
+    return ans;
+}
+
+bool isBalanced_1(Node* &root) {
+
+    if(root == NULL) {
+        return true;
+    }
+
+    bool left = isBalanced_1(root -> left);
+    bool right = isBalanced_1(root -> right);
+    bool leftAndRight = abs(height(root -> left) - height(root -> right)) <= 1;
+
+    if(left && right && leftAndRight) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 
-// NLR
-void preorderTraversal(Node* &root) {
+// APPROACH 2 - O(N)
+pair<bool, int> balanced(Node* root) {
 
     if(root == NULL) {
-        return;
+        return {true, 0};
     }
 
-    cout << root -> data << " ";
-    preorderTraversal(root -> left);
-    preorderTraversal(root -> right);
-}  
+    pair<bool, int> left = balanced(root -> left);
+    pair<bool, int> right = balanced(root -> right);
 
+    bool leftAns = left.first;
+    bool rightAns = right.first;
+    bool diff = abs(left.second - right.second) <= 1;
 
-// LRN
-void postorderTraversal(Node* &root) {
+    pair<bool, int> ans;
+    ans.second = max(left.second, right.second) + 1;
 
-    if(root == NULL) {
-        return;
+    if(leftAns && rightAns && diff) {
+        ans.first = true;    
+    }
+    else {
+        ans.first = false;
     }
 
-    postorderTraversal(root -> left);
-    postorderTraversal(root -> right);
-    cout << root -> data << " ";
+    return ans;
+} 
+
+bool isBalanced_2(Node* root) {
+
+    return balanced(root).first;
 }
+
 
 int main() {
 
     Node* root = NULL;
 
-    // buildTree(root);
-    // levelOrderTraversal(root);
-
     buildFromLevelOrder(root);
     levelOrderTraversal(root);
 
-    cout << endl << "Inorder Traversal: ";
-    inorderTraversal(root);
+    bool ans = isBalanced_1(root);
+    // bool ans = isBalanced_2(root);
 
-    cout << endl << "Preorder Traversal: ";
-    preorderTraversal(root);
+    ans ? cout << "true" : cout << "false";
 
-    cout << endl << "Postorder Traversal: ";
-    postorderTraversal(root);
-     
     return 0;
 }

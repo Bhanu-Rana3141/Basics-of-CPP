@@ -1,7 +1,7 @@
 #include<iostream>
 #include<queue>
-#include<vector>
 using namespace std;
+
 
 class Node {
 
@@ -16,7 +16,6 @@ class Node {
         this -> right = NULL;
     }
 };
-
 
 void buildTree(Node* &root) {
 
@@ -52,7 +51,7 @@ void buildTree(Node* &root) {
             q.push(front -> right);
         }
     }
-}
+} 
 
 
 void levelOrderTraversal(Node* &root) {
@@ -86,80 +85,25 @@ void levelOrderTraversal(Node* &root) {
     }
 }
 
+void kthAncestor(Node* root, int k, int node, int &ans, vector<int> path) {
 
-/*
-1. left subtree except leaf node
-2. leaf nodes of left subtree
-3. leaf nodes of right subtree
-4. right subtree in reverse order except leaf node
-*/
+    if(root == NULL) return;
 
-void leftTraversal(Node* &root, vector<int>& ans) {
+    path.push_back(root -> data);
 
-    if((root == NULL) || (root -> left == NULL && root -> right == NULL)) {
+    if(root -> data == node) {
+        int size = path.size();
+        int idx = size - k - 1;
+
+        if(idx >= 0) {
+            ans = path[idx];
+        }
         return;
     }
 
-    ans.push_back(root -> data);
-
-    if(root -> left) {
-        leftTraversal(root -> left, ans);
-    }
-    else {
-        leftTraversal(root -> right, ans);
-    }
+    kthAncestor(root -> left, k, node, ans, path);
+    kthAncestor(root -> right, k, node, ans, path);
 }
-
-
-void leafNodeTraversal(Node* &root, vector<int>& ans) {
-
-    if(root == NULL) {
-        return;
-    }
-
-    if(root -> left == NULL && root -> right == NULL) {
-        ans.push_back(root -> data);
-        return;
-    }
-
-    leafNodeTraversal(root -> left, ans);
-    leafNodeTraversal(root -> right, ans);
-}
-
-
-void rightTraversal(Node* &root, vector<int>& ans) {
-
-    if((root == NULL) || (root -> left == NULL && root -> right == NULL)) {
-        return;
-    }
-
-    if(root -> right) {
-        rightTraversal(root -> right, ans);
-    }
-    else {
-        rightTraversal(root -> left, ans);
-    }
-
-    ans.push_back(root -> data);
-}
-
-
-void boundaryTraversal(Node* &root, vector<int>& ans) {
-
-    if(root == NULL) {
-        return;
-    }
-
-    ans.push_back(root -> data);
-
-    leftTraversal(root -> left, ans);
-
-    leafNodeTraversal(root -> left, ans);
-    leafNodeTraversal(root -> right, ans);
-
-    rightTraversal(root -> right, ans);
-}
-
 
 int main() {
 
@@ -168,14 +112,19 @@ int main() {
     buildTree(root);
     levelOrderTraversal(root);
 
-    cout << endl;
+    int k;
+    cout << "Enter k: ";
+    cin >> k;
 
-    vector<int> ans;
-    boundaryTraversal(root, ans);
+    int node;
+    cout << "Enter node data : ";
+    cin >> node; 
 
-    for(int i=0; i<ans.size(); i++) {
-        cout << ans[i] << " ";
-    }
-    
+    int ans = -1;
+    vector<int> path;
+    kthAncestor(root, k, node, ans, path);
+
+    cout << "ans : " << ans;
+
     return 0;
 }

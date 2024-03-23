@@ -1,5 +1,7 @@
 #include<iostream>
 #include<queue>
+#include<limits.h>
+#include<vector>
 using namespace std;
 
 class Node {
@@ -82,14 +84,32 @@ void levelOrderTraversal(Node* root) {
     }
 }
 
-int maxDepth(Node* root) {
+void maxDepth_1(Node* root, int& maxDepth, vector<int> arr) {
+
+    if(root == NULL) {
+        return;
+    }
+
+    arr.push_back(root -> data);
+
+    if(root -> left == NULL && root -> right == NULL) {
+        int depth = arr.size();
+        maxDepth = max(maxDepth, depth);
+    }
+
+    maxDepth_1(root -> left, maxDepth, arr);
+    maxDepth_1(root -> right, maxDepth, arr);
+
+}
+
+int maxDepth_2(Node* root) {
 
     if(root == NULL) {
         return 0;
     } 
 
-    int left = maxDepth(root -> left);
-    int right = maxDepth(root -> right);
+    int left = maxDepth_2(root -> left);
+    int right = maxDepth_2(root -> right);
 
     int ans = max(left, right) + 1;
 
@@ -103,9 +123,13 @@ int main() {
     buildTreeFromLevelOrder(root);
     levelOrderTraversal(root);
     
-    int ans = maxDepth(root);
-    
-    cout << "Max depth : " << ans;
+    int maxDepth = INT_MIN;
+    vector<int> arr;
+    maxDepth_1(root, maxDepth, arr);
+    cout << "Max depth : " << maxDepth;
+
+    // int ans = maxDepth_2(root);
+    // cout << "Max depth : " << ans;
 
     return 0;
 }

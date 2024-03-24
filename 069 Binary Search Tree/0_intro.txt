@@ -1,0 +1,11 @@
+Q. What is BST ?
+- A tree which follows the property : for every root node, data in left subtree nodes should be small, and in right subtree should be greater 
+
+Q. Time complexity of INSERTION in BST ?
+- 1 part is neglected
+- O( log n )
+
+Q INORDER 
+* INORDER will be in sorted order
+* Inorder predecessor
+* Inorder successor

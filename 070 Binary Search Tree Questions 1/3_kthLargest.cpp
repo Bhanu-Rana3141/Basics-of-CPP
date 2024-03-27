@@ -80,9 +80,9 @@ void kthLargest(Node* root, vector<int>& nodeData) {
         return;
     }
 
-    kthLargest(root, nodeData);
+    kthLargest(root -> left, nodeData);
     nodeData.push_back(root -> data);
-    kthLargest(root, nodeData);
+    kthLargest(root -> right, nodeData);
     
 }
 
@@ -90,10 +90,10 @@ int main() {
 
     Node* root = NULL;
 
-    cout << "Enter data to create BST: " << endl;
+    cout << "Enter data to create BST: ";
     takeInput(root);
 
-    cout << "Printing BST: ";
+    cout << "Printing BST: " << endl;
     levelOrderTraversal(root);
 
     cout << endl;
@@ -108,7 +108,7 @@ int main() {
 
     kthLargest(root, nodeData);
 
-    int idx = nodeData.size() - 1 - k;
+    int idx = nodeData.size() - k;
     cout << "ans: " << nodeData[idx];
     
     return 0;

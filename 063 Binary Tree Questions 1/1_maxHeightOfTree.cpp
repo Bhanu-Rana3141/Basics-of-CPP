@@ -1,3 +1,8 @@
+/*
+TC & SC - O(N)
+In the worst case, the depth of the tree could be the number of nodes (for example, in the case of a skewed tree).
+*/
+
 #include<iostream>
 #include<queue>
 #include<limits.h>
@@ -116,6 +121,22 @@ int maxDepth_2(Node* root) {
     return ans;
 }
 
+void maxDepth_3(Node* root, int height, int& maxHeight) {
+
+    if(root == NULL) {
+        return;
+    }
+
+    height++;
+
+    if(root -> left == NULL && root -> right == NULL) {
+        maxHeight = max(height, maxHeight);
+    }
+
+    maxDepth_3(root -> left, height, maxHeight);
+    maxDepth_3(root -> right, height, maxHeight);
+}
+
 int main() {
 
     Node* root = NULL;
@@ -123,13 +144,21 @@ int main() {
     buildTreeFromLevelOrder(root);
     levelOrderTraversal(root);
     
-    int maxDepth = INT_MIN;
-    vector<int> arr;
-    maxDepth_1(root, maxDepth, arr);
-    cout << "Max depth : " << maxDepth;
+    // int maxDepth = INT_MIN;
+    // vector<int> arr;
+    // maxDepth_1(root, maxDepth, arr);
+    // cout << "Max depth : " << maxDepth;
 
     // int ans = maxDepth_2(root);
     // cout << "Max depth : " << ans;
+
+
+    int height = 0;
+    int maxHeight = 0;
+
+    maxDepth_3(root, height, maxHeight);
+
+    cout << "max depth : " << maxHeight;
 
     return 0;
 }

@@ -2,7 +2,6 @@
 #include<queue>
 using namespace std;
 
-
 class Node {
 
     public:

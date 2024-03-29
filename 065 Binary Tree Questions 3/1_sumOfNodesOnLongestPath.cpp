@@ -90,22 +90,24 @@ void levelOrderTraversal(Node* &root) {
 void sumOfLongestPath(Node* &root, int sum, int &maxSum, int len, int &maxLen) {
 
     if(root == NULL) {
-
-        if(len > maxLen) {
-            maxLen = len;
-            sum = maxSum;
-        }
-
-        if(len == maxLen) {
-            maxSum = max(sum, maxSum);
-        }
         return;
     }
 
     sum += root -> data;
+    len++;
 
-    sumOfLongestPath(root -> left, sum, maxSum, len+1, maxLen);
-    sumOfLongestPath(root -> right, sum, maxSum, len+1, maxLen);
+    if(root -> left == NULL && root -> right == NULL) {
+        if(len > maxLen) {
+            maxLen = len;
+            maxSum = sum;
+        }
+        else if(len == maxLen) {
+            maxSum = max(sum, maxSum);
+        }
+    }
+
+    sumOfLongestPath(root -> left, sum, maxSum, len, maxLen);
+    sumOfLongestPath(root -> right, sum, maxSum, len, maxLen);
 }  
 
 

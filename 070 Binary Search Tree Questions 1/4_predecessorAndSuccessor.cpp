@@ -1,14 +1,6 @@
-/*
-APPROACH 1 -
-* STORE VALUES OF NODE IN VECTOR BY INORDER TRAVERSAL(sorted order)
-* kth element from the start will be the answer
-
-APPROACH 2 - 
-* DON'T STORE VALUE IN VECTOR JUST CREATE A VARIABLE AND INCREASE IT BY 1 WHEN IT POINTS TO ANY NODE AND WHEN IT BECOMES EQUAL TO K, THAT DATA WILL BE THE ANSWER
-*/
-
 #include<iostream>
 #include<queue>
+#include<vector>
 using namespace std;
 
 class Node {
@@ -17,7 +9,7 @@ class Node {
         int data;
         Node* left;
         Node* right;
-
+    
     Node(int d) {
         this -> data = d;
         this -> left = NULL;
@@ -46,13 +38,12 @@ void takeInput(Node* &root) {
     cin >> d;
 
     while(d != -1) {
-
         insertInBST(root, d);
         cin >> d;
     }
 }
 
-void levelOrderTraversal(Node* &root) {
+void levelOrderTraversal(Node* root) {
 
     queue<Node*> q;
     q.push(root);
@@ -65,6 +56,7 @@ void levelOrderTraversal(Node* &root) {
 
         if(front == NULL) {
             cout << endl;
+
             if(q.size() != 0) {
                 q.push(NULL);
             }
@@ -83,47 +75,62 @@ void levelOrderTraversal(Node* &root) {
     }
 }
 
-void kthSmallest(Node* root, int k, int &i, int &ans) {
+void inorder(Node* root, vector<int>& nodeData) {
 
     if(root == NULL) {
         return;
     }
 
-    kthSmallest(root -> left, k, i, ans);
+    inorder(root -> left, nodeData);
+    nodeData.push_back(root -> data);
+    inorder(root -> right, nodeData);
+}
 
-    i++;
-    if(i == k) {
-        ans = root -> data;
-        return;
+pair<int, int> preAndSucc_1(Node* root, int key) {
+
+    vector<int> nodeData;
+    inorder(root, nodeData);
+
+    int pre = -1;
+    int succ = -1;
+
+    int idx = -1;
+    for(int i=0; i<nodeData.size(); i++) {
+        if(nodeData[i] == key) {
+            idx = i;
+            break;
+        }
     }
 
-    kthSmallest(root -> right, k, i, ans);
+    if(idx > 0) {
+        pre = nodeData[idx-1];
+    }
+
+    if(idx < nodeData.size()-1) {
+        succ = nodeData[idx+1];
+    }
+
+    pair<int,int> ans = make_pair(pre, succ);
+    return ans;
 }
 
 int main() {
 
     Node* root = NULL;
 
-    cout << "Enter data to create BST: " << endl;
+    cout << "Enter data to create BST: ";
     takeInput(root);
 
-    cout << "Printing BST: ";
+    cout << "Printing tree: " << endl;
     levelOrderTraversal(root);
-
-    cout << endl;
-
-    int k;
-    cout << "Enter K: ";
-    cin >> k;
-
-    cout << endl;
-
-    int ans = -1;
-    int i = 0;
-
-    kthSmallest(root, k, i, ans);
-
-    cout << "ans: " << ans;
     
+    int key;
+    cout << "Enter key: ";
+    cin >> key;
+
+    pair<int, int> ans = preAndSucc_1(root, key);
+
+    cout << ans.first << " , " << ans.second;
+
     return 0;
 }

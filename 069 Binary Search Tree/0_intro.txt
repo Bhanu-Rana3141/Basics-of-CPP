@@ -1,11 +1,24 @@
 Q. What is BST ?
+- data structure used to store and organise data in organised manner
 - A tree which follows the property : for every root node, data in left subtree nodes should be small, and in right subtree should be greater 
 
 Q. Time complexity of INSERTION in BST ?
 - 1 part is neglected
 - O( log n )
 
-Q INORDER 
+Q INORDER ?
 * INORDER will be in sorted order
-* Inorder predecessor
-* Inorder successor
+* Inorder predecessor - previous node in inorder traversal
+* Inorder successor - next node
+
+
+- DELETION OF NODE
+1. search node
+2. check no of childs node have
+if 0 child delete node and return NULL
+if 1 child either left or right point to it with another pointer, delete node and return additional pointer
+if 2 child find min from the right subtree, copy min value to root -> data, find min value node and delete it
+
+
+- Use morris traversal in kth largest and kth smallest
+

@@ -77,7 +77,7 @@ void levelOrderTraversal(Node* &root) {
 //  Recursive Approach
 Node* searchNode_1(Node* root, int &value) {
 
-    if(root == NULL) {
+    if(root == NULL) { // value not present
         return NULL;
     }
 
@@ -86,11 +86,12 @@ Node* searchNode_1(Node* root, int &value) {
     }
 
     if(root -> data > value) {
-        return searchNode_1(root -> left, value);
+        root -> left = searchNode_1(root -> left, value);
     }
     else {
-        return searchNode_1(root -> right, value);
+        root -> right = searchNode_1(root -> right, value);
     }
+    return root;
 }
 
 // Iterative Approach

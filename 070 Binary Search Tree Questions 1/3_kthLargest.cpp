@@ -1,3 +1,10 @@
+/*
+APPROACH 1 - INORDER
+
+APPROACH 2 - RECURSIVE 
+- kth largest is : (n-k) + 1 smallest
+*/
+
 #include<iostream>
 #include<queue>
 using namespace std;
@@ -110,6 +117,6 @@ int main() {
 
     int idx = nodeData.size() - k;
     cout << "ans: " << nodeData[idx];
-    
+
     return 0;
 }

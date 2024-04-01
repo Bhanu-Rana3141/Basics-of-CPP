@@ -1,5 +1,5 @@
 Q. What is BST ?
-- data structure used to store and organise data in organised manner
+- data structure used to store and organise data in sorted manner
 - A tree which follows the property : for every root node, data in left subtree nodes should be small, and in right subtree should be greater 
 
 Q. Time complexity of INSERTION in BST ?

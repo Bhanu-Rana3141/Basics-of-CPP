@@ -1,5 +1,5 @@
 /*
-APPROACH 1 - INORDER
+APPROACH 1 - USING A EXTRA DATA STRUCTURE - VECTOR
 
 APPROACH 2 - RECURSIVE 
 - kth largest is : (n-k) + 1 smallest
@@ -81,6 +81,7 @@ void levelOrderTraversal(Node* &root) {
     }
 }
 
+// APPROACH 1
 void kthLargest(Node* root, vector<int>& nodeData) {
 
     if(root == NULL) {
@@ -91,6 +92,35 @@ void kthLargest(Node* root, vector<int>& nodeData) {
     nodeData.push_back(root -> data);
     kthLargest(root -> right, nodeData);
     
+}
+
+// APPROACH 2
+void countNodes(Node* root, int &cnt) {
+
+    if(root == NULL) {
+        return;
+    }
+
+    countNodes(root -> left, cnt);
+    cnt++;
+    countNodes(root -> right, cnt);
+}
+
+void kthLargest_2(Node* root, int k, int n, int& i, int& ans) {
+
+    if(root == NULL) {
+        return;
+    }
+
+    kthLargest_2(root -> left, k, n, i, ans);
+
+    i++;
+    if(i == (n-k)+1) {
+        ans = root -> data;
+        return;
+    }
+
+    kthLargest_2(root -> right, k, n, i, ans);
 }
 
 int main() {
@@ -111,12 +141,21 @@ int main() {
 
     cout << endl;
 
-    vector<int> nodeData;
+    // vector<int> nodeData;
+    // kthLargest(root, nodeData);
+    // int idx = nodeData.size() - k;
+    // cout << "ans: " << nodeData[idx];
 
-    kthLargest(root, nodeData);
 
-    int idx = nodeData.size() - k;
-    cout << "ans: " << nodeData[idx];
+    int cnt = 0;
+    countNodes(root, cnt);
+    int n = cnt;
+    int ans = -1;
+    int i = 0;
+    
+    kthLargest_2(root, k, n, i, ans);
+
+    cout << "ans : " << ans;
 
     return 0;
 }

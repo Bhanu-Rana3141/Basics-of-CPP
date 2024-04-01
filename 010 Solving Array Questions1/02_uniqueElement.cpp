@@ -11,7 +11,7 @@ APPROACH 3 - Hashing
 * TC - O(N)
 * SC - O(N)
 
-Approach 3 -> Optimised approach using XOR
+Approach 4 -> Optimised approach using XOR
 TC O(n)
 SC O(1)
  */
@@ -66,6 +66,7 @@ int unique3(int arr[],int n){
 }
 
 int main() {
+    
     int n;
     cout << "Enter the n of the array: ";
     cin >> n;

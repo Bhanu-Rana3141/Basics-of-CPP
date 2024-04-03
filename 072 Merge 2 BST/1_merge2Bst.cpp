@@ -1,3 +1,42 @@
+/*
+APPROACH 1
+1. inorder traversal of both bst and store values in array in a sorted manner
+2. merge 2 sorted arrays
+3. inorder to BST - THIS IS ANSWER
+
+TC - O(M+N)
+SC - O(M+N)
+
+
+APPROACH 2
+1. Convert bst into sorted LL 
+TC - O(M) , SC - O(h1)
+TC - O(N) , SC - O(h2)
+
+by using LL , space complexity is improved, discarding use of vectors
+
+2. merge 2 sorted LL
+TC - O(M+N)
+SC - O(1)
+
+3. convert sorted LL in BST
+
+ALGO - 
+1. Convert right subtree in LL, it will give head
+root -> right = head 
+head -> left = root
+head = root
+2. convert left subtree in LL, it will give head
+
+
+
+Q. This question is combination of 3 questions ?
+1. Convert a BST into LL
+2. Merger 2 sorted LL
+3. Sorted LL  -> BST
+ 
+*/
+
 #include<iostream>
 #include<queue>
 #include<vector>
@@ -75,29 +114,21 @@ void levelOrderTraversal(Node* root) {
     } 
 }
 
-void inorder(Node* root, vector<int>& arr) {
+void convertIntoSortedDLL(Node* root, Node* &head) {
 
     if(root == NULL) {
         return;
     }
 
-    inorder(root -> left, arr);
-    arr.push_back(root -> data);
-    inorder(root -> right, arr);
-}
-
-void balancedBST(Node* &root, int s, int e, vector<int>& arr) {
-
-    if(s > e) {
-        return;
+    // Q. why root -> right is called first ?
+    convertIntoSortedDLL(root -> right, head);
+    root -> right = head;
+    if(head != NULL) {
+        head -> left = root;
     }
+    head = root;
 
-    int mid = (s+e)/2;
-
-    root = new Node(arr[mid]);
-
-    balancedBST(root -> left, s, mid-1, arr);
-    balancedBST(root -> right, mid+1, e, arr);
+    convertIntoSortedDLL(root -> left, head);
 }
 
 int main() {
@@ -106,15 +137,8 @@ int main() {
     
     takeInput(root);
     levelOrderTraversal(root);
-    cout << endl;
 
-    vector<int> arr;
-    inorder(root, arr);
-
-    Node* newRoot = NULL;
-    balancedBST(newRoot, 0, arr.size()-1, arr);
-
-    levelOrderTraversal(newRoot);
+   
 
     return 0;
 }

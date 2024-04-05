@@ -1,4 +1,16 @@
 /*
+
+APPROACH 1 - USE ARRAY
+- store node value in arr in each call
+- Update maxValue if current node is leaf node
+
+APPROACH 2 - USE variable height, maxHeight
+increase height value by 1 in each function call and update maxHeight, if the current node is leaf node
+
+APPROACH 3
+- Calculate height from left and right
+- Take max from it and increment by 1 , i.e maxValue + 1 (1 is used here to include current node)
+
 TC & SC - O(N)
 In the worst case, the depth of the tree could be the number of nodes (for example, in the case of a skewed tree).
 */
@@ -89,7 +101,7 @@ void levelOrderTraversal(Node* root) {
     }
 }
 
-void maxDepth_1(Node* root, int& maxDepth, vector<int> arr) {
+void maxDepth_1(Node* root, int& maxDepth, vector<int>& arr) {
 
     if(root == NULL) {
         return;
@@ -100,6 +112,8 @@ void maxDepth_1(Node* root, int& maxDepth, vector<int> arr) {
     if(root -> left == NULL && root -> right == NULL) {
         int depth = arr.size();
         maxDepth = max(maxDepth, depth);
+        arr.pop_back();
+        return;
     }
 
     maxDepth_1(root -> left, maxDepth, arr);

@@ -8,7 +8,7 @@ Implementing USING ARRAY
 IN 0 BASED INDEXING
 - left child = 2*i+1
 - right child = 2*i+2
-- parent = i/2+1
+- parent = (i-1)/2
 
 INSERTION 
 - insert node at end in array

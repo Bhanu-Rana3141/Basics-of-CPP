@@ -85,6 +85,7 @@ void levelOrderTraversal(Node* &root) {
     }
 }  
 
+// TC - O(N^2) && SC - O(N)
 void totalPaths(Node* root, int k, int &count, vector<int> path) {
 
     if(root == NULL) return;

@@ -43,6 +43,7 @@ int kthSmallest_2(vector<int>& arr, int& n, int& k) {
 
 int kthSmallest_3(vector<int>& arr, int n, int k) {
 
+    // MAX HEAP
     priority_queue<int> pq;
 
     for(int i=0; i<k; i++) {
@@ -56,8 +57,7 @@ int kthSmallest_3(vector<int>& arr, int n, int k) {
         }
     }
 
-    int ans = pq.top();
-    return ans;
+    return pq.top();
 }
 
 int main()
@@ -66,7 +66,7 @@ int main()
     int n = 5;
     vector<int> arr = {7, 10, 4, 20, 15};
 
-    int k = 3;
+    int k = 4;
 
     if(k == n) {
         cout << "does not exist" << endl;

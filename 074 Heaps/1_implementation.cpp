@@ -8,7 +8,7 @@ Implementing USING ARRAY
 IN 0 BASED INDEXING
 - left child = 2*i+1
 - right child = 2*i+2
-- parent = (i-1)/2
+- parent = (i-1)
 
 INSERTION 
 - insert node at end in array
@@ -111,14 +111,11 @@ void heapify(int *arr, int n, int i) {
     int leftIdx = 2*i;
     int rightIdx = 2*i + 1;
 
-    if(leftIdx <= n && arr[i] < arr[leftIdx]) {
+    if(leftIdx <= n && arr[largest] < arr[leftIdx]) {
         largest = leftIdx;
     }
-    else if(rightIdx <= n && arr[i] < arr[rightIdx]) {
+    if(rightIdx <= n && arr[largest] < arr[rightIdx]) {
         largest = rightIdx;
-    }
-    else {
-        return;
     }
 
     if(largest != i) {

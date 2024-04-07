@@ -84,6 +84,8 @@ void levelOrderTraversal(Node* &root) {
     }
 }
 
+// TC - O(N) -> each node is traversed once
+// SC - O(N) -> ans vector and queue 
 vector<vector<int>> zigZag(Node* root) {
 
     vector<vector<int>> result;

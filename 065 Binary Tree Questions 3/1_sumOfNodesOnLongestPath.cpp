@@ -86,7 +86,7 @@ void levelOrderTraversal(Node* &root) {
     }
 }
 
-
+// TC - O(N) && SC - O(N) in worst case skewed tree , otherwise O(H) -> height of tree
 void sumOfLongestPath(Node* &root, int sum, int &maxSum, int len, int &maxLen) {
 
     if(root == NULL) {

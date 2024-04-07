@@ -84,7 +84,7 @@ void levelOrderTraversal(Node* &root) {
     }
 }
 
-
+// TC - O(N) && SC - O(N)
 Node* lca(Node* root, Node* p, Node* q) {
 
     if(root == NULL) {

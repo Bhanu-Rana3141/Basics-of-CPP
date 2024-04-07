@@ -85,6 +85,7 @@ void levelOrderTraversal(Node* &root) {
     }
 }
 
+// TC - O(N) && SC - O(N)
 void kthAncestor(Node* root, int k, int node, int &ans, vector<int> path) {
 
     if(root == NULL) return;

@@ -1,5 +1,3 @@
-// TC - O(N^2) && SC - O(N)
-
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -17,6 +15,8 @@ class Node {
         this -> right = NULL;
     }
 };
+
+// TC - O(N^2) && SC - O(N)
 
 int findPosition(vector<int>& inorder, int n, int element) {
 

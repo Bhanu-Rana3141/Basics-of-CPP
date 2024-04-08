@@ -1,5 +1,3 @@
-//  TC - O(N) && SC - O(N)
-
 #include<iostream>
 #include<vector>
 #include<map>
@@ -18,6 +16,8 @@ class Node {
         this -> right = NULL;
     }
 };
+
+//  TC - O(N) && SC - O(N)
 
 void createMapping(vector<int>& inorder, int n, map<int,int>& elementToIndex) {
 

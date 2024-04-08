@@ -1,4 +1,12 @@
-// TC - O(N) && SC - O(N)
+/*
+APPROACH
+1. create a stack
+2. if char is ( [ { push in stack
+3. if after first iteration stack is empty and a closed bracket is encountered then the input is invalid parenthesis
+4. if closed bracket is encountered and opening parenthesis is present in stack, in that case check for it's corressponding closing parenthesis, if found pop it else return false , invalid parenthesis
+
+TC - O(N) && SC - O(N)
+*/
 
 #include<iostream>
 #include<stack>

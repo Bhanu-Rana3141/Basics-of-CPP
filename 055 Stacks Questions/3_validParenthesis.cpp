@@ -22,6 +22,7 @@ bool isValid(string s) {
             st.push(s[i]);
         }
         else {
+            // closing bracket
             if(st.size() == 0) {
                 return false;
             }

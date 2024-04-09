@@ -1,0 +1,1 @@
+GRAPH - a data structure , combination of edges and nodes

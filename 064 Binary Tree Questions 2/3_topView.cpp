@@ -140,3 +140,4 @@ if(front -> left) { q.push({front -> left, hd-1}); }: If the left child exists, 
 if(front -> right) { q.push({front -> right, hd+1}); }: If the right child exists, it enqueues it with a horizontal distance increased by 1.
 for(auto i : hdToNodeData) { ans.push_back(i.second); }: Transfers the node data from the map to the result vector ans.
 */
+

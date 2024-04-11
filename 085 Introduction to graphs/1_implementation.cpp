@@ -2,18 +2,15 @@
 #include<unordered_map>
 #include<list>
 using namespace std;
-template<typename T>
 
 class Graph {
 
     public:
-        unordered_map<T, list<T>> adj;
+        unordered_map<int, list<int>> adj;
 
-    void addEdge(T u, T v, bool direction) {
-        // direction - 0 (undirected graph)
-        // direction - 1 (directed graph)
-
-        // create an edge from u to v
+    void addEdge(int u, int v, bool direction) {
+        // direction 0 - represents undirected graph
+        // direction 1 - represents directed graph
         adj[u].push_back(v);
 
         if(direction == 0) {
@@ -22,12 +19,13 @@ class Graph {
     }
 
     void print() {
+
         for(auto i : adj) {
             cout << i.first << " -> ";
-            for(auto j : i.second) {
+            for(auto  j : i.second) {
                 cout << j << " ";
             }
-            cout << endl; 
+            cout << endl;
         }
     }
 };
@@ -35,17 +33,17 @@ class Graph {
 int main() {
 
     int n;
-    cout << "Enter number of nodes: ";
+    cout << "Enter no of nodes: ";
     cin >> n;
 
     int m;
-    cout << "Enter number of edges : ";
+    cout << "Enter no of edges: ";
     cin >> m;
 
-    Graph<int> g;
+    Graph g;
 
     for(int i=0; i<m; i++) {
-        int u , v;
+        int u, v;
         cin >> u >> v;
 
         g.addEdge(u, v, 0);
@@ -55,3 +53,7 @@ int main() {
     
     return 0;
 }
+
+/*
+1. create a map and store neighbours of every node in form of list
+*/

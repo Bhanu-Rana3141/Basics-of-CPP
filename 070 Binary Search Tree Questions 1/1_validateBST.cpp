@@ -1,5 +1,6 @@
 #include<iostream>
 #include<queue>
+#include<limits.h>
 using namespace std;
 
 class Node {
@@ -74,6 +75,13 @@ void levelOrderTraversal(Node* root) {
     }
 }
 
+/*
+APPROACH 1 - USE VECTOR
+- using inorder traversal store values in a vector
+- value is stored in sorted order
+- check if vector is sorted , if sorted TRUE else FALSE
+*/
+
 void inorder(Node* root, vector<int>& nodeData) {
 
     if(root == NULL) {
@@ -99,6 +107,25 @@ bool isValidateBST(Node* root) {
     return true;
 }
 
+/*
+APPROACH 2 - USE RANGE MAX-MIN
+- min for left subtree 
+- max for right subtree
+*/
+
+bool isValidateBST_2(Node* root, int min, int max) {
+
+    if(root == NULL) return true;
+
+    // check if root->data is in range
+    if(root -> data < min || root -> data > max) return false;
+
+    bool left = isValidateBST_2(root -> left, min, root -> data);
+    bool right = isValidateBST_2(root -> right, root -> data, max);
+
+    return left && right;
+}
+
 int main() {
 
     Node* root = NULL;
@@ -109,7 +136,9 @@ int main() {
     cout << "Printing tree: " << endl;
     levelOrderTraversal(root);
     
-    bool ans = isValidateBST(root);
+    // bool ans = isValidateBST_1(root);
+
+    bool ans = isValidateBST_2(root, INT_MIN, INT_MAX);
 
     ans ? cout << "true" : cout << "false";
 

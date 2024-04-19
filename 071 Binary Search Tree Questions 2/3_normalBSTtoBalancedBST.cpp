@@ -86,7 +86,7 @@ void inorder(Node* root, vector<int>& arr) {
     inorder(root -> right, arr);
 }
 
-void balancedBST(Node* &root, int s, int e, vector<int>& arr) {
+Node* balancedBST(int s, int e, vector<int>& arr) {
 
     if(s > e) {
         return;
@@ -94,10 +94,12 @@ void balancedBST(Node* &root, int s, int e, vector<int>& arr) {
 
     int mid = (s+e)/2;
 
-    root = new Node(arr[mid]);
+    Node* root = new Node(arr[mid]);
+ 
+    root -> left = balancedBST(s, mid-1, arr);
+    root -> right = balancedBST(mid+1, e, arr);
 
-    balancedBST(root -> left, s, mid-1, arr);
-    balancedBST(root -> right, mid+1, e, arr);
+    return root;
 }
 
 int main() {
@@ -111,8 +113,7 @@ int main() {
     vector<int> arr;
     inorder(root, arr);
 
-    Node* newRoot = NULL;
-    balancedBST(newRoot, 0, arr.size()-1, arr);
+    Node* newRoot = balancedBST(0, arr.size()-1, arr);
 
     levelOrderTraversal(newRoot);
 

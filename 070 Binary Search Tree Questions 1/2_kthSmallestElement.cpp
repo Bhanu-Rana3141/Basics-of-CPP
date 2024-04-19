@@ -1,12 +1,3 @@
-/*
-APPROACH 1 -
-* STORE VALUES OF NODE IN VECTOR BY INORDER TRAVERSAL(sorted order)
-* kth element from the start will be the answer
-
-APPROACH 2 - 
-* DON'T STORE VALUE IN VECTOR JUST CREATE A VARIABLE AND INCREASE IT BY 1 WHEN IT POINTS TO ANY NODE AND WHEN IT BECOMES EQUAL TO K, THAT DATA WILL BE THE ANSWER
-*/
-
 #include<iostream>
 #include<queue>
 using namespace std;
@@ -82,6 +73,15 @@ void levelOrderTraversal(Node* &root) {
         }
     }
 }
+
+/*
+APPROACH 1 -
+* STORE VALUES OF NODE IN VECTOR BY INORDER TRAVERSAL(sorted order)
+* kth element from the start will be the answer
+
+APPROACH 2 - 
+* DON'T STORE VALUE IN VECTOR JUST CREATE A VARIABLE AND INCREASE IT BY 1 WHEN IT POINTS TO ANY NODE AND WHEN IT BECOMES EQUAL TO K, THE DATA OF CURRENT NODE WILL BE THE ANSWER
+*/
 
 void kthSmallest(Node* root, int k, int &i, int &ans) {
 

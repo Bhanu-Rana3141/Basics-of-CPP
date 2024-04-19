@@ -1,10 +1,3 @@
-/*
-APPROACH 1 - USING A EXTRA DATA STRUCTURE - VECTOR
-
-APPROACH 2 - RECURSIVE 
-- kth largest is : (n-k) + 1 smallest
-*/
-
 #include<iostream>
 #include<queue>
 using namespace std;
@@ -80,6 +73,13 @@ void levelOrderTraversal(Node* &root) {
         }
     }
 }
+
+/*
+APPROACH 1 - USING A EXTRA DATA STRUCTURE - VECTOR
+
+APPROACH 2 - RECURSIVE 
+- kth largest is : (n-k) + 1 smallest
+*/
 
 // APPROACH 1
 void kthLargest(Node* root, vector<int>& nodeData) {

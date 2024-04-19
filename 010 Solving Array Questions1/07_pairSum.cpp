@@ -3,13 +3,14 @@
 using namespace std;
 
 int main() {
+
     int n;
     cout << "Enter the n of the array: ";
     cin >> n;
 
     vector<int>arr(n);
 
-    for (int i = 0; i < n; i++) {
+    for(int i = 0; i < n; i++) {
         cin >> arr[i];
     }
 
@@ -36,5 +37,6 @@ int main() {
     }
     
     cout << "Pair count: " << pairsCount;
+    
     return 0;
 }

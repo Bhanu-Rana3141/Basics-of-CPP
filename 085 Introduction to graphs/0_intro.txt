@@ -1,5 +1,0 @@
-GRAPH - a data structure , combination of edges and nodes
-
-can be implemented by 2 ways
-1. Adjacency list -> optimised
-2. Adjaceny matrix

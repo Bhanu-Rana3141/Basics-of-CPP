@@ -75,6 +75,7 @@ void levelOrderTraversal(Node* root) {
     }
 }
 
+// APPROACH 1
 void inorder(Node* root, vector<int>& nodeData) {
 
     if(root == NULL) {
@@ -114,6 +115,41 @@ pair<int, int> preAndSucc_1(Node* root, int key) {
     return ans;
 }
 
+// APPROACH 2
+int successor(Node* root, int key) {
+
+    int succ = -1;
+
+    while(root != NULL) {
+        if(key >= root -> data) {
+            root = root -> right;
+        }
+        else {
+            succ = root -> data;
+            root = root -> left;
+        }
+    }
+
+    return succ;
+}
+
+int predecessor(Node* root, int key) {
+
+    int pre = -1;
+
+    while(root != NULL) {
+        if(root -> data < key) {
+            pre = root -> data;
+            root = root -> right;
+        }
+        else {
+            root = root -> left;
+        }
+    }
+
+    return pre;
+}
+
 int main() {
 
     Node* root = NULL;
@@ -128,9 +164,13 @@ int main() {
     cout << "Enter key: ";
     cin >> key;
 
-    pair<int, int> ans = preAndSucc_1(root, key);
+    // pair<int, int> ans = preAndSucc_1(root, key);
+    // cout << ans.first << " , " << ans.second;
 
-    cout << ans.first << " , " << ans.second;
+    int pre = predecessor(root, key);
+    int succ = successor(root, key);
+
+    cout << "pre : " << pre << " , " << "succ : " << succ;
 
     return 0;
 }

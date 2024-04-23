@@ -6,7 +6,7 @@ Q. What is Heap?
 
 Q. What is complete binary tree ?
 - a tree in which all levels are completely filled except last level, last level is not mandatory to be filled
-- node always added from last and deleted from start
+- node always added from left 
 
 TYPES OF HEAP
 * HEAP ORDER PROPERTY - 

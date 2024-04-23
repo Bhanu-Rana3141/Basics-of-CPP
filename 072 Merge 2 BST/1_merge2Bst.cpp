@@ -1,12 +1,12 @@
 /*
 APPROACH 1
-1. inorder traversal of both bst and store values in array in a sorted manner
-2. merge 2 sorted arrays
-3. inorder to BST - THIS IS ANSWER
+1. inorder traversal of both bst : bst1, bst2
+2. merge 2 sorted arrays in a ans vector
+3. return ans if it is mentioned to return array as ans
+4. In case you have to return BST after merge , inorderToBST
 
 TC - O(M+N)
 SC - O(M+N)
-
 
 
 APPROACH 2
@@ -121,114 +121,61 @@ void levelOrderTraversal(Node* root) {
     } 
 }
 
-// convert bst in sorted list
-void convertIntoSortedDLL(Node* root, Node* &head) {
+// APPROACH 1
+void inorder(Node* root, vector<int>& arr) {
 
-    if(root == NULL) {
-        return;
-    }
-
-    // Q. why root -> right is called first ?
-    convertIntoSortedDLL(root -> right, head);
-    root -> right = head;
-    if(head != NULL) {
-        head -> left = root;
-    }
-    head = root;
-
-    convertIntoSortedDLL(root -> left, head);
+    if(root == NULL) return;
+    inorder(root->left, arr);
+    arr.push_back(root->data);
+    inorder(root->right, arr);
 }
 
-// merge ll
-Node* merge(Node* head1, Node* head2) {
+vector<int> merge(vector<int> bst1, vector<int> bst2) {
 
-    Node* head = NULL;
-    Node* tail = NULL;
+    int i = 0;
+    int j = 0;
+    int n = bst1.size();
+    int m = bst2.size();
 
-    while(head1 != NULL && head2 != NULL) {
+    vector<int> ans;
 
-        if(head1 -> data < head2 -> data) 
-        {
-            if(head == NULL) 
-            {
-                head = head1;
-                tail = head1;
-                head1 = head1 -> right;
-            }
-            else 
-            {
-                tail -> right = head1;
-                head1 -> left = tail;
-                tail = head1;
-                head1 = head1 -> right;
-            }
+    while(i < n && j < m) {
+        if(bst1[i] <= bst2[j]) {
+            ans.push_back(bst1[i]);
+            i++;
         }
         else {
-            if(head == NULL) 
-            {
-                head = head2;
-                tail = head2;
-                head2 = head2 -> right;
-            }
-            else 
-            {
-                // insert at end
-                tail -> right = head2;
-                head2 -> left = tail;
-                tail = head2;
-                head2 = head2 -> right;
-            }
+            ans.push_back(bst2[j]);
+            j++;
         }
+    }    
+
+    while(i < n) {
+        ans.push_back(bst1[i]);
+        i++;
     }
 
-    while(head1 != NULL) {
-        tail -> right = head1;
-        head1 -> left = tail;
-        tail = head1;
-        head1 = head1 -> right;   
+    while(j < m) {
+        ans.push_back(bst2[j]);
+        j++;
     }
 
-    while(head2 != NULL) {
-        tail -> right = head2;
-        head2 -> left = tail;
-        tail = head2;
-        head2 = head2 -> right;   
-    }
-
-    return head;
+    return ans;
 }
 
-// convert sorted LL in bst
-int countNodes(Node* head) {
+Node* inorderToBalancedBst(int s, int e, vector<int> arr) {
 
-    Node* temp = head;
-    int cnt = 0;
-
-    while(temp != NULL) {
-        cnt++;
-        temp = temp -> right;
-    }
-
-    return cnt;
-}
-
-Node* sortedLLToBST(Node* head, int n) {
-
-    if(n <= 0 || head == NULL) {
+    if(s > e) {
         return NULL;
     }
-
-    Node* left = sortedLLToBST(head, n/2);
-
-    Node* root = head;
-    root -> left  = left;
-
-    head = head -> right;
-
-    root -> right = sortedLLToBST(head, n-n/2-1);
-
+    int mid = s + (e-s)/2;
+    Node* root = new Node(arr[mid]);
+    root->left = inorderToBalancedBst(s, mid-1, arr);
+    root->right = inorderToBalancedBst(mid, e , arr);
     return root;
-}
+}   
+
+// APPROACH 2 
 
 int main() {
 
@@ -241,22 +188,17 @@ int main() {
     levelOrderTraversal(root1);
     levelOrderTraversal(root2);
 
-    // 1. convert bst into DLL inplace 
-    Node* head1 = NULL;
-    convertIntoSortedDLL(root1, head1);
-    head1 -> left = NULL;
+    // APPROACH 1
+    // vector<int> bst1, bst2;
+    // inorder(root1, bst1); 
+    // inorder(root2, bst1); 
+    // vector<int> mergedArray = merge(bst1, bst2);
 
-    Node* head2 = NULL;
-    convertIntoSortedDLL(root2, head2);
-    head2 -> left = NULL;
-
-    //  2. merge sorted LL
-    Node* head = merge(head1, head2);
-
-    // 3. convert sorted LL into BST
-    Node* root = sortedLLToBST(head, countNodes(head));
-
-    levelOrderTraversal(root);
+    // // convert merged array in bst
+    // int s = 0;
+    // int e = mergedArray.size() - 1;
+    // Node* root = inorderToBalancedBst(s, 0, mergedArray);
+    
 
     return 0;
 }

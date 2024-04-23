@@ -43,67 +43,58 @@ class Heap {
         arr[0] = -1;
     }
 
-    void insert(int value) {
-
-        size = size + 1;
-        int index = size;
-        arr[index] = value;
-
-        while(index > 1) 
-        {
-            int parent = index/2;
-            if(arr[parent] < arr[index]) {
-                swap(arr[parent], arr[index]);
-                index = parent;
-            }
-            else {
-                return;
-            }
-        } 
-    } 
-
-    void print() {
+     void print() {
 
         for(int i=1; i<=size; i++) {
             cout << arr[i] << " ";
         }
     }
 
-    // jb bhi delete ki baat hogi root node ko delete krna h
-    void deleteFromHeap() {
+    void insert(int val) {
 
-        if(size == 0) {
-            cout << "Nothing to delete " << endl;
-            return;
+        size += 1;
+        int idx = size;
+        arr[idx] = val;
+
+        while(idx > 1) {
+            if(arr[idx] > arr[idx/2]) {
+                swap(arr[idx], arr[idx/2]);
+                idx = idx/2;
+            }
+            else {
+                return;
+            }
         }
 
-        // step 1: put last element at first index
+    }
+
+    // whenever deletion has to be done root node will be deleted
+    // 1. Delete first node , assign value of last node in first node
+    // 2. size --
+    // 3. Now place new root node at its right position by comparing with its left and right child
+    void deleteFromHeap() {
+
         arr[1] = arr[size];
-
-        // step 2: remove last element
         size--;
-
-        // step 3: take root node to its correct postition
         int i = 1;
+
         while(i < size) {
+            int leftIdx = 2*i;
+            int rightIdx = 2*i + 1;
 
-            int leftIndex = 2 * i;
-            int rightIndex = 2 * i + 1;
-
-            if(leftIndex <= size && arr[i] < arr[leftIndex]) {
-                swap(arr[i], arr[leftIndex]);
-                i = leftIndex;
+            if(leftIdx < size && arr[i] < arr[leftIdx]) {
+                swap(arr[i], arr[leftIdx]);
+                i = leftIdx;
             }
-            else if(rightIndex <= size && arr[i] < arr[rightIndex]) {
-                swap(arr[i], arr[rightIndex]);
-                i = rightIndex;
+            else if(rightIdx < size && arr[i] < arr[rightIdx]) {
+                swap(arr[i], arr[rightIdx]);
+                i = rightIdx;
             }
             else {
                 return;
             }
         }
     }
-};
 
 void heapify(int *arr, int n, int i) {
 
@@ -146,6 +137,7 @@ void printArr(int *arr, int n) {
     }
     cout << endl;
 }
+};
 
 int main() {
 
@@ -160,7 +152,6 @@ int main() {
     cout << endl;
 
     h.deleteFromHeap();
-
     h.print();
     cout << endl;
 
@@ -169,17 +160,17 @@ int main() {
 
     // heap creation
     for(int i=n/2; i>0; i--) {
-        heapify(arr, n, i);
+        // heapify(arr, n, i);
     }
 
-    cout << "printing array after heapify : ";
-    printArr(arr, n);
+    // cout << "printing array after heapify : ";
+    // printArr(arr, n);
 
     // heap sort
-    heapSort(arr, n);
+    // heapSort(arr, n);
 
-    cout << "printing arr after heap sort: ";
-    printArr(arr, n);
+    // cout << "printing arr after heap sort: ";
+    // printArr(arr, n);
     cout << endl;
 
 

@@ -8,7 +8,7 @@ Implementing USING ARRAY
 IN 0 BASED INDEXING
 - left child = 2*i+1
 - right child = 2*i+2
-- parent = (i-1)
+- parent = (i-1)/2
 
 INSERTION 
 - insert node at end in array
@@ -96,47 +96,47 @@ class Heap {
         }
     }
 
-void heapify(int *arr, int n, int i) {
+    void heapify(int *arr, int n, int i) {
 
-    int largest = i;
-    int leftIdx = 2*i;
-    int rightIdx = 2*i + 1;
+        int largest = i;
+        int leftIdx = 2*i;
+        int rightIdx = 2*i + 1;
 
-    if(leftIdx <= n && arr[largest] < arr[leftIdx]) {
-        largest = leftIdx;
+        if(leftIdx <= n && arr[largest] < arr[leftIdx]) {
+            largest = leftIdx;
+        }
+        if(rightIdx <= n && arr[largest] < arr[rightIdx]) {
+            largest = rightIdx;
+        }
+
+        if(largest != i) {
+            swap(arr[largest], arr[i]);
+            heapify(arr, n, largest);
+        }
     }
-    if(rightIdx <= n && arr[largest] < arr[rightIdx]) {
-        largest = rightIdx;
+
+    void heapSort(int *arr, int n) {
+
+        int size = n;
+
+        while(size > 1) {
+
+            // step 1: swap
+            swap(arr[size], arr[1]);
+            size--;
+
+            // step 2 : heapify
+            heapify(arr, size, 1);
+        }
     }
 
-    if(largest != i) {
-        swap(arr[largest], arr[i]);
-        heapify(arr, n, largest);
+    void printArr(int *arr, int n) {
+
+        for(int i=1; i<=n; i++) {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
     }
-}
-
-void heapSort(int *arr, int n) {
-
-    int size = n;
-
-    while(size > 1) {
-
-        // step 1: swap
-        swap(arr[size], arr[1]);
-        size--;
-
-        // step 2 : heapify
-        heapify(arr, size, 1);
-    }
-}
-
-void printArr(int *arr, int n) {
-
-    for(int i=1; i<=n; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-}
 };
 
 int main() {
@@ -191,6 +191,7 @@ int main() {
     cout << "top element: " << pq.top() << endl;
     pq.pop();
     cout << "top element: " << pq.top() << endl;
+    
     cout << "size: " << pq.size() << endl;
 
     if(pq.empty()) {

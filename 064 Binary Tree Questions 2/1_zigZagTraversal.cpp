@@ -89,10 +89,8 @@ void levelOrderTraversal(Node* &root) {
 vector<vector<int>> zigZag(Node* root) {
 
     vector<vector<int>> result;
-
     queue<Node*> q;
     q.push(root);
-
     bool leftToRight = true;
 
     while(q.size() != 0) {

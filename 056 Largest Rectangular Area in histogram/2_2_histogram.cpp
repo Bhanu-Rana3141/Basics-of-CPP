@@ -45,20 +45,17 @@ vector<int> nextSmaller(vector<int> arr, int n) {
 int maxArea(vector<int>& arr, int n) {
 
     int maxArea = INT_MIN;
+    vector<int> prev = previousSmaller(arr, n);
+    vector<int> next = nextSmaller(arr, n);
 
     for(int i=0; i<n; i++) {
-
-        vector<int> prev = previousSmaller(arr, n);
-        vector<int> next = nextSmaller(arr, n);
-
+        
         if(next[i] == -1) {
             next[i] = n;
         }
 
         int width = next[i] - prev[i] - 1;
-
         int area = arr[i] * width;
-
         maxArea = max(maxArea, area);
     }
     return maxArea;

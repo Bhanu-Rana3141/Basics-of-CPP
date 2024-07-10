@@ -65,7 +65,7 @@ int main() {
     int first = firstOccurence(arr,n,key);
     int last = lastOccurence(arr,n,key);
 
-    cout << "Total Occurences: " << last-first+1;
+    cout << "Total Occurences: " << last - first + 1;
     
 
 }

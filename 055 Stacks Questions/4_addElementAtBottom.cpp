@@ -44,9 +44,7 @@ void insertElement_2(stack<int>& st, int x) {
 
     int topElement = st.top();
     st.pop();
-
     insertElement_2(st, x);
-    
     st.push(topElement);
 }
 

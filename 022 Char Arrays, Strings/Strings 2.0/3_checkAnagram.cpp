@@ -130,7 +130,7 @@ int main() {
     }
     else{
         if(isAnagramOptimised(s,t)) {
-        cout << "strings are anagram";
+            cout << "strings are anagram";
         }
         else{
             cout << "Not anagram";

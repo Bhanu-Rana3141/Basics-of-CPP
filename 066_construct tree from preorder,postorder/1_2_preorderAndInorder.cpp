@@ -62,7 +62,7 @@ int main() {
     int preOrderIndex = 0;
     int n = inorder.size();
     int inorderStart = 0;
-    int inorderEnd = n-1;
+    int inorderEnd = n-1;   
 
     map<int, int> elementToindex;
     createMapping(inorder, n, elementToindex);

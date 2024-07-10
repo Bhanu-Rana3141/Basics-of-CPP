@@ -65,6 +65,7 @@ void approach_3_finding_duplicates(vector<int>&arr, int n) {
 }
 
 int main () {
+    
     int n;
     cout << "Enter n: ";
     cin >> n;

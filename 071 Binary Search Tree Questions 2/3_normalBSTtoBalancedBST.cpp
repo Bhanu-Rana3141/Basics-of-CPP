@@ -89,7 +89,7 @@ void inorder(Node* root, vector<int>& arr) {
 Node* balancedBST(int s, int e, vector<int>& arr) {
 
     if(s > e) {
-        return;
+        return NULL;
     }
 
     int mid = (s+e)/2;

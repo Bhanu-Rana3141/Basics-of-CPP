@@ -45,7 +45,6 @@ vector<int> nextSmaller(vector<int> arr, int n) {
 int largestArea(vector<int> arr, int n) {
 
     int maxArea = INT_MIN;
-
     vector<int> prev = previousSmaller(arr, n);
     vector<int> next = nextSmaller(arr, n);
 
@@ -56,9 +55,7 @@ int largestArea(vector<int> arr, int n) {
         }
 
         int width = next[i] - prev[i] - 1;
-        
         int area = arr[i] * width;
-
         maxArea = max(maxArea, area);
     }
     return maxArea;
@@ -79,13 +76,9 @@ int main() {
             if(arr[i][j] != 0) {
                 arr[i][j] = arr[i][j] + arr[i-1][j];
             }
-            else {
-                arr[i][j] = 0;
-            }
         }        
 
         int area = largestArea(arr[i], m);
-
         maxArea = max(maxArea, area);
     }
 

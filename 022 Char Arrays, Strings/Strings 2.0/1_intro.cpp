@@ -9,9 +9,9 @@ int main() {
     // string str1("wallah");
     // cout << str << " " << str1 << endl;
 
-    string s;
-    getline(cin, s); 
-    cout << s;
+    // string s;
+    // getline(cin, s); 
+    // cout << s;
 
     // Inbuilt functions
     // Reverse
@@ -54,13 +54,13 @@ int main() {
     // cout << strlen(str) << endl; //O(n)
 
     // to_string -> to convert numeric value in string
-    int num = 432;
-    string s = to_string(num);
-    s += '1';
-    cout << s << endl;
-    cout << s[1] << endl;
-    s[1] = '9';
-    cout << s << endl;
+    // int num = 432;
+    // string s = to_string(num);
+    // s += '1';
+    // cout << s << endl;
+    // cout << s[1] << endl;
+    // s[1] = '9';
+    // cout << s << endl;
 
     return 0;
 }

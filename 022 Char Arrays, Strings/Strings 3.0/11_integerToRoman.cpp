@@ -15,10 +15,10 @@ int main() {
     int numericValues[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
 
     string ans = "";
-    for(int i=0; i<13; i++) {
+    for(int i = 0; i<13; i++) {
         while(num >= numericValues[i]) {
             ans += romanValues[i];
-            num = num-numericValues[i];
+            num = num - numericValues[i];
         }
     }
 

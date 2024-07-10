@@ -36,12 +36,14 @@ int main() {
 */
 
     // in place replacement    TC -> O(n) : size of string , O(m) : part that has to be replaced , OVERALL : O(m*n),  SC-> O(1)
-
     for(int i=0; i<s.size(); i++) {
         if(s[i] == ' ') {
             s.replace(i, 2, "786");
         }
     }
+    //     pos: The position in the string where the replacement starts.
+    //     n: The number of characters to replace.
+    //     str: The string that will replace the characters specified by pos and n.
     print(s);
 
     return 0;

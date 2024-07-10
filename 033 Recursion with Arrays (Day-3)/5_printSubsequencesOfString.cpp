@@ -7,17 +7,17 @@ Total subsequences - 2^n
 #include<vector>
 using namespace std;
 
-void printSubsequences(string s, string output, int i, vector<string>& ans) {
+void printSubsequencess(string s, string output, int i, vector<string>& ans) {
     if(i >= s.size()) {
         // cout << output << " ";
         ans.push_back(output);
         return;
     }
     // exclude
-    printSubsequences(s, output, i+1, ans);
+    printSubsequencess(s, output, i+1, ans);
     // include
-    output.pop_back();
-    printSubsequences(s, output, i+1, ans);
+    output += s[i];
+    printSubsequencess(s, output, i+1, ans);
 }
 
 int main() {
@@ -30,7 +30,7 @@ int main() {
     int i = 0;
     string output = ""; // to create ans
 
-    printSubsequences(s, output, i, ans);
+    printSubsequencess(s, output, i, ans);
 
     for(auto it: ans) {
         cout << it << " ";

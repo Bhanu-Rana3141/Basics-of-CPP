@@ -8,7 +8,7 @@ void printArray(int arr[], int n) {
 }
 
 void swapAlternate(int arr[] , int n){
-    for(int i=0; i<n; i+=2){
+    for(int i=0; i<n-1; i+=2){
         swap(arr[i],arr[i+1]);
     }
     return;
@@ -27,8 +27,6 @@ int main() {
 
     swapAlternate(arr,n);
     printArray(arr,n);
-
-   
 
     return 0;
 }

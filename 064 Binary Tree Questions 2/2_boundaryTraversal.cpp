@@ -126,7 +126,6 @@ void leafNodeTraversal(Node* &root, vector<int>& ans) {
     leafNodeTraversal(root -> right, ans);
 }
 
-
 void rightTraversal(Node* &root, vector<int>& ans) {
 
     if((root == NULL) || (root -> left == NULL && root -> right == NULL)) {

@@ -25,7 +25,7 @@ class Stack {
     }
 
     void pop() {
-        if(top >= 0) {
+        if(top >= 0 && top < size) {
             top--;
         }
         else {
@@ -34,7 +34,7 @@ class Stack {
     }
 
     int peek() {
-        if(top >= 0) {
+        if(top >= 0 && top < size) {
             return arr[top];
         }
         else {

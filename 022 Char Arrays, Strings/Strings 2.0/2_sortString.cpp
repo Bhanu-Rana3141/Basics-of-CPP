@@ -17,7 +17,7 @@ string countSort(string s) {
     int j=0;
     for(int i=0; i<26; i++) {
         while(freq[i]--) {
-            s[j] = i+'a';
+            s[j] = i + 'a';
             j++;
         }
     }

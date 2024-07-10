@@ -44,3 +44,12 @@ During runtime, the program interacts with the operating system, hardware, and e
 The program continues to execute until it reaches the end or encounters a specific exit condition. At this point, the program terminates, and the operating system reclaims the resources allocated to the program.
 
 */
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    cout << "hello world";
+    return 0;
+}

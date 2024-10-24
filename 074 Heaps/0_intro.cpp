@@ -31,7 +31,7 @@ void heapify(vector<int>& arr, int n, int i) {
     if(leftIdx < n && arr[largest] < arr[leftIdx]) {
         largest = leftIdx;
     }
-    if(rightIdx < n && arr[largest] < arr[rightIdx]) {
+    else if(rightIdx < n && arr[largest] < arr[rightIdx]) {
         largest = rightIdx;
     }
     if(largest != i) {
@@ -45,7 +45,7 @@ int main()
     vector<int> arr = {54, 53, 55, 52, 50};
     int n = arr.size();
 
-    for(int i = n/2; i>=0; i--) {
+    for(int i = n/2; i >= 0; i--) {
         heapify(arr, n, i);
     }
 

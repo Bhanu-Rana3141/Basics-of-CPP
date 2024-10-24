@@ -53,7 +53,6 @@ void buildTree(Node* &root) {
     }
 } 
 
-
 void levelOrderTraversal(Node* &root) {
 
     queue<Node*> q;

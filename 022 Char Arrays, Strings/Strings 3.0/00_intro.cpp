@@ -93,7 +93,8 @@ string erase(string& str, int& pos, int& noOfCharacters) {
 
 int main() {
 
-/*   char ch[100];
+/*   
+    char ch[100];
     cin >> ch;
    
     for(int i=0; i<9; i++) {

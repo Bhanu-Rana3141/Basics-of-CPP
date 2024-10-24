@@ -146,7 +146,6 @@ int main() {
     // int idx = nodeData.size() - k;
     // cout << "ans: " << nodeData[idx];
 
-
     int cnt = 0;
     countNodes(root, cnt);
     int n = cnt;

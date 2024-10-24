@@ -21,4 +21,3 @@ if 2 child find min from the right subtree, copy min value to root -> data, find
 
 
 - Use morris traversal in kth largest and kth smallest
-

@@ -43,7 +43,7 @@ class Heap {
         arr[0] = -1;
     }
 
-     void print() {
+    void print() {
 
         for(int i=1; i<=size; i++) {
             cout << arr[i] << " ";
